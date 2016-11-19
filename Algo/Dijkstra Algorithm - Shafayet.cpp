@@ -17,7 +17,7 @@ int main()
     {
     cin>>n>>m;
 
-    while(m--)
+    for(int i=0; i<m; i++) //    while(m--) 
     {
         cin>>u>>v>>w;
         G[u].push_back(pii(w,v));
