@@ -65,5 +65,18 @@ int main()
     for(int i=j-1;i>=0;i--)
         cout << path[i]<<" -> ";
     cout << endl << "minimum distance: " << distance[target] << endl;
+      /*
+     
+         // For minimum cost of all vertex visit from the source
+         for(int i=1; i<=n; i++)
+         {
+            if(i == source)  continue;
+            if(distance[i] >= inf) cout<<"-1"<<" ";
+            else cout<<distance[i]<<" ";
+         }
+         
+        cout<<endl;
+     
+     */
     return 0;
 }
