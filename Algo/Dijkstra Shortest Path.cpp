@@ -1,3 +1,6 @@
+
+///Dijkstra Shortest Path is undirected graph.
+
 #include<bits/stdc++.h>
 #define pii pair<int,int>
 #define infinity 999999999999
@@ -21,8 +24,8 @@ int main()
      for(int i=0; i<m; i++)
      {
         cin>>u>>v>>w;
-        G[u].push_back(pii(w,v));
-        G[v].push_back(pii(w,u));
+        G[u].push_back(pii(w,v)); 
+        G[v].push_back(pii(w,u)); ///Ai line ta na dile directed hoye jabe.
      }
 
    int start = 1;
