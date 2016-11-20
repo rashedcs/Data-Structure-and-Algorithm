@@ -1,19 +1,22 @@
 #include<bits/stdc++.h>
 #define pii pair<int,int>
-#define infinity 999999999999999999
+#define infinity 999999999999
 using namespace std;
 
-long long int n,m,u,v,w,d[1000000],dir[1000000];
-vector<pii>G[1000000];
-priority_queue<pii,vector<pii>,greater<pii> >q;
+long long int n,m,u,v,w,i,dist[1000000],prev[1000000]; 
+
 vector<int>path;
 
 
 int main()
 {
-     int tc, start;
 
      cin>>n>>m;
+
+     vector<pii>G[n+1];
+     priority_queue<pii,vector<pii>,greater<pii> >q;
+
+
 
      for(int i=0; i<m; i++)
      {
@@ -22,16 +25,18 @@ int main()
         G[v].push_back(pii(w,u));
      }
 
+   int start = 1;
+
     for(int i=1; i<=n; i++)
     {
-        d[i]=infinity;
-        dir[i]=-1;
+        dist[i]=infinity;
+        prev[i]=-1;
     }
 
-    start = 1;
+
 
     q.push(pii(0,start));
-    d[start]=0;
+    dist[start]=0;
 
     while(!q.empty())
     {
@@ -41,18 +46,18 @@ int main()
         {
             v=G[u][i].second;
             w=G[u][i].first;
-            if(d[u]+w<d[v])
+            if(dist[u]+w<dist[v])
             {
 
-                d[v]=d[u]+w;
-                dir[v]=u;
-                q.push(pii(d[v],v));
+                dist[v]=dist[u]+w;
+                prev[v]=u;
+                q.push(pii(dist[v],v));
             }
         }
      }
 
 
-    if(dir[n]==-1)
+    if(prev[n]==-1)
     {
        cout<<"-1"<<endl;
     }
@@ -63,7 +68,7 @@ int main()
         while(u!=-1)
         {
             path.push_back((u));
-            u=dir[u];
+            u=prev[u];
         }
 
         for(int i=path.size()-1; i>=0; i--)
