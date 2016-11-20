@@ -1,3 +1,6 @@
+//It is not good for programming contest
+
+
 #include<bits/stdc++.h>
 #define inf 9999
 using namespace std;
