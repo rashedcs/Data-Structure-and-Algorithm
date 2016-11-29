@@ -22,15 +22,16 @@
 		   int u = stack.top();
 		   cout<<u<<" ";
 		   stack.pop();
-	       for(vector<int>::iterator it=nodes[u].begin(); it!=nodes[u].end(); it++)
-           {
+	       
+	           for(vector<int>::iterator it=nodes[u].begin(); it!=nodes[u].end(); it++)
+                   {
 		 	  if(visited[*it]==false)
 		 	  {
 				visited[*it] = true;
 				stack.push(*it);
 			  }
-           }
-       }
+                  }
+        }
    }
 
 
@@ -49,9 +50,9 @@ int main()
 	}
 
 	int start;
-    cout<<"\nEnter the starting node"<<endl;
-    cin>>start;
-    bfs(start, edges);
+        cout<<"\nEnter the starting node"<<endl;
+        cin>>start;
+        bfs(start, edges);
 
 	cout<<endl;
 	return 0;
