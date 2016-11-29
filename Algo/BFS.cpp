@@ -3,24 +3,21 @@ using namespace std;
 
 vector<int>nodes[1000];
 
-void bfs(int start, int edges)
+void bfs(int start, int vertex)
 {
 
-    queue<int>que;
+     queue<int>que;
 
-    bool visited[edges];
+     bool visited[edges];
 
-    for(int i=0;i<edges;i++)
-    {
-       visited[i]=false;
-    }
-
-
-    que.push(start);
-    visited[start]=true;
+     for(int i=0;i<edges;i++)
+     {
+        visited[i]=false;
+     }
 
 
-	cout<<"\nBFS Traversal\n";
+     que.push(start);
+     visited[start]=true;
 
      while(!que.empty())
      {
@@ -28,16 +25,16 @@ void bfs(int start, int edges)
 		 cout<<front<<" ";
 		 que.pop();
 
-	     for(vector<int>::iterator it=nodes[front].begin();
-		 it!=nodes[front].end();++it)
-		 {
+	         for(vector<int>::iterator it=nodes[front].begin();
+		  it!=nodes[front].end();++it)
+		  {
 			if(visited[*it]==false)
 			{
 				visited[*it]=true;
 				que.push(*it);
 			}
 		 }
-     }
+      }
 
 }
 
@@ -46,9 +43,10 @@ void bfs(int start, int edges)
 int main()
 {
 
-    int edges,a,b;
-    cout<<"Enter the no of edges"<<endl;
-	cin>>edges;
+        int start, vertex, edges,a,b;
+	
+        cout<<"Enter the no of vertex and edges"<<endl;
+	cin>>vertex>>edges;
 	for(int i=0;i<edges;i++)
 	{
 		cin>>a>>b;
@@ -56,14 +54,12 @@ int main()
 		nodes[b].push_back(a);
 	}
 
+       cout<<"\nEnter the starting node"<<endl;
+       cin>>start;
+       bfs(start, vertex);
 
-	int start;
-    cout<<"\nEnter the starting node"<<endl;
-    cin>>start;
-    bfs(start, edges);
-
-	cout<<endl;
-	return 0;
+       cout<<endl;
+       return 0;
 
 }
 
