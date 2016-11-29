@@ -39,9 +39,9 @@
 int main()
 {
 
-    int edges,a,b;
-    cout<<"Enter the no of edges"<<endl;
-	cin>>edges;
+    int vertex, edges,a,b;
+    cout<<"Enter the no of vertex and edges"<<endl;
+	cin>>vertex>>edges;
 	for(int i=0;i<edges;i++)
 	{
 		cin>>a>>b;
@@ -52,7 +52,7 @@ int main()
 	int start;
         cout<<"\nEnter the starting node"<<endl;
         cin>>start;
-        bfs(start, edges);
+        bfs(start, vertex);
 
 	cout<<endl;
 	return 0;
