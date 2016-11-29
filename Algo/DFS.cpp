@@ -66,4 +66,52 @@ int main()
 
 
 
+Recursive : 
+
+       #include<bits/stdc++.h>
+       using namespace std;
+
+
+       stack<int>S;
+       vector<int>adj[1000];
+
+       bool visited[10];//n is no of vertices and graph is sorted in array G[10][10]
+
+
+       void dfs(int u)
+       {
+           printf("\n%d",u);
+		   visited[u] = true;
+		   for(int i=0; i<adj[u].size(); i++)
+		   {
+			  if (visited[adj[u][i]] == false)
+			  {
+				dfs(adj[u][i]);
+			  }
+		   }
+		   S.push(u);
+       }
+
+
+      int main()
+      {
+         int vertex, edges, a, b;
+	     cin>>vertex>>edges;
+
+	     for(int i=0; i<edges; i++)
+	     {
+	        cin>>a>>b;
+	        adj[a].push_back(b);
+	     }
+
+         for(int i=0; i<vertex; i++){
+           if(visited[i]==false)  dfs(i);
+         }
+         cout<<endl;
+
+         return 0;
+      }
+
+
+
 
