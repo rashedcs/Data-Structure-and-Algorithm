@@ -15,7 +15,8 @@ void bfs(int start, int vertex)
         visited[i]=false;
      }
 
-
+         //bool *visited = new bool[V];
+	//bool *visited = new bool[V];
      que.push(start);
      visited[start]=true;
 
