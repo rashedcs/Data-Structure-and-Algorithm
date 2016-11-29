@@ -8,9 +8,9 @@ void bfs(int start, int vertex)
 
      queue<int>que;
 
-     bool visited[edges];
+     bool visited[vertex];
 
-     for(int i=0;i<edges;i++)
+     for(int i=0; i<vertex; i++)
      {
         visited[i]=false;
      }
