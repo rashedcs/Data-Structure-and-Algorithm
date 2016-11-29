@@ -3,7 +3,7 @@
 
   vector<int>nodes[1000];
 
-  void bfs(int start, int vertex)
+  void dfs(int start, int vertex)
   {
        stack<int>stack;
 
@@ -13,7 +13,8 @@
        {
            visited[i]=false;
        }
-
+       //bool *visited = new bool[V];
+	//  bool *visited = new bool[V];
        stack.push(start);
        visited[start]=true;
 
@@ -39,8 +40,9 @@
 int main()
 {
 
-    int vertex, edges,a,b;
-    cout<<"Enter the no of vertex and edges"<<endl;
+        int start, vertex, edges,a,b;
+	
+        cout<<"Enter the no of vertex and edges"<<endl;
 	cin>>vertex>>edges;
 	for(int i=0;i<edges;i++)
 	{
@@ -48,11 +50,10 @@ int main()
 		nodes[a].push_back(b);
 		nodes[b].push_back(a);
 	}
-
-	int start;
+	
         cout<<"\nEnter the starting node"<<endl;
         cin>>start;
-        bfs(start, vertex);
+        dfs(start, vertex);
 
 	cout<<endl;
 	return 0;
