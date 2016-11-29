@@ -25,14 +25,13 @@ void bfs(int start, int vertex)
 		 cout<<front<<" ";
 		 que.pop();
 
-	         for(vector<int>::iterator it=nodes[front].begin();
-		  it!=nodes[front].end();++it)
+	         for(vector<int>::iterator it=nodes[front].begin(); it!=nodes[front].end();  ++it)
 		  {
-			if(visited[*it]==false)
-			{
-				visited[*it]=true;
-				que.push(*it);
-			}
+		       if(visited[*it]==false)
+		       {
+			   visited[*it]=true;
+			   que.push(*it);
+		       }
 		 }
       }
 
