@@ -68,7 +68,7 @@ int main()
 
 Recursive : 
 
-       #include<bits/stdc++.h>
+             #include<bits/stdc++.h>
        using namespace std;
 
 
@@ -89,29 +89,28 @@ Recursive :
 				dfs(adj[u][i]);
 			  }
 		   }
-		   S.push(u);
        }
 
 
       int main()
       {
-         int vertex, edges, a, b;
+         int vertex, start, edges, a, b;
 	     cin>>vertex>>edges;
 
 	     for(int i=0; i<edges; i++)
 	     {
 	        cin>>a>>b;
 	        adj[a].push_back(b);
+	      //  adj[b].push_back(a);
 	     }
 
-         for(int i=0; i<vertex; i++){
-           if(visited[i]==false)  dfs(i);
+          cin>>start;
+
+         for(int i=start; i<vertex; i++)
+         {
+            if(visited[i]==false)  dfs(i);
          }
          cout<<endl;
 
          return 0;
       }
-
-
-
-
