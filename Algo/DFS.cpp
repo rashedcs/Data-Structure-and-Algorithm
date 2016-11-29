@@ -3,13 +3,13 @@
 
   vector<int>nodes[1000];
 
-  void bfs(int start, int edges)
+  void bfs(int start, int vertex)
   {
        stack<int>stack;
 
-       bool visited[edges];
+       bool visited[vertex];
 
-       for(int i=0;i<edges;i++)
+       for(int i=0; i<vertex; i++)
        {
            visited[i]=false;
        }
