@@ -9,11 +9,14 @@ void bfs(int start, int vertex)
      queue<int>que;
 
      bool visited[vertex];
-
+   
      for(int i=0; i<vertex; i++)
      {
         visited[i]=false;
      }
+  
+         //You can use initialize all variable to false to use memset function instead of for loop
+    // memset(visited,false,sizeof(visited)); 
 
          //bool *visited = new bool[V];
 	//bool *visited = new bool[V];
@@ -22,19 +25,19 @@ void bfs(int start, int vertex)
 
      while(!que.empty())
      {
-		 int front = que.front();
-		 cout<<front<<" ";
-		 que.pop();
+	 int front = que.front();
+	 cout<<front<<" ";
+	 que.pop();
 
-	         for(vector<int>::iterator it=nodes[front].begin(); it!=nodes[front].end();  ++it)
-		  {
-		       if(visited[*it]==false)
-		       {
-			   visited[*it]=true;
-			   que.push(*it);
-		       }
-		 }
-      }
+	 for(vector<int>::iterator it=nodes[front].begin(); it!=nodes[front].end();  ++it)
+         {
+		  if(visited[*it]==false)
+		   {
+		        visited[*it]=true;
+		       que.push(*it);
+		   }
+         }
+     }
 
 }
 
@@ -66,6 +69,7 @@ int main()
 
 
 
+
 //Best Way :
 #include<bits/stdc++.h>
 using namespace std;
@@ -79,10 +83,14 @@ void bfs(int start, int vertex)
 
      bool visited[vertex+1];
 
+    /*	
      for(int i=0; i<vertex; i++)
      {
         visited[i]=false;
      }
+     */
+    //You can use initialize all variable to false to use memset function instead of for loop
+     memset(visited,false,sizeof(visited)); 
 
          //bool *visited = new bool[V];
 	//bool *visited = new bool[V];
@@ -91,20 +99,19 @@ void bfs(int start, int vertex)
 
      while(!que.empty())
      {
-		 int u = que.front();
-		 cout<<u<<" ";
-		 que.pop();
-         for(int i=0;i<nodes[u].size();i++)
-         {
-            int v = nodes[u][i];
-            if(visited[v]==false)
-            {
+	   int u = que.front();
+	   cout<<u<<" ";
+	   que.pop();
+           for(int i=0;i<nodes[u].size();i++)
+           {
+             int v = nodes[u][i];
+             if(visited[v]==false)
+             {
                 visited[v]=true;
                 que.push(v);
-            }
-         }
+             }
+          }
      }
-
 }
 
 
@@ -119,7 +126,7 @@ int main()
 	    for(int i=0;i<edges;i++)
 	    {
 		  cin>>a>>b;
-		  nodes[a].push_back(b);
+		  nodes[a].push_back(b); //For directed graph
 		  //nodes[b].push_back(a);
 	    }
 
