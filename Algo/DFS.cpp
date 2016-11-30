@@ -1,44 +1,44 @@
-  #include<bits/stdc++.h>
-  using namespace std;
+   #include<bits/stdc++.h>
+   using namespace std;
 
-  vector<int>nodes[1000];
+   vector<int>nodes[1000];
+ 
+   void dfs(int start, int vertex)
+   {
+        stack<int>stack;
 
-  void dfs(int start, int vertex)
-  {
-       stack<int>stack;
+        bool visited[vertex];
 
-       bool visited[vertex];
-
-       for(int i=0; i<vertex; i++)
-       {
-           visited[i]=false;
-       }
-       //bool *visited = new bool[V];
+        for(int i=0; i<vertex; i++)
+        {
+            visited[i]=false;
+        }
+        //bool *visited = new bool[V];
 	//  bool *visited = new bool[V];
-       stack.push(start);
-       visited[start]=true;
+        stack.push(start);
+        visited[start]=true;
 
-       while(!stack.empty())
-       {
-		   int u = stack.top();
-		   cout<<u<<" ";
-		   stack.pop();
+        while(!stack.empty())
+        {
+		    int u = stack.top();
+		    cout<<u<<" ";
+		    stack.pop();
 	       
-	           for(vector<int>::iterator it=nodes[u].begin(); it!=nodes[u].end(); it++)
-                   {
+	            for(vector<int>::iterator it=nodes[u].begin(); it!=nodes[u].end(); it++)
+                    {
 		 	  if(visited[*it]==false)
 		 	  {
 				visited[*it] = true;
 				stack.push(*it);
 			  }
-                  }
-        }
-   }
+                   }
+         }
+     }
 
 
 
-int main()
-{
+  int main()
+  {
 
         int start, vertex, edges,a,b;
 	
@@ -58,7 +58,7 @@ int main()
 	cout<<endl;
 	return 0;
 
-}
+   }
 
 
 
@@ -69,7 +69,7 @@ int main()
 
 Recursive : 
 
-             #include<bits/stdc++.h>
+       #include<bits/stdc++.h>
        using namespace std;
 
 
@@ -81,7 +81,7 @@ Recursive :
 
        void dfs(int u)
        {
-           printf("\n%d",u);
+                   printf("\n%d",u);
 		   visited[u] = true;
 		   for(int i=0; i<adj[u].size(); i++)
 		   {
@@ -95,7 +95,7 @@ Recursive :
 
       int main()
       {
-         int vertex, start, edges, a, b;
+             int vertex, start, edges, a, b;
 	     cin>>vertex>>edges;
 
 	     for(int i=0; i<edges; i++)
@@ -105,13 +105,14 @@ Recursive :
 	      //  adj[b].push_back(a);
 	     }
 
-          cin>>start;
+             cin>>start;
 
-         for(int i=start; i<vertex; i++)
-         {
-            if(visited[i]==false)  dfs(i);
-         }
-         cout<<endl;
+             for(int i=start; i<vertex; i++)
+             {
+                if(visited[i]==false)  dfs(i);
+             }
+	      
+            cout<<endl;
 
-         return 0;
-      }
+            return 0;
+       }
