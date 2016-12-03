@@ -27,30 +27,42 @@ void build(int node,int b,int e)
 
 void update(int node, int b, int e, int index, int newvalue)
 {
-    if (index > e || index < b) //Out of range index 
+    if(index > e || index < b) //Out of range index
     {
-        return; 
+        return;
     }
-    
-    if(b==e)  //if (b >= index && e <= index) 
-    { 
+
+    if(b==e)  //Leaf Node
+    {
+       //if (b >= index && e <= index)
         tree[node] = newvalue;
         return;
     }
-    
-    int Left = node * 2; 
-    int Right = node * 2 + 1;
-    int mid = (b + e) / 2;
-    update(Left, b, mid, index, newvalue);
-    update(Right, mid + 1, e, index, newvalue);
-    tree[node] = tree[Left] + tree[Right];
+
+    else
+    {
+      int Left = node * 2;
+      int Right = node * 2 + 1;
+      int mid = (b + e) / 2;
+      update(Left, b, mid, index, newvalue);
+      update(Right, mid + 1, e, index, newvalue);
+      tree[node] = tree[Left] + tree[Right];
+    }
 }
 
 
 int query(int node,int b,int e,int i,int j)
 {
-    if(i>e||j<b)   return 0;
-    if(b>=i&&e<=j) return tree[node];
+    if(i>e||j<b)    ////base case: result of out-of-bound query
+    {
+       return 0;
+    }
+
+    if(b>=i && e<=j)
+    {
+      return tree[node];
+    }
+
     int Left=node*2;
     int Right=node*2+1;
     int mid=(b+e)/2;
@@ -70,14 +82,21 @@ int main()
         for(int b=0; b<n; b++)   scanf("%d",&arr[b]);
 
         build(1,1,n);
-        //Update(1,1,n,index, value)
 
         scanf("%d%d",&i,&j);
 
         printf("%d\n",query(1,1,n,i,j));
 
+        update(1, 1, n, 1, 10);
+
+        printf("%d\n",query(1,1,n,1,3));
+
        return 0;
 }
+
+
+
+
 
 
 
