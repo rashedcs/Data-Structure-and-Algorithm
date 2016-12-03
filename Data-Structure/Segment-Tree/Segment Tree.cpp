@@ -25,7 +25,7 @@ void build(int node,int b,int e)
     }
 }
 
-oid update(int node, int b, int e, int index, int newvalue)
+void update(int node, int b, int e, int index, int newvalue)
 {
     if (index > e || index < b)
     {
