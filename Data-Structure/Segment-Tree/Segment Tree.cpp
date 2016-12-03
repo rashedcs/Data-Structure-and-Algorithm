@@ -25,32 +25,24 @@ void build(int node,int b,int e)
     }
 }
 
-void update(int node, int start, int end, int idx, int val)
+oid update(int node, int b, int e, int index, int newvalue)
 {
-    if(start == end)
+    if (index > e || index < b)
     {
-        // Leaf node
-        arr[idx] += val;
-        tree[node] += val;
+        return; 
     }
-    else
-    {
-        int mid = (start + end) / 2;
-        if(start <= idx and idx <= mid)
-        {
-            // If idx is in the left child, recurse on the left child
-            update(2*node, start, mid, idx, val);
-        }
-        else
-        {
-            // if idx is in the right child, recurse on the right child
-            update(2*node+1, mid+1, end, idx, val);
-        }
-        // Internal node will have the sum of both of its children
-        tree[node] = tree[2*node] + tree[2*node+1];
+    if (b >= index && e <= index) 
+    { 
+        tree[node] = newvalue;
+        return;
     }
+    int Left = node * 2; 
+    int Right = node * 2 + 1;
+    int mid = (b + e) / 2;
+    update(Left, b, mid, index, newvalue);
+    update(Right, mid + 1, e, index, newvalue);
+    tree[node] = tree[Left] + tree[Right];
 }
-
 
 
 int query(int node,int b,int e,int i,int j)
