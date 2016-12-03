@@ -27,15 +27,17 @@ void build(int node,int b,int e)
 
 void update(int node, int b, int e, int index, int newvalue)
 {
-    if (index > e || index < b)
+    if (index > e || index < b) //Out of range index 
     {
         return; 
     }
-    if (b >= index && e <= index) 
+    
+    if(b==e)  //if (b >= index && e <= index) 
     { 
         tree[node] = newvalue;
         return;
     }
+    
     int Left = node * 2; 
     int Right = node * 2 + 1;
     int mid = (b + e) / 2;
