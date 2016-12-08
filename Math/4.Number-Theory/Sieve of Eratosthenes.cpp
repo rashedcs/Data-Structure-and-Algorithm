@@ -1,4 +1,4 @@
-// Sieve of Eratho
+// Sieve of Eratho Source: http://www.geeksforgeeks.org/sieve-of-eratosthenes/
 void sieve(int num)
 {
     long long sum = 0;
