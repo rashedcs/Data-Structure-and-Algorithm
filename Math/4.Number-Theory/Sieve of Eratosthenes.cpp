@@ -22,5 +22,5 @@ void sieve(int num)
         }
     }
     
-    cout<<endl;
+    cout<<endl;  
 }
