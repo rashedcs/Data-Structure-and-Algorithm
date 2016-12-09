@@ -16,6 +16,24 @@ void PF(int n)
   }
 }
 
+Or :
+ 
+void PF(int num)
+{
+    for (int i=2; i<=num; i++)
+    {
+         while(num%i == 0)
+         {
+                num /= i;
+                v.push_back(i);
+         }
+    }
+    v.erase(unique(v.begin(), v.end()), v.end());
+    for(int i=0; i<v.size(); i++)  cout<<" "<<v[i]<<flush;
+    v.clear();
+    cout<<endl;
+}
+
 
 
 
