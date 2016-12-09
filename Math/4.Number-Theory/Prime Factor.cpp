@@ -52,3 +52,23 @@ void PF(ll num)
     cout<<endl;
  
 }
+
+
+
+
+ 
+void PF(int num)
+{
+    for (int i=2; i<=num; i++)
+    {
+         while(num%i == 0)
+         {
+                num /= i;
+                v.push_back(i);
+         }
+    }
+    for(int i=0; i<v.size(); i++)  cout<<" "<<v[i]<<flush;
+    v.clear();
+    cout<<endl;
+}
+
