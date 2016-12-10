@@ -1,4 +1,35 @@
-int NumPrimeFactor(int n)
+//Naive Solution 
+int numPF(int n)
+{
+  int cnt = 0;
+  for(int i=2; i<=n; i++)
+  {
+    if(n%i==0)
+    {
+      while(n%i==0)
+      {
+        n = n/i;
+      }
+      cnt++;
+    }
+  }
+  return cnt;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Better Approach 
+int numPF(int n)
 {
     int result = 0;   // Initialize result as n
     for (int p=2; p*p<=n; p++)
