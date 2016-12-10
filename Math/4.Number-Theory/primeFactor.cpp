@@ -14,3 +14,17 @@ void primeFactor(int n)
     }
   }
 }
+
+
+//Naive Solution with duplicate elements
+void primeFactor(int n)
+{
+    for (int i=2; i<=n; i++)
+     {
+        while(n%i == 0)
+        {
+            n /= i;
+            cout<<i<<" ";
+        }
+     }
+}
