@@ -2,19 +2,22 @@
    using namespace std;
 
    vector<int>nodes[1000];
- 
+
    void dfs(int start, int vertex)
    {
         stack<int>stack;
 
         bool visited[vertex];
 
+       /*
         for(int i=0; i<vertex; i++)
         {
             visited[i]=false;
         }
+        */
+         memset(visited,false,sizeof(visited));
         //bool *visited = new bool[V];
-	//  bool *visited = new bool[V];
+	    //bool *visited = new bool[V];
         stack.push(start);
         visited[start]=true;
 
@@ -23,15 +26,26 @@
 		    int u = stack.top();
 		    cout<<u<<" ";
 		    stack.pop();
-	       
-	            for(vector<int>::iterator it=nodes[u].begin(); it!=nodes[u].end(); it++)
-                    {
-		 	  if(visited[*it]==false)
+
+            for(int i=0; i<nodes[u].size(); i++)
+            {
+              int v = nodes[u][i];
+		 	  if(visited[v]==false)
 		 	  {
-				visited[*it] = true;
-				stack.push(*it);
+				visited[v] = true;
+				stack.push(v);
 			  }
-                   }
+            }
+           /*
+            for(vector<int>::iterator it=nodes[u].begin(); it!=nodes[u].end(); it++)
+            {
+              if(visited[*it]==false)
+              {
+                visited[*it] = true;
+                stack.push(*it);
+              }
+            }
+          */
          }
      }
 
@@ -40,25 +54,41 @@
   int main()
   {
 
-        int start, vertex, edges,a,b;
-	
-        cout<<"Enter the no of vertex and edges"<<endl;
-	cin>>vertex>>edges;
-	for(int i=0;i<edges;i++)
-	{
-		cin>>a>>b;
-		nodes[a].push_back(b);
-		nodes[b].push_back(a);
-	}
-	
+       int start, vertex, edges,a,b;
+
+       cout<<"Enter the no of vertex and edges"<<endl;
+	   cin>>vertex>>edges;
+	   for(int i=0;i<edges;i++)
+	   {
+		 cin>>a>>b;
+		 nodes[a].push_back(b);
+		// nodes[b].push_back(a);
+	   }
+
         cout<<"\nEnter the starting node"<<endl;
         cin>>start;
         dfs(start, vertex);
 
-	cout<<endl;
-	return 0;
-
+	   cout<<endl;
+	   return 0;
    }
+
+
+/* Input  : Directed graph
+    5 5
+    1 0
+    0 2
+    2 1
+    0 3
+    1 4
+    0
+
+    Output : 0 3 2 1 4
+
+    //http://www.geeksforgeeks.org/iterative-depth-first-traversal/
+
+
+*/
 
 
 
