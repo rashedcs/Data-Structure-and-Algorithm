@@ -45,7 +45,22 @@ int main()
 
 
 
+/*
 
+int value(int id, int w)
+{
+  if (id == N || w == 0)       return 0;
+  else if (memo[id][w] != -1)  return memo[id][w];
+  else
+  {
+       if (W[id] >w)       memo[id][w] = value(id + 1, w);
+       else               memo[id][w] = max( value(id + 1, w), V[id] + value(id + 1, w-W[id]));
+
+      return  memo[id][w];
+  }
+}
+
+*/
 
 
 
