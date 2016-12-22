@@ -1,5 +1,5 @@
  //DP approach : Time Complexity 0(n)  Source : http://www.programcreek.com/2013/02/leetcode-maximum-subarray-java/
-// Source : http://www.algoqueue.com/algoqueue/default/view/9568256/find-maximum-sum-subarray-non-contiguous-
+
  int maxSubArraySum(int arr[], int n)
  {
      int m = arr[0];
