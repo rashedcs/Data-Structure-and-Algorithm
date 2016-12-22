@@ -1,10 +1,11 @@
-Best approach: 
+//Best approach: 
 
 int kadane(int arr[], int size)
 {
     int curMax,gMax;
     curMax = arr[0];
     gMax   = arr[0];
+    
     for(int i=1;i<size;i++)
     {
         curMax=max(arr[i],curMax+arr[i]);
@@ -24,7 +25,8 @@ int kadane(int arr[], int size)
 
 
 
-Another approach : But it does not calcualte negativ numbers
+//Another approach : But it does not calcualte negativ numbers
+
 int maxSubArraySum(int arr[], int n)
 {
   int sum = 0, ans = 0;
