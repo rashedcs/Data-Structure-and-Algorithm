@@ -1,4 +1,4 @@
-//Best approach: 
+//Best approach:  Time Complexity O(n)
 
 int kadane(int arr[], int size)
 {
@@ -25,7 +25,7 @@ int kadane(int arr[], int size)
 
 
 
-//Another approach : But it does not calcualte negativ numbers
+//Another approach : But it does not calcualte negativ numbers Time Complexity O(n)
 
 int maxSubArraySum(int arr[], int n)
 {
