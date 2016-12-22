@@ -1,3 +1,22 @@
+ //DP approach : Time Complexity 0(n)
+
+ int maxSubArraySum(int arr[], int n)
+ {
+		int m = arr[0];
+		int *sum = new int[n];
+		sum[0] = arr[0];
+
+		for (int i=1; i<n; i++)
+		{
+			sum[i] =  max(arr[i], sum[i-1] + arr[i]);
+			m      =  max(m, sum[i]);
+		}
+		return m;
+ }
+
+
+
+
 //Best approach:  Time Complexity O(n)
 
 int kadane(int arr[], int size)
