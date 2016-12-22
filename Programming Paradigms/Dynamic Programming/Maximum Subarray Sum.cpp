@@ -1,7 +1,30 @@
-#include<bits/stdc++.h>
-using namespace std;
+Best approach: 
+
+int kadane(int arr[], int size)
+{
+    int curMax,gMax;
+    curMax = arr[0];
+    gMax   = arr[0];
+    for(int i=1;i<size;i++)
+    {
+        curMax=max(arr[i],curMax+arr[i]);
+        gMax=max(curMax,gMax);
+    }
+    return gMax;
+}
 
 
+
+
+
+
+
+
+
+
+
+
+Another approach : But it does not calcualte negativ numbers
 int maxSubArraySum(int arr[], int n)
 {
   int sum = 0, ans = 0;
@@ -17,12 +40,3 @@ int maxSubArraySum(int arr[], int n)
   return sum;
 }
 
-
-
-int main()
-{
-  int n = 7;
-  int arr[] =  {-2, -3, 4, -1, -2, 1, 5, -3};
-  printf("Max 1D Range Sum = %d\n", maxSubArraySum(arr,n));
-  return 0;
-}
