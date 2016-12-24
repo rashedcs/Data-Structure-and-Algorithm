@@ -1,0 +1,11 @@
+Goal: 
+Solve only subproblems that are necessary and solve it only once
+
+Memorization is another way to deal with overlapping subproblems in dynamic programming
+
+With memorization, we implement the algorithm recursively:
+If we encounter a new subproblem, we compute and store the solution.
+If we encounter a subproblem we have seen, we look up the answer
+
+Most useful when the algorithm is easiest to implement recursively
+Especially if we do not need solutions to all subproblems.
