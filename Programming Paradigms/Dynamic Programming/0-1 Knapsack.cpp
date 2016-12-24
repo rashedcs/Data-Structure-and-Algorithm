@@ -2,45 +2,34 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-#define MAX_N 100
-#define MAX_W 100
+#define MAX_N 2000
+#define MAX_W 2000
 
-int i, tc, G, ans, N, MW, V[MAX_N], W[MAX_N], memo[MAX_N][MAX_W];
+int   N, V[MAX_N], W[MAX_N], memo[MAX_N][MAX_W];
 
 int value(int id, int w)
 {
   if (id == N || w == 0)       return 0;
   else if (memo[id][w] != -1)  return memo[id][w];
-  else
-  {
-     if (W[id] >w)             return memo[id][w] = value(id + 1, w);
-     else                      return memo[id][w] = max(value(id + 1, w), V[id] + value(id + 1, w - W[id]));
-  }
+  else  if (W[id] >w)          return memo[id][w] = value(id + 1, w);
+  else                         return memo[id][w] = max(value(id + 1, w),  V[id] + value(id + 1, w - W[id]));
+
 }
 
 
 int main()
 {
-	cin>>tc;
-	while(tc--)
-	{
-	    memset(memo, -1, sizeof memo);
+         int tc, id, MW;
+         memset(memo, -1, sizeof memo);
 
-	    cin>>N; //Number of value and weight
-	    cin>>MW; //Weight
+         cin>>MW>>N;
 
-	   // V = new int[N];
-	  //  W = new int[N];
+         for(int i=0;i<N;i++)   cin>>W[i]>>V[i];
+	
+        cout<<value(0,MW)<<endl;
 
-	    for(int i=0;i<N;i++)   cin>>V[i];  //Value
-	    for(int i=0;i<N;i++)   cin>>W[i];  //Weight
-
-	    cout<<value(0,MW)<<endl;
-
-	}
-	return 0;
+       return 0;
 }
-
 
 
 
