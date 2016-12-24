@@ -9,7 +9,7 @@ int   N, V[MAX_N], W[MAX_N], memo[MAX_N][MAX_W];
 
 int value(int id, int w)
 {
-  if (id == N || w == 0)       return 0;
+  if (id == N || w == 0)       return 0; //Base Case
   else if (memo[id][w] != -1)  return memo[id][w];
   else  if (W[id] >w)          return memo[id][w] = value(id + 1, w);
   else                         return memo[id][w] = max(value(id + 1, w),  V[id] + value(id + 1, w - W[id]));
