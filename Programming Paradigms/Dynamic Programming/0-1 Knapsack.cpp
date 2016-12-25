@@ -58,7 +58,7 @@ int main()
 
 
 
-//0-1 Knaspack 
+//Bottom Up Approach
 #include<bits/stdc++.h>
 using namespace std;
 
