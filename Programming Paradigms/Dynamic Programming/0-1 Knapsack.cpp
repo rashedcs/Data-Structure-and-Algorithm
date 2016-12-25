@@ -2,54 +2,44 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-#define MAX_N 2000
-#define MAX_W 2000
+#define MAX_N 2001
 
-int   N, V[MAX_N], W[MAX_N], memo[MAX_N][MAX_W];
+int  n, val[MAX_N], wt[MAX_N], memo[MAX_N][MAX_N];
 
-int value(int id, int w)
+
+int knapSack(int n, int w)
 {
-  if (id == N || w == 0)       return 0; //Base Case
-  else if (memo[id][w] != -1)  return memo[id][w];
-  else  if (W[id] >w)          return memo[id][w] = value(id + 1, w);
-  else                         return memo[id][w] = max(value(id + 1, w),  V[id] + value(id + 1, w - W[id]));
+   if (memo[n][w] != -1)       return memo[n][w];
+   // Base Case
+   if (n == 0 || w == 0)  return 0;
 
+
+   else if (wt[n-1] > w)  return memo[n][w] = knapSack(n-1,w);
+
+   else return memo[n][w] = max(val[n-1] + knapSack(n-1, w-wt[n-1]), knapSack(n-1, w));
 }
+
+
 
 
 int main()
 {
-         int tc, id, MW;
+         int n, mw;
          memset(memo, -1, sizeof memo);
 
-         cin>>MW>>N;
+         cin>>mw>>n;
 
-         for(int i=0;i<N;i++)   cin>>W[i]>>V[i];
-	
-        cout<<value(0,MW)<<endl;
+         for(int i=0;i<n;i++)   cin>>wt[i]>>val[i];
 
-       return 0;
+         cout<<knapSack(n,mw)<<endl;
+
+         return 0;
 }
 
 
 
 
-/*
 
-int value(int id, int w)
-{
-  if (id == N || w == 0)       return 0;
-  else if (memo[id][w] != -1)  return memo[id][w];
-  else
-  {
-       if (W[id] >w)       memo[id][w] = value(id + 1, w);
-       else               memo[id][w] = max( value(id + 1, w), V[id] + value(id + 1, w-W[id]));
-
-      return  memo[id][w];
-  }
-}
-
-*/
 
 
 
@@ -126,6 +116,62 @@ int main()
 
 
 
+
+
+
+//Daught :
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#define MAX_N 2000
+#define MAX_W 2000
+
+int   N, V[MAX_N], W[MAX_N], memo[MAX_N][MAX_W];
+
+int value(int id, int w)
+{
+  if (id == N || w == 0)       return 0; //Base Case
+  else if (memo[id][w] != -1)  return memo[id][w];
+  else  if (W[id] >w)          return memo[id][w] = value(id + 1, w);
+  else                         return memo[id][w] = max(value(id + 1, w),  V[id] + value(id + 1, w - W[id]));
+
+}
+
+
+int main()
+{
+         int tc, id, MW;
+         memset(memo, -1, sizeof memo);
+
+         cin>>MW>>N;
+
+         for(int i=0;i<N;i++)   cin>>W[i]>>V[i];
+	
+        cout<<value(0,MW)<<endl;
+
+       return 0;
+}
+
+
+
+
+/*
+
+int value(int id, int w)
+{
+  if (id == N || w == 0)       return 0;
+  else if (memo[id][w] != -1)  return memo[id][w];
+  else
+  {
+       if (W[id] >w)       memo[id][w] = value(id + 1, w);
+       else               memo[id][w] = max( value(id + 1, w), V[id] + value(id + 1, w-W[id]));
+
+      return  memo[id][w];
+  }
+}
+
+*/
 
 
 
