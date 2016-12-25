@@ -1,4 +1,4 @@
-//Top down approach
+//Top down approach : 
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -9,14 +9,14 @@ int  n, val[MAX_N], wt[MAX_N], memo[MAX_N][MAX_N];
 
 int knapSack(int n, int w)
 {
-   if (memo[n][w] != -1)       return memo[n][w];
-   // Base Case
-   if (n == 0 || w == 0)  return 0;
-
-
-   else if (wt[n-1] > w)  return memo[n][w] = knapSack(n-1,w);
-
-   else return memo[n][w] = max(val[n-1] + knapSack(n-1, w-wt[n-1]), knapSack(n-1, w));
+   if (memo[n][w] != -1)       return memo[n][w]; //Memoization
+	
+   if (n == 0 || w == 0)  return 0;  // Base Case : We can not take anything else
+	
+   else if (wt[n-1] > w)  return memo[n][w] = knapSack(n-1,w);  //We have no choice
+	
+   //We have two choices : ignore or take this item : we take the maximum value
+   else return memo[n][w] = max( knapSack(n-1, w),  val[n-1] + knapSack(n-1, w-wt[n-1]));  
 }
 
 
@@ -55,7 +55,9 @@ int knapSack(int wt[], int val[], int n, int W)
        for(int w = 0; w <= W; w++)
        {
            if (i==0 || w==0)        K[i][w] = 0;
+	       
            else if (wt[i-1] <= w)   K[i][w] = max(val[i-1] + K[i-1][w-wt[i-1]],  K[i-1][w]);
+	       
            else                     K[i][w] = K[i-1][w];
        }
     }
