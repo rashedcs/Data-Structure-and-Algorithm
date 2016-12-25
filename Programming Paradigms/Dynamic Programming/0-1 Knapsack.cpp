@@ -100,8 +100,9 @@ int main()
 
 
 
-
-//Daught : Source : 
+//Please : Do not follow below code......It is just daught code not absolute.
+//Daught : 
+//Source : 
 
 /*
 Source : competitive programming 3
