@@ -2,7 +2,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-#define MAX_N 2001
+#define MAX_N 2001    //You must size+1 otherwise it will shown wrong answer
 
 int  n, val[MAX_N], wt[MAX_N], memo[MAX_N][MAX_N];
 
@@ -42,41 +42,23 @@ int main()
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //Bottom Up Approach
 #include<bits/stdc++.h>
 using namespace std;
 
 
-
 int knapSack(int wt[], int val[], int n, int W)
 {
-   int K[n+1][W+1];
-   
-   for(int i = 0; i <= n; i++)
-   {
+    int K[n+1][W+1];
+    for(int i = 0; i <= n; i++)
+    {
        for(int w = 0; w <= W; w++)
        {
            if (i==0 || w==0)        K[i][w] = 0;
            else if (wt[i-1] <= w)   K[i][w] = max(val[i-1] + K[i-1][w-wt[i-1]],  K[i-1][w]);
            else                     K[i][w] = K[i-1][w];
        }
-   }
+    }
    return K[n][W];
 }
 
@@ -119,10 +101,10 @@ int main()
 
 
 
-//Daught :
+//Daught : Source : 
 
-#include<bits/stdc++.h>
-using namespace std;
+/*
+Source : competitive programming 3
 
 #define MAX_N 2000
 #define MAX_W 2000
@@ -139,24 +121,10 @@ int value(int id, int w)
 }
 
 
-int main()
-{
-         int tc, id, MW;
-         memset(memo, -1, sizeof memo);
-
-         cin>>MW>>N;
-
-         for(int i=0;i<N;i++)   cin>>W[i]>>V[i];
-	
-        cout<<value(0,MW)<<endl;
-
-       return 0;
-}
 
 
 
-
-/*
+Source : Internet
 
 int value(int id, int w)
 {
@@ -171,11 +139,8 @@ int value(int id, int w)
   }
 }
 
-*/
+Source : Internet
 
-
-
-/*
 int knapSack(int n, int w)
 {
    if (memo[n][w] != -1)       return memo[n][w];
