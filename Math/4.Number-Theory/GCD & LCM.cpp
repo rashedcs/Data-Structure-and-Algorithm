@@ -7,6 +7,10 @@ int gcd(int a, int b)
  else       return gcd(b, a%b);
 }
 
+int LCM(int a,int b)
+{
+    return (a*b)/GCD(a,b);
+}
 
 // Using Templete
 template<typename T> T gcd(T a, T b) 
