@@ -9,3 +9,9 @@ If we encounter a subproblem we have seen, we look up the answer
 
 Most useful when the algorithm is easiest to implement recursively
 Especially if we do not need solutions to all subproblems.
+
+
+Step :
+LIS
+LCS
+LPS
