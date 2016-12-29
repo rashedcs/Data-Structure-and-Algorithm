@@ -15,3 +15,10 @@ Step :
 LIS
 LCS
 LPS
+
+
+Memoization :
+Fibonacci
+0-1 Knapsack
+Edit distance
+Subset Sum
