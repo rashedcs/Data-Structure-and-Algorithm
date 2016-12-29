@@ -1,4 +1,24 @@
- //DP approach : Time Complexity 0(n)  Source : http://www.programcreek.com/2013/02/leetcode-maximum-subarray-java/
+ 
+
+//Best approach:  Time Complexity O(n)
+
+int kadane(int arr[], int size)
+{
+    int curMax,gMax;
+    curMax = arr[0];
+    gMax   = arr[0];
+    
+    for(int i=1;i<size;i++)
+    {
+        curMax=max(arr[i],curMax+arr[i]);
+        gMax=max(curMax,gMax);
+    }
+    return gMax;
+}
+
+
+
+//DP approach : Time Complexity 0(n)  Source : http://www.programcreek.com/2013/02/leetcode-maximum-subarray-java/
 
  int maxSubArraySum(int arr[], int n)
  {
@@ -16,22 +36,6 @@
 
 
 
-
-//Best approach:  Time Complexity O(n)
-
-int kadane(int arr[], int size)
-{
-    int curMax,gMax;
-    curMax = arr[0];
-    gMax   = arr[0];
-    
-    for(int i=1;i<size;i++)
-    {
-        curMax=max(arr[i],curMax+arr[i]);
-        gMax=max(curMax,gMax);
-    }
-    return gMax;
-}
 
 
 
