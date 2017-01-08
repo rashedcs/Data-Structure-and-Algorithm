@@ -1,13 +1,11 @@
 #include<bits/stdc++.h>
 using namespace std;
- 
- 
+
+
 int main()
 {
-    int n,tc, cnt;
-    cin>>tc;
-    while(tc--)
-    {
+        int n, cnt;
+
         cnt = 0;
         cin>>n;
         while(n)
@@ -16,7 +14,7 @@ int main()
             n=n/5;
         }
         cout<<cnt<<endl;
-    }
-    return 0;
+
+       return 0;
 }
- 
+
