@@ -59,3 +59,64 @@ int main()
 }
 
 
+
+
+//Short Way :
+#include<bits/stdc++.h>
+using namespace std;
+
+
+
+
+void kmpSearch(string text, string pattern)
+{
+   ///Calculate Prefix Table
+    int n = text.size();
+    int m = pattern.size();
+    int j = 0;
+
+    int *pre = new int[m];
+
+  	pre[0] = -1;
+	pre[1] =  0;
+
+	for (int i=2 ; i<m; i++)
+	{
+		while (j>0 && pattern[j+1]!=pattern[i])
+		{
+			j = pre[j];
+		}
+		if (pattern[i] == pattern[j + 1]) pre[i] = ++j;
+		else pre[i] = j;
+	}
+
+
+    ///Now Pattern Matching
+    int  k=0;
+    for (int i=0; i<n; i++)
+    {
+        while (k>0 && pattern[k]!=text[i])
+        {
+           k = pre[k];
+        }
+
+        if(pattern[k] == text[i])  k++;
+
+        if (k==m)
+        {
+            printf("Pattern found at index: %d\n", (i-m)+1);
+            k = pre[k];
+        }
+    }
+    free(pre);
+}
+
+
+int main()
+{
+  string text,pattern;
+  cin>>text>>pattern;
+  kmpSearch(text,pattern);
+  return 0;
+}
+
