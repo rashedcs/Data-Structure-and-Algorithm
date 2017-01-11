@@ -1,3 +1,5 @@
+//http://code.activestate.com/recipes/577908-implementation-of-knuthmorrispratt-algorithm/
+
 #include<bits/stdc++.h>
 using namespace std;
 
