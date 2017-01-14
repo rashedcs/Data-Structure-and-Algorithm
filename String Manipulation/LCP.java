@@ -1,5 +1,67 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
+int main()
+{
+        ios::sync_with_stdio(false);
+
+        string small,large;
+
+        string s1 = "Hello World ";
+        string s2 = "Hello Wo";
+
+        int index = 0;
+
+
+        if(s1.size() > s2.size())
+        {
+           small = s2;
+           large = s1;
+        }
+
+        else
+        {
+          small = s1;
+          large = s2;
+        }
+
+
+        for(int i=0; i<large.size(); i++)
+        {
+            if(index==small.size() || large[i] != small[index])  break;
+            //if(large[i] != small[index])   break;
+            else                   index++;
+        }
+
+       if(index==0)   cout<<" have no common prefix";
+       else           cout<<large.substr(0,index);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //Length of longest common prefix /lcp
 //Source : http://ideone.com/9tjrWp
+
+
+
 
 import java.util.*;
 import java.lang.*;
