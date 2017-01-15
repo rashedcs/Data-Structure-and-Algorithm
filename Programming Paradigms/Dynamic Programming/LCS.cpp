@@ -1,3 +1,4 @@
+//http://ideone.com/tR451k
 // Longest Common Subsequence Dynamic Problem
 // Given two string . Find the longest common subsequence between them .
 // Tabulation Method
@@ -31,3 +32,5 @@ int main()
     printf("%d\n",solve(strlen(A),strlen(B)));
     return 0;
 }
+
+//printing solution : http://www.geeksforgeeks.org/printing-longest-common-subsequence/
