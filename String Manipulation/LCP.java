@@ -1,4 +1,5 @@
 //C++ implementation : lcp of two string 
+//Source :
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -115,6 +116,7 @@ class Ideone
 
 
 //Java Implementation : lcp of many string
+//Source : 
 import java.util.Scanner;
 
 public class lcp
