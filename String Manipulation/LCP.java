@@ -1,3 +1,5 @@
+//C++ implementation : lcp of two string 
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -57,7 +59,7 @@ int main()
 
 
 
-//Length of longest common prefix /lcp
+//Java Implementation
 //Source : http://ideone.com/9tjrWp
 
 
@@ -98,3 +100,84 @@ class Ideone
         else           System.out.println((large.substring(0,index)).length());
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Java Implementation : lcp of many string
+import java.util.Scanner;
+
+public class lcp
+{
+	public static String longestCommonPrefix(String[] strs) 
+	{
+	    if (strs.length == 0) return" ";
+	    String prefix = strs[0];
+	    for (int i = 1; i < strs.length; i++)
+	        while (strs[i].indexOf(prefix) != 0) 
+	        {
+	            prefix = prefix.substring(0, prefix.length() - 1);
+	            if (prefix.isEmpty()) return "";
+	        }        
+	     return prefix;
+	}
+	
+
+    public static void main(String[] args)
+	{
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.print("Enter how many friends: ");
+		
+	//	int numOfFriends = Integer.parseInt(scan.nextLine());
+		int numOfFriends = scan.nextInt();
+ 
+		String [] arrayOfNames = new String[numOfFriends];
+		
+		for (int i=0; i<arrayOfNames.length; i++) 
+		{
+		     arrayOfNames[i] = scan.next();
+		}
+		
+	 //System.out.println(longestCommonPrefix(arrayOfNames));
+	  System.out.println(longestCommonPrefix(arrayOfNames));
+
+	}
+}
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
