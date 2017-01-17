@@ -109,8 +109,53 @@ class Ideone
 
 
 
+//C++ implementation : lcp of two string 
+//Source : http://code.geeksforgeeks.org/F7lklL
+
+    #include<bits/stdc++.h>
+    using namespace std;
+
+    string longestCommonPrefix(string strs[], int n)
+    {
+        if (n==0) return " ";
+
+        string prefix = strs[0];
+
+        for(int i=0; i<n; i++)
+        {
+          while (strs[i].find(prefix)!= 0)
+          {
+             prefix = prefix.substr(0, prefix.size()-1);
+             if(prefix.empty()) return "";
+          }
+        }
+       return prefix;
+    }
 
 
+
+
+
+    int main()
+	{
+
+		ios::sync_with_stdio(false);
+
+		int n;
+		cin>>n;
+
+		string *arr = new string[n];
+
+		for (int i=0; i<n; i++)
+		{
+		     cin>>arr[i];
+		}
+
+	   cout<<(longestCommonPrefix(arr,n))<<endl;
+
+	   return 0;
+
+	}
 
 
 
