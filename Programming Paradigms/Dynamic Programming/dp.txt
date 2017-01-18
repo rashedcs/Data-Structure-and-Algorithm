@@ -25,17 +25,25 @@ Subset Sum
 
 
 Dynamic Programming Problems :
-1. Fibonacci
-2. Coin Change
-3. 0-1 Knapsack
-4. Travelling Salesman Problem
-5. Edit distance / String Editing
-6. Subset Sum
+1.  Fibonacci
+2.  Coin Change
+3.  0-1 Knapsack
+4.  Travelling Salesman Problem
+5.  Edit distance / String Editing
+6.  Subset Sum /  Maximum Subarray
 7.  LIS
 8.  LCS
 9.  LPS
 10. Matrix Chain Multiplication
 11. Optimal Binary Search Tree
 12. Egg Dropping Puzzle
-13. Cutting a Rod
-14. 
+13. Cutting a Rod    //
+14. Binomial Coefficient
+15. Minimum Partition
+16. Minimum Cost Path Problem
+17. Flow Shop Scheduling
+18. Longest Path In Matrix
+19. Weighted Job Scheduling
+20. 
+//Some dp Approach is analysis in graph
+
