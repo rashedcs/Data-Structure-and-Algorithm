@@ -44,6 +44,6 @@ Dynamic Programming Problems :
 17. Flow Shop Scheduling
 18. Longest Path In Matrix
 19. Weighted Job Scheduling
-20. 
-//Some dp Approach is analysis in graph
+20. Bitmask dp and Graph
+//Some dp Approach is analysis in graph theory and bit manipulation
 
