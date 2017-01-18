@@ -22,3 +22,20 @@ Fibonacci
 0-1 Knapsack
 Edit distance
 Subset Sum
+
+
+Dynamic Programming Problems :
+1. Fibonacci
+2. Coin Change
+3. 0-1 Knapsack
+4. Travelling Salesman Problem
+5. Edit distance / String Editing
+6. Subset Sum
+7.  LIS
+8.  LCS
+9.  LPS
+10. Matrix Chain Multiplication
+11. Optimal Binary Search Tree
+12. Egg Dropping Puzzle
+13. Cutting a Rod
+14. 
