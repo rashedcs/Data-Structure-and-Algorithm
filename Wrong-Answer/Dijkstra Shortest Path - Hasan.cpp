@@ -124,9 +124,9 @@ using namespace std;
 
 int main()
 {
-     int node,n,a,b,c;
+     int node,m,a,b,c;
 
-     cin>>node>>n;
+     cin>>node>>m;
 
      vector<int> v[node+1];
      vector<int> cost[node+1];
@@ -143,7 +143,7 @@ int main()
     }
 
 
-    for(int i=1; i<=n; i++)
+    for(int i=1; i<=m; i++)
     {
         cin>>a>>b>>c;
         v[a].push_back(b);
