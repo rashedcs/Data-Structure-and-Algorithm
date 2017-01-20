@@ -1,29 +1,24 @@
- //Lab
-   #include<bits/stdc++.h>
-   #define inf 9999
+    #include<bits/stdc++.h>
    using namespace std;
 
-   int node, m, a,b,c;
-   vector<int> cost[3000+1];
+   #define inf 999999
+   #define ll long long int
+
+   ll node, m, a,b,c;
+   vector<int> cost[100000];
 
 
-
-
-   void dijkstra(int source, vector<int>G[])
+   void dijkstra(int source, vector<ll>G[])
    {
 
-     queue <int> x;
-     vector<int> path;
+     queue<ll>x;
+     vector<ll>path;
 
-     int distance[1000000];
-     int prev[1000000];
+     ll distance[100000];
+     ll prev[100000];
 
-
-     for(int i=1; i<=node; i++)
-     {
-        distance[i] = inf;
-        prev[i] = -1;
-     }
+     memset(distance,inf,sizeof(distance));
+     memset(prev,-1,sizeof(prev));
 
      distance[source] = 0;
      x.push(source);
@@ -74,7 +69,7 @@ int main()
 
      cin>>node>>m;
 
-     vector<int> G[node+1];
+     vector<ll> G[node+1];
 
      for(int i=0; i<m; i++)
      {
@@ -85,13 +80,10 @@ int main()
         cost[b].push_back(c); ///Ata na dile shudhu directed ar moto kaz korbe
      }
 
-     int start = 1;
+     ll start = 1;
      dijkstra(start,G);
 
      return 0;
 }
-
-
-
 //Daught Program : http://ideone.com/tWbmpl
 
