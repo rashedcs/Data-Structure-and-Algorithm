@@ -15,23 +15,22 @@ using namespace std;
 
 void dijkstra(int start, vector<pii>G[])
  {
-    long long int dist[1000000],prev[1000000];
-
 
       priority_queue<pii,vector<pii>,greater<pii> >q;
+
+      long long int dist[1000000],prev[1000000];
       vector<int>path;
 
 
+      memset(dist,inf,sizeof(dist));
+      memset(prev,-1,sizeof(prev));
 
-     memset(dist,inf,sizeof(dist));
-     memset(prev,-1,sizeof(prev));
 
+     q.push(pii(0,start));
+     dist[start]=0;
 
-    q.push(pii(0,start));
-    dist[start]=0;
-
-    while(!q.empty())
-    {
+     while(!q.empty())
+     {
         u=q.top().second;
         q.pop();
         for(int i=0; i<G[u].size();i++)
@@ -68,9 +67,6 @@ void dijkstra(int start, vector<pii>G[])
         }
         cout<<endl;
     }
-  //   delete [] prev;
-  //  delete [] dist;
-
 }
 
 
@@ -91,13 +87,8 @@ int main()
         G[v].push_back(pii(w,u)); ///Ai line ta na dile directed hoye jabe.
      }
 
-
      int start = 1;
      dijkstra(start,G);
 
-
-
     return 0;
-
-
 }
