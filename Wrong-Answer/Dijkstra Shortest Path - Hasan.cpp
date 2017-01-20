@@ -114,7 +114,7 @@ int main()
 
 
 
-
+//Daught Program
 
 
 //It is not good for programming contest
@@ -124,19 +124,19 @@ using namespace std;
 
 int main()
 {
-     int m,n,a,b,c;
+     int node,n,a,b,c;
 
-     cin>>m>>n;
+     cin>>node>>n;
 
-     vector<int> v[m+1];
-     vector<int> cost[m+1];
+     vector<int> v[node+1];
+     vector<int> cost[node+1];
      queue <int> x;
      vector<int>path;
 
     int distance[1000000];
     int prev[1000000];
 
-    for(int i=1; i<=m; i++)
+    for(int i=1; i<=node; i++)
     {
         distance[i] = inf;
         prev[i] = -1;
@@ -152,7 +152,7 @@ int main()
         cost[b].push_back(c); ///Ata na dile shudhu directed ar moto kaz korbe
     }
 
-    int source=1,target=m;
+    int source=1,target=node;
 
 
 
@@ -180,7 +180,7 @@ int main()
 
 
 
-    if(prev[m]==-1)
+    if(prev[node]==-1)
     {
       cout<<"-1"<<endl;
     }
@@ -201,3 +201,4 @@ int main()
 
     return 0;
 }
+
