@@ -1,7 +1,10 @@
+//Source : http://ideone.com/vGPHXA
 #include<bits/stdc++.h>
-#define pii pair<int,int>
-#define infinity 99999999999
 using namespace std;
+
+#define pii pair<int,int>
+#define inf 999999
+
 
  long long int n,m,u,v,w;
 
@@ -20,11 +23,9 @@ void dijkstra(int start, vector<pii>G[])
 
 
 
-     for(int i=1; i<=n; i++)
-     {
-        dist[i]=infinity;
-        prev[i]=-1;
-     }
+     memset(dist,inf,sizeof(dist));
+     memset(prev,-1,sizeof(prev));
+
 
     q.push(pii(0,start));
     dist[start]=0;
@@ -82,6 +83,7 @@ int main()
 
      cin>>n>>m;
      vector<pii>G[n+1];
+
      for(int i=0; i<m; i++)
      {
         cin>>u>>v>>w;
