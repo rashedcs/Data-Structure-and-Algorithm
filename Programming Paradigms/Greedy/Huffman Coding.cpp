@@ -6,7 +6,7 @@ struct node
 {
 	char character;
 	int freq;
-    node *left;
+        node *left;
 	node *right;
 	node(char chas, int fr)
 	{
@@ -14,7 +14,7 @@ struct node
 	  freq=fr;
 	  left=NULL;
 	  right = NULL;
-    };
+       }
 };
 
 
@@ -36,12 +36,13 @@ void print_heap(node *head, string path)
 	if(head->character !=NULL)
 	{
 		cout<< head->character << " code is " << path<<"\n";
-    }
-    else
-    {
+        }
+	
+        else
+        {
 	   print_heap(head->left, path+"0");
 	   print_heap(head->right, path+"1");
-    }
+        }
 }
 
 
