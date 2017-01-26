@@ -1,15 +1,17 @@
 //Job Scheduling
+//Modified Program : http://ideone.com/b0QWDT
+
+
+
+
+
+
+
      #include<bits/stdc++.h>
      using namespace std;
 
 
-
-
-
-
-
-
-    int main(string args[])
+    int main(sring args[])
     {
       ios::sync_with_stdio(false);
 
