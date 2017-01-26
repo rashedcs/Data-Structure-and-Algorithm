@@ -1,5 +1,5 @@
 //Source: http://ideone.com/jlmurQ
-
+//Priority queue : https://www.quora.com/How-can-I-find-minimum-element-from-a-priority-queue-in-C-C++
 #include<bits/stdc++.h>
 using namespace std;
 
