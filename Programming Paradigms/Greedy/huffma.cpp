@@ -1,3 +1,5 @@
+//Source: http://ideone.com/jlmurQ
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -6,7 +8,7 @@ struct node
 {
 	char character;
 	int freq;
-    node *left;
+        node *left;
 	node *right;
 	node(char chas, int fr)
 	{
