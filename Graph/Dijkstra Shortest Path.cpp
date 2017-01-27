@@ -9,10 +9,6 @@ using namespace std;
  long long int n,m,u,v,w;
 
 
-
-
-
-
 void dijkstra(int start, vector<pii>G[])
  {
 
@@ -92,3 +88,6 @@ int main()
 
     return 0;
 }
+
+
+//Simple Way : http://ideone.com/QknEbW
