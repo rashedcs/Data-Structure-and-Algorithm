@@ -91,6 +91,85 @@ int main()
 
 
 
+    #include<bits/stdc++.h>
+    using namespace std;
+
+    int n;
+
+
+    bool comp(const pair<int,int> &a, const pair<int,int> &b)
+    {
+      double r1 =  (double)a.first / a.second;
+      double r2 =  (double)b.first / b.first;
+      return r1 > r2;
+    }
+
+
+
+   double activitySelection(pair<int, int>P[], int W)
+   {
+       sort(P, P+n, comp);
+
+       int curWeight = 0;  // Current weight in knapsack
+       double finalvalue = 0.0; // Result (value in Knapsack)
+
+       // Looping through all Items
+       for (int i=0; i<n; i++)
+       {
+         // If adding Item won't overflow, add it completely
+         if(curWeight + P[i].second <= W)
+         {
+            curWeight += P[i].second;
+            finalvalue += P[i].first;
+         }
+
+         // If we can't add current Item, add fractional part of it
+         else
+         {
+            int remain = W - curWeight;
+            finalvalue += P[i].first * ((double) remain / P[i].second);
+            break;
+         }
+      }
+
+      return finalvalue;
+
+   }
+
+
+
+
+
+
+
+
+   int main()
+   {
+
+          ios::sync_with_stdio(false);
+
+          int  weight, profit, W;
+
+          cin>>n;
+
+          pair <int,int> P[n+1];
+
+          for(int i=0; i<n; i++)
+          {
+            cin>>profit>>weight;
+            P[i] = make_pair(profit, weight);
+          }
+
+          cin>>W;
+          //sort(C,C+n,comp);
+         cout<< activitySelection(P,W)<<endl;
+
+
+          return 0;
+   }
+
+
+
 
 
 
