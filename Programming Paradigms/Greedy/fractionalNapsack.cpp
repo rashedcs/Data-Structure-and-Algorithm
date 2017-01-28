@@ -172,7 +172,7 @@ int main()
 
 
 
-
+//Knas variant : http://ideone.com/vBiQRY
 
 
 
