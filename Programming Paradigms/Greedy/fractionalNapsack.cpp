@@ -1,3 +1,125 @@
+//Source : http://ideone.com/yQ6Nhx
+   //Article : http://thecodersportal.com/knapsack-greedy/
+    #include<bits/stdc++.h>
+    using namespace std;
+
+    int n;
+
+
+    bool comp(const pair<double,double> &a, const pair<double,double> &b)
+    {
+       return (double)(a.first/a.second) > (double)(b.first/b.first);
+    }
+
+
+
+    void activitySelection(pair<double, double>P[], int W)
+    {
+       sort(P, P+n, comp);
+
+       double pro = 0.0;
+
+       for(int i=0; i<n&&W!=0.0; i++)
+       {
+         if(P[i].second<=W)
+         {
+            W-=P[i].second; // Take the item .
+            pro+=P[i].first;
+         }
+
+         else
+         {
+             pro+=(P[i].first * (W/P[i].second));
+             W=0.0;
+         }
+       }
+       printf("Maximize profit is : %lf\n",pro);
+    }
+
+
+
+
+
+
+
+
+   int main()
+   {
+
+          //ios::sync_with_stdio(false);
+
+          double  weight, profit, W;
+
+          cin>>n>>W;
+
+          pair <double, double> P[n+1];
+
+          for(int i=0; i<n; i++)
+          {
+            cin>>profit>>weight;
+            P[i] = make_pair(profit, weight);
+          }
+
+
+          //sort(C,C+n,comp);
+         activitySelection(P,W);
+
+
+
+          return 0;
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -82,6 +204,27 @@ int main()
    knapsack(num, weight, profit, capacity);
    return(0);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
