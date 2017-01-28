@@ -33,6 +33,7 @@
       }
 
       cout<<"Sorting Activity : "<<endl;
+
       for(int i=0; i<n; i++)
       {
         cout<<job[i]<<"  ";
@@ -40,7 +41,6 @@
         cout<<f[i]<<" ";
         cout<<endl;
       }
-
 
      int cnt = 0;
 
@@ -93,7 +93,18 @@ Sorted activities as per finish time (ascending order)
 */
 
 
-//Accepted Code : http://ideone.com/QGba6i     ......... http://ideone.com/JuTsoI
+
+
+
+
+
+
+
+
+
+//Accepted Code : 
+ //Same  : http://ideone.com/IPNKOj   ...... http://ideone.com/QGba6i   
+//Something Difference :  http://ideone.com/JuTsoI ..... 
 
 
 
