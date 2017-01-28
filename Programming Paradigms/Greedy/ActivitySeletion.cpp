@@ -1,11 +1,8 @@
-   //Source : https://www.dyclassroom.com/greedy-algorithm/activity-selection-problem
-
-
-   #include<bits/stdc++.h>
+  //Traditional Source Code: Get TLE
+  #include<bits/stdc++.h>
    using namespace std;
 
    int n;
-
 
    void activitySelection(int s[], int f[], int job[])
    {
@@ -94,6 +91,16 @@ Sorted activities as per finish time (ascending order)
         a6          5          8
 
 */
+
+
+
+//Accepted Code : http://ideone.com/GO9kyz
+//Accepted Code : 
+
+
+
+
+
 
 //N.B : Intervel Scheduling is the variant of Activity Selection Algo ...Source : http://ideone.com/Zr8QDT
 
