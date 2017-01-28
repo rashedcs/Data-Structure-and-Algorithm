@@ -95,4 +95,6 @@ Sorted activities as per finish time (ascending order)
 
 */
 
+//N.B : Intervel Scheduling is the variant of Activity Selection Algo ...Source : http://ideone.com/Zr8QDT
+
 
