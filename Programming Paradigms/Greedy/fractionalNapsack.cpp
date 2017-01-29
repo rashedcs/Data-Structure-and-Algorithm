@@ -8,6 +8,11 @@
     bool comp(const pair<int, int> &a, const pair<int, int> &b)
     {
        return (double)(a.first/a.second) > (double)(b.first/b.second);
+       /*
+          double r1 =  (double)a.first / a.second;
+          double r2 =  (double)b.first / b.second;
+          return r1 > r2;
+       */
     }
 
 
