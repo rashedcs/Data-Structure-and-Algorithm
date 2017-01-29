@@ -29,7 +29,7 @@ int main()
 
          cin>>mw>>n;
 
-         for(int i=0;i<n;i++)   cin>>wt[i]>>val[i];
+         for(int i=0;i<n;i++)   cin>>val[i]>>wt[i];
 
          cout<<knapSack(n,mw)<<endl;
 
