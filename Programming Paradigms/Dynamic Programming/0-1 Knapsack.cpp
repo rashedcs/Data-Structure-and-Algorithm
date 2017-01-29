@@ -45,7 +45,8 @@ int main()
 //Bottom Up Approach
 #include<bits/stdc++.h>
 using namespace std;
-
+//#define mx 1000
+//int price[mx],weight[mx],dp[mx][mx];
 
 int knapSack(int wt[], int val[], int n, int W)
 {
