@@ -1,0 +1,8 @@
+Greedy Algorithm Problems :
+
+
+Spoj:
+1. MSCHED - Milk Scheduling -   http://www.spoj.com/problems/MSCHED/
+2. BUSYMAN - I AM VERY BUSY -   http://www.spoj.com/problems/BUSYMAN/
+3. GERGOVIA - Wine trading in Gergovia  - http://www.spoj.com/problems/GERGOVIA/
+4. EXPEDI - Expedition    - http://www.spoj.com/problems/EXPEDI/
