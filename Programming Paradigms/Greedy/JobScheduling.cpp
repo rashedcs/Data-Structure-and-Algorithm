@@ -69,7 +69,7 @@ int main()
 
 
 
-//Job Scheduling C++ Traditional  code link : http://ideone.com/xgbata
+//Job Scheduling C++ Traditional  code link : http://ideone.com/Qo9M9a
  #include<bits/stdc++.h>
      using namespace std;
  
