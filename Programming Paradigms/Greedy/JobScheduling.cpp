@@ -1,4 +1,4 @@
-///Job Sequencing C++ STL Below code link : http://ideone.com/YcLPps
+///Job Sequencing C++ STL code  link : http://ideone.com/YcLPps
 #include<bits/stdc++.h>
 using namespace std;
  
@@ -69,7 +69,7 @@ int main()
 
 
 
-//Job Scheduling Traditional Source Code: http://ideone.com/xgbata
+//Job Scheduling C++ Traditional  code link : http://ideone.com/xgbata
  #include<bits/stdc++.h>
      using namespace std;
  
