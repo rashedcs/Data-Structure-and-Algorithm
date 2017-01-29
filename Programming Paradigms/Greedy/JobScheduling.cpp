@@ -1,59 +1,61 @@
-  ///Job Sequencing C++ STL
-      #include<bits/stdc++.h>
-    using namespace std;
-
-
-    bool comp(const pair<int, int> &a, const pair<int, int> &b)
+///Job Sequencing C++ STL Below code link : http://ideone.com/YcLPps
+#include<bits/stdc++.h>
+using namespace std;
+ 
+ 
+bool comp(const pair <string, pair< int,int> >&a, const pair< string, pair<int, int> >&b)
+{
+    return a.second.second>b.second.second;
+}
+ 
+ 
+void jobScheduling(pair<string, pair<int, int> > P[], int n)
+{
+    sort(P, P+n, comp);
+ 
+    int count=0, total=0;
+ 
+    cout<<"Job index : "<<"Profit : "<<"Deadline : "<<endl;
+    for(int i=0; i<n; i++)
     {
-        return a.first>b.first;
+       if(P[i].second.first>count)
+       {
+         total+=P[i].second.second;
+         cout<<P[i].first<<"  "<<P[i].second.second<<"  "<<P[i].second.first<<endl;
+         count++;
+       }
     }
+    cout<<"\nTotal Profit : " << total<<endl;
+}
+ 
+ 
+int main()
+{
+     ios::sync_with_stdio(false);
+ 
+     int n, profit, dead;
+     cin>>n;
+	 string job;
+     pair <string, pair<int, int > > P[n+1];
+ 
+     for(int i=0; i<n; i++)
+     {
+       cin>>job>>profit>>dead;
+       P[i] = make_pair(job, make_pair(dead,profit));
+     }
+ 
+     jobScheduling(P,n);
+ 
+     return 0;
+}
 
 
-    void jobScheduling(pair<int, int>P[], int n)
-    {
-        sort(P, P+n, comp);
-
-        int count=0, total=0;
-
-        for(int i=0; i<n; i++)
-        {
-           if(P[i].second>count)
-           {
-             total+=P[i].first;
-             //cout<<"Job : " <<P[i]<<"  ";
-             cout<<"Profit : " << P[i].first<<"  ";
-             cout<<"Deadline : " <<P[i].second<<"  ";
-             count++;
-           }
-           cout<<endl;
-        }
-       cout<<"\nTotal Profit : " << total<<endl;
-    }
 
 
 
 
-   int main()
-   {
-        ios::sync_with_stdio(false);
 
-        int n, profit, dead;
-        cin>>n;
-
-        pair <int, int> P[n+1];
-
-        for(int i=0; i<n; i++)
-        {
-          cin>>profit>>dead;
-          P[i] = make_pair(profit, dead);
-        }
-
-        jobScheduling(P,n);
-
-        return 0;
-   }
-
-
+ //C++ STL Daught Code : http://ideone.com/plTe3p
 
 
 
