@@ -85,6 +85,88 @@
 
 
 
+//Traditional approach :
+
+/* Fraction Knapsack- Greedy Approach by TheCodersPortal */
+#include <iostream>
+using namespace std;
+
+//This code available in : http://ideone.com/cmYtTV
+/* arrange function will arrange the list val and wt with respect to non-decreasing order in vlwt */
+void sorting(float val[],float wt[],float vlwt[],int n)
+{
+    for(int i=0;i<n;i++)
+    {
+        for(int j=i;j<n;j++)
+        {
+            if(vlwt[i]<vlwt[j])
+            {
+                float temp=vlwt[i];
+                vlwt[i]=vlwt[j];
+                vlwt[j]=temp;
+                int tmp=wt[i];
+                wt[i]=wt[j];
+                wt[j]=tmp;
+                tmp=val[i];
+                val[i]=val[j];
+                val[j]=tmp;
+            }
+        }
+    }
+}
+
+/*knapsack is the function which takes the val and wt arrays,
+    W and n and returns the max value using greedy approach */
+float knapsack(float val[],float wt[],int W,int n)
+{
+    float V=0;
+    /* vlwt is the array which will store the val/wt ratio of the items */
+    float vlwt[n];
+
+    /* Assigning the values in vlwt list */
+    for(int i=0;i<n;i++)
+    {
+        vlwt[i]=val[i]/wt[i];
+    }
+    sorting(val,wt,vlwt,n);
+
+    /* Calculating the max value */
+    for(int i=0; i<n; i++)
+    {
+        /* If item can put in the knapsack as whole */
+        if(wt[i]<=W)
+        {
+            V+=val[i];
+            W-=wt[i];
+        }
+
+        /* When item need to be broken to put it in knapsack */
+        else
+        {
+            V+=(val[i]*(W/wt[i]));
+            break;
+        }
+    }
+    return V;
+}
+
+/* Driver program to test the above function */
+int main()
+{
+    float wt[]={1,2,8,5};
+    float val[]={2,7,4,2};
+    int W=9;
+    int n=sizeof(val)/sizeof(val[0]);
+    cout<<knapsack(val,wt,W,n)<<endl;
+    return 0;
+}
+
+
+
+
+
+
+
 
 
 
