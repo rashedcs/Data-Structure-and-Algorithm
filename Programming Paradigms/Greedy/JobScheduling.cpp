@@ -1,3 +1,88 @@
+  ///Job Sequencing C++ STL
+      #include<bits/stdc++.h>
+    using namespace std;
+
+
+    bool comp(const pair<int, int> &a, const pair<int, int> &b)
+    {
+        return a.first>b.first;
+    }
+
+
+    void jobScheduling(pair<int, int>P[], int n)
+    {
+        sort(P, P+n, comp);
+
+        int count=0, total=0;
+
+        for(int i=0; i<n; i++)
+        {
+           if(P[i].second>count)
+           {
+             total+=P[i].first;
+             //cout<<"Job : " <<P[i]<<"  ";
+             cout<<"Profit : " << P[i].first<<"  ";
+             cout<<"Deadline : " <<P[i].second<<"  ";
+             count++;
+           }
+           cout<<endl;
+        }
+       cout<<"\nTotal Profit : " << total<<endl;
+    }
+
+
+
+
+   int main()
+   {
+        ios::sync_with_stdio(false);
+
+        int n, profit, dead;
+        cin>>n;
+
+        pair <int, int> P[n+1];
+
+        for(int i=0; i<n; i++)
+        {
+          cin>>profit>>dead;
+          P[i] = make_pair(profit, dead);
+        }
+
+        jobScheduling(P,n);
+
+        return 0;
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //Job Scheduling Source : http://ideone.com/xgbata
  #include<bits/stdc++.h>
      using namespace std;
