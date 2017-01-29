@@ -50,11 +50,6 @@ int main()
 }
 
 
-
-
-
-
-
  //C++ STL Daught Code : http://ideone.com/plTe3p
 
 
@@ -74,18 +69,7 @@ int main()
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-//Job Scheduling Source : http://ideone.com/xgbata
+//Job Scheduling Traditional Source Code: http://ideone.com/xgbata
  #include<bits/stdc++.h>
      using namespace std;
  
