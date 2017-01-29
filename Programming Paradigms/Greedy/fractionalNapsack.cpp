@@ -1,4 +1,3 @@
-//Source : http://ideone.com/yQ6Nhx
    //Article : http://thecodersportal.com/knapsack-greedy/
     #include<bits/stdc++.h>
     using namespace std;
@@ -6,32 +5,37 @@
     int n;
 
 
-    bool comp(const pair<double,double> &a, const pair<double,double> &b)
+    bool comp(const pair<int, int> &a, const pair<int, int> &b)
     {
-       return (double)(a.first/a.second) > (double)(b.first/b.first);
+       return (double)(a.first/a.second) > (double)(b.first/b.second);
     }
 
 
 
-    void activitySelection(pair<double, double>P[], int W)
+    void activitySelection(pair<int, int>P[], int W)
     {
-       sort(P, P+n, comp);
+        sort(P, P+n, comp);
 
-       double pro = 0.0;
+       //double curWeight = 0.0;  // Current weight in knapsack
+       float pro = 0.0; // Result (value in Knapsack)
 
-       for(int i=0; i<n&&W!=0.0; i++)
+       // Looping through all Items
+       for (int i=0; i<n; i++)
        {
-         if(P[i].second<=W)
-         {
-            W-=P[i].second; // Take the item .
-            pro+=P[i].first;
-         }
+         // If adding Item won't overflow, add it completely
+          if(P[i].second <= W)
+          {
+             pro += P[i].first;
+             W   -= P[i].second;
+          }
 
-         else
-         {
-             pro+=(P[i].first * (W/P[i].second));
-             W=0.0;
-         }
+          // If we can't add current Item, add fractional part of it
+          else
+          {
+             cout<<pro<<endl;
+             pro += P[i].first* ((double) (W) / P[i].second);
+             break;
+          }
        }
        printf("Maximize profit is : %lf\n",pro);
     }
@@ -45,14 +49,14 @@
 
    int main()
    {
-
           //ios::sync_with_stdio(false);
 
-          double  weight, profit, W;
+          int  weight, profit;
+          int W;
 
           cin>>n>>W;
 
-          pair <double, double> P[n+1];
+          pair <int, int> P[n+1];
 
           for(int i=0; i<n; i++)
           {
@@ -68,7 +72,6 @@
 
           return 0;
    }
-
 
 
 
