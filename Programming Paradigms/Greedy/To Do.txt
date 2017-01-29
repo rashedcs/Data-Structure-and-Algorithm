@@ -6,3 +6,5 @@ Spoj:
 2. BUSYMAN - I AM VERY BUSY -   http://www.spoj.com/problems/BUSYMAN/
 3. GERGOVIA - Wine trading in Gergovia  - http://www.spoj.com/problems/GERGOVIA/
 4. EXPEDI - Expedition    - http://www.spoj.com/problems/EXPEDI/
+
+A2OJ Greedy Catagory : https://a2oj.com/category?ID=56
