@@ -1,184 +1,90 @@
-///Job Sequencing C++ STL code  link : http://ideone.com/YcLPps
+///Job Sequencing C++ STL code  link : 
 #include<bits/stdc++.h>
 using namespace std;
- 
- 
+
+
 bool comp(const pair <string, pair< int,int> >&a, const pair< string, pair<int, int> >&b)
 {
-    return a.second.second>b.second.second;
+    return a.second.first>b.second.first;
 }
- 
- 
+
+
 void jobScheduling(pair<string, pair<int, int> > P[], int n)
 {
     sort(P, P+n, comp);
- 
+
     int count=0, total=0;
- 
-    cout<<"Job index : "<<"Profit : "<<"Deadline : "<<endl;
-    for(int i=0; i<n; i++)
-    {
-       if(P[i].second.first>count)
-       {
-         total+=P[i].second.second;
-         cout<<P[i].first<<"  "<<P[i].second.second<<"  "<<P[i].second.first<<endl;
-         count++;
-       }
-    }
-    cout<<"\nTotal Profit : " << total<<endl;
+
+    //cout<<"Job index : "<<"Profit : "<<"Deadline : "<<endl;
+    bool slot[n];
+    memset(slot,0,sizeof(slot));
+    int ans=0;
+
+   /*Job sequencing*/
+   for(int i=0;i<n; ++i)
+      for(int j=min(n,P[i].second.second)-1; j>=0; --j)
+      {
+         if(!slot[j])
+         {
+            slot[j]=true;
+            ans += P[i].second.first;
+            cout<<P[i].first<<" "<<P[i].second.first<<" "<<P[i].second.second<<endl;
+            break;
+         }
+      }
+     cout<<ans<<"\n";
 }
- 
- 
+
+
 int main()
 {
      ios::sync_with_stdio(false);
- 
+
      int n, profit, dead;
      cin>>n;
 	 string job;
      pair <string, pair<int, int > > P[n+1];
- 
+
      for(int i=0; i<n; i++)
      {
        cin>>job>>profit>>dead;
-       P[i] = make_pair(job, make_pair(dead,profit));
+       P[i] = make_pair(job, make_pair(profit,dead));
      }
- 
+
      jobScheduling(P,n);
- 
+
      return 0;
 }
 
 
- //C++ STL Daught Code : http://ideone.com/plTe3p
+ /*
+ 5
+ a 100 2
+ b 19 1
+ c 27 2
+ d 25 1
+ e 15 3
+
+ output :
+ sort
+ a 100 2
+ c 27  2
+ d 25  1
+ b 19  1
+ e 15  3
+
+
+
+ Select
+ a 100 2
+ c 27 2
+ e 15 3
+
+ tF; 142
+ */
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-//Job Scheduling C++ Traditional  code link : http://ideone.com/Qo9M9a
- #include<bits/stdc++.h>
-     using namespace std;
- 
-     int n;
- 
-    void jobScheduling(int job[], int profit[], int dead[])
-    {
-      int temp;
- 
-      for(int i=0; i<n-1; i++)
-      {
-         for(int j=0;j<n-1;j++)
-         {
-            if(profit[j+1]>profit[j])
-            {
-                temp=profit[j+1];
-                profit[j+1]=profit[j];
-                profit[j]=temp;
- 
-                temp=dead[j+1];
-                dead[j+1]=dead[j];
-                dead[j]=temp;
- 
-                temp=job[j+1];
-                job[j+1]=job[j];
-                job[j]=temp;
-            }
-         }
-      }
- 
-     /*
-      for(int i=0;i<n-1;i++)
-      {
-         for(int j=0;j<n-1;j++)
-         {
-            if(profit[j]==profit[j+1])
-            {
-                if(dead[j]<dead[j+1])
-                {
-                    temp=dead[j+1];
-                    dead[j+1]=dead[j];
-                    dead[j]=temp;
- 
-                    temp=job[j+1];
-                    job[j+1]=job[j];
-                    job[j]=temp;
-                }
-            }
-         }
-      }
-    */
-       cout<<"Sorting Jobs : \n";
-       for(int i=0; i<n; i++)
-       {
-         cout<<job[i]<<"  ";
-         cout<<profit[i]<<"  ";
-         cout<<dead[i]<<" ";
-         cout<<endl;
-       }
- 
-  //http://ideone.com/Qo9M9a
- 
- 
-      int count=0, total=0;
-      for(int i=0; i<n; i++)
-      {
-          if(dead[i]>count)
-          {
-            total+=profit[i];
-            cout<<"Job : " << job[i]<<"  ";
-            cout<<"Profit : " << profit[i]<<"  ";
-            cout<<"Deadline : " << dead[i]<<"  ";
-            count++;
-          }
-          cout<<endl;
-       }
-       cout<<"\nTotal Profit : " << total<<endl;
-    }
- 
- 
- 
- 
- 
-    int main(string args[])
-    {
- 
-      ios::sync_with_stdio(false);
-      cout<<"Enter number of jobs : ";
-      cin>>n;
- 
-      int job[n];
-      int profit[n];
-      int dead[n];
- 
-      for(int i=0;i<n;i++)
-      {
-        //cout<<"Enter job no.";
-        cin>>job[i];
-        //cout<<"Profit of job " <<(i+1) << ":";
-        cin>>profit[i];
-        //cout<<"Deadline of job " << (i+1) << ":";
-        cin>>dead[i];
-      }
- 
-     //Sorting in descending order of Profit (Bubble Sort)
- 
- 
-      jobScheduling(job, profit, dead);
- 
-      return 0;
- 
- }
+//Wrong Logic Code : http://ideone.com/YcLPps      http://ideone.com/Qo9M9a   http://ideone.com/plTe3p
