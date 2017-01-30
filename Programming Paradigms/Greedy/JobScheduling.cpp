@@ -1,4 +1,4 @@
-///Job Sequencing C++ STL code  link : 
+///Job Sequencing C++ STL code  link some thng difference below code  :http://ideone.com/nNbTrU 
 #include<bits/stdc++.h>
 using namespace std;
 
