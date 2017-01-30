@@ -1,4 +1,4 @@
-    //Same  :     http://ideone.com/IPNKOj  ......  http://ideone.com/QGba6i ..... http://ideone.com/JuTsoI 
+   //Same : http://ideone.com/IPNKOj    http://ideone.com/QGba6i    http://ideone.com/JuTsoI 
    #include<bits/stdc++.h>
    using namespace std;
 
