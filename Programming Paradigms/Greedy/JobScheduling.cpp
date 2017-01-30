@@ -1,4 +1,5 @@
 ///Job Sequencing C++ STL code  link some thng difference below code  :http://ideone.com/nNbTrU 
+// Article : https://www.dyclassroom.com/greedy-algorithm/job-sequencing-problem-with-deadline
 #include<bits/stdc++.h>
 using namespace std;
 
