@@ -5,6 +5,10 @@
    bool comp(const pair<int, int> &a, const pair<int, int> &b)
    {
       return  a.second<b.second;
+	   // if (a.second == b.second) return  a.first<b.first ;
+           //else                       return  a.second<b.second;
+
+	
    }
 
 
