@@ -164,8 +164,8 @@ Sorted activities as per finish time (ascending order)
 
 
 //Accepted Code : 
- //Same  : http://ideone.com/IPNKOj   ...... http://ideone.com/QGba6i   
-//Something Difference :  http://ideone.com/JuTsoI ..... 
+ //Same  :                http://ideone.com/IPNKOj    ...... http://ideone.com/QGba6i   
+//Something Difference :  http://ideone.com/JuTsoI    .....   http://ideone.com/Zr8QDT
 
 
 
@@ -174,6 +174,5 @@ Sorted activities as per finish time (ascending order)
 
 
 
-//N.B : Intervel Scheduling is the variant of Activity Selection Algo ...Source : http://ideone.com/Zr8QDT
 
 
