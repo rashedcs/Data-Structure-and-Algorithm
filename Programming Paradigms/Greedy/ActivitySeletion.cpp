@@ -1,4 +1,5 @@
-    #include<bits/stdc++.h>
+    //Same  :     http://ideone.com/IPNKOj  ......  http://ideone.com/QGba6i ..... http://ideone.com/JuTsoI 
+   #include<bits/stdc++.h>
    using namespace std;
 
 
@@ -167,9 +168,8 @@ Sorted activities as per finish time (ascending order)
 
 
 
-//Accepted Code : 
- //Same  :                http://ideone.com/IPNKOj    ...... http://ideone.com/QGba6i   
-//Something Difference :  http://ideone.com/JuTsoI    .....   http://ideone.com/Zr8QDT
+  
+//Something Difference :     .....   http://ideone.com/Zr8QDT
 
 
 
