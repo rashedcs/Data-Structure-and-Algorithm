@@ -22,8 +22,9 @@ void jobScheduling(pair<string, pair<int, int> > P[], int n)
 
    /*Job sequencing*/
    for(int i=0;i<n; ++i)
-      for(int j=min(n,P[i].second.second)-1; j>=0; --j)
-      {
+      for(int j=min(n,P[i].second.second)-1; j>=0; --j)   //  for(int j=min(n-1, P[i].second.second-1); j>=0; j--)
+      { //we substract from j because array starting with zero not one.........but here n=5 ...so total index = 4
+	      
          if(!slot[j])
          {
             slot[j]=true;
