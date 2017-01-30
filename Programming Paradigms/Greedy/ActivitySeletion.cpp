@@ -1,3 +1,64 @@
+    #include<bits/stdc++.h>
+   using namespace std;
+
+
+   bool comp(const pair<int, int> &a, const pair<int, int> &b)
+   {
+      return  a.second<b.second;
+   }
+
+
+   void activitySelection(pair<int, int>P[], int n)
+   {
+      sort(P,P+n,comp);
+      cout<<"Sorting Activity : "<<endl;
+      for(int i=0; i<n; i++)
+      {
+         cout<<P[i].first<<" "<<P[i].second<<endl;
+      }
+
+      int ans = 0, e =-1;
+      cout<<"Selected Activity No : "<<endl;
+      for(int i=0; i<n; i++)
+       {
+          if(P[i].first>= e)
+          {
+            e = P[i].second;
+            ans++;
+            cout<<P[i].first<<" "<<P[i].second<<endl;
+          }
+       }
+       cout<<ans<<endl;
+   }
+
+
+   int main()
+   {
+        ios::sync_with_stdio(false);
+
+        int tc, n, start, finish;
+
+        cin>>n;
+        pair <int,int> P[n+1];
+
+        for(int i=0; i<n; i++)
+        {
+            cin>>start>>finish;
+            P[i] = make_pair(start,finish);
+        }
+
+        activitySelection(P,n);
+
+        return 0;
+   }
+
+
+
+
+
+
+
+
   //Traditional Source Code: Get TLE
   #include<bits/stdc++.h>
    using namespace std;
