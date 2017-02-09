@@ -1,6 +1,8 @@
 // A Dynamic Programming based C++ program to find minimum of coins to make a given change V
 //http://www.programcreek.com/2015/04/leetcode-coin-change-java/
 //http://www.csegeek.com/csegeek/view/tutorials/algorithms/dynamic_prog/dp_part5.php
+//VII - https://github.com/mission-peace/interview/blob/master/src/com/interview/dynamic/CoinChanging.java
+
 #include<bits/stdc++.h>
 using namespace std;
 
