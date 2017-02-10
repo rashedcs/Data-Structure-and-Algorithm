@@ -7,7 +7,7 @@ https://discuss.leetcode.com/topic/20971/c-o-n-log-n-584-ms-3-solutions/10
 https://github.com/yuanhui-yang/LeetCode-Online-Judge/blob/master/Algorithms/meeting-rooms-ii.cpp
 
 http://ideone.com/YwoAoL
-
+/*
 #include<bits/stdc++.h>
 using namespace std;
 int main()
@@ -32,7 +32,7 @@ int main()
 
     return 0;
 }
-
+*/
 
 int minMeetingRooms(vector<Interval>& intervals) {
     vector<pair<int, int>> changes;
