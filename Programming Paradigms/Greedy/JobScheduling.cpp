@@ -32,7 +32,7 @@ void jobScheduling(pair<string, pair<int, int> > P[], int n)
             ans += P[i].second.first;
             cout<<P[i].first<<" "<<P[i].second.first<<" "<<P[i].second.second<<endl;
             break;
-         }
+	 }
       }
      cout<<ans<<"\n";
 }
