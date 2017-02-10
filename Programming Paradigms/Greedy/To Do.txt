@@ -1,5 +1,5 @@
 Greedy Algorithm Problems :
-
+Work : http://ideone.com/pCWjRv
 
 Spoj:
 1. MSCHED - Milk Scheduling -   http://www.spoj.com/problems/MSCHED/
