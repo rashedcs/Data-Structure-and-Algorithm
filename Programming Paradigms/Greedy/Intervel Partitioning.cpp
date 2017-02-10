@@ -8,7 +8,30 @@ https://github.com/yuanhui-yang/LeetCode-Online-Judge/blob/master/Algorithms/mee
 
 http://ideone.com/YwoAoL
 
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    vector< pair<int,int> > v;
+    int noofconf,n,starttime,endtime;
+    cin>>noofconf;
+    for(int i = 0 ; i < noofconf ; i++)
+    {
+        cin>>starttime>>endtime;
+        v.push_back(make_pair(starttime,endtime));
+    }
+    sort(v.begin(),v.end());
 
+    int noofrooms=0;
+    for(int i = 0 ; i < noofconf ; i++)
+    {
+        if(v[i].second > v[i+1].first)
+            noofrooms++;
+    }
+    cout<<noofrooms;
+
+    return 0;
+}
 
 
 int minMeetingRooms(vector<Interval>& intervals) {
