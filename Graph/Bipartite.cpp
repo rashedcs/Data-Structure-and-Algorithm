@@ -104,3 +104,45 @@ int main()
     
     return 0;
 }
+
+
+
+
+/* Resource : 
+Bipartite graph could be found by using DFS or BFS. Just run dfs from any vertex 
+and let's take one more variable cur which switches each time(such as 1 and 2). 
+And when two vertices have the same "color", then this graph is not bipartite. 
+It is better to show code:
+
+
+
+bool bipartite = true;
+int a[MaxN][MaxN], color[MaxN];
+
+void dfs(int v, int cur)
+{
+  mark[v] = true;
+  color[v] = cur; // color this vertex as cur
+  for (int i = 0; i < n; i++)
+     if (a[v][i] == 1)
+        { // if there is edge between v and i
+           if (color[i] == cur) 
+            { 
+              // if color of vertex i is equal to color of v, that is cur
+               bipartite = false; // graph is definitely not bipartite, so return
+               return;
+            }
+           if (!mark[i]) dfs(v, cur==1?2:1); // continue dfs
+        }
+ };
+
+int main(){
+...
+dfs(0, 1); 
+cout << bipartite;
+...
+}
+Then, if graph is bipartite, all vertices colored with 1 are in one group and with color 2 is in another respectively.
+Try to debug this program and try to understand and analyze. It is obviously that there is no edge between two vertices from the same group.
+Sorry for my poor English)
+*/
