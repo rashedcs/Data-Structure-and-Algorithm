@@ -108,7 +108,7 @@ int main()
 
 
 
-/* Resource : 
+/* Resource : http://codeforces.com/blog/entry/5048
 Bipartite graph could be found by using DFS or BFS. Just run dfs from any vertex 
 and let's take one more variable cur which switches each time(such as 1 and 2). 
 And when two vertices have the same "color", then this graph is not bipartite. 
