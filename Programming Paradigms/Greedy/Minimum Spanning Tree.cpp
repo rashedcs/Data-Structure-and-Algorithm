@@ -1,9 +1,5 @@
 //links : https://www.hackerearth.com/practice/algorithms/graphs/minimum-spanning-tree/tutorial/
-#include <iostream>
-#include <vector>
-#include <utility>
-#include <algorithm>
-
+#include <bits/stdc++.h>
 using namespace std;
 const int MAX = 1e4 + 5;
 int id[MAX], nodes, edges;
