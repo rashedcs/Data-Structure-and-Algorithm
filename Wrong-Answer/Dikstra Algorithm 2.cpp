@@ -4,7 +4,8 @@
 
 #include<bits/stdc++.h>
 using namespace std;
-
+//#define INF (1<<20)
+//#define pp pair<int,int>
 typedef pair< int, int >pii;
 
 const int MAX = 3001;
@@ -13,6 +14,17 @@ const int INF = 0x3f3f3f3f;
 
 vector< pii > G[MAX];
 int d[MAX];
+
+/*
+struct greater
+{
+    bool operator() (const pp &p1, const pp &p2)
+    {
+        return p1.second<p2.second;
+    }
+};
+
+*/
 
 
 
@@ -23,16 +35,24 @@ void dijkstra(int start)
     priority_queue< pii, vector<pii>, greater<pii> >Q;
 
     memset(d, 0x3f, sizeof d);
-    Q.push(pii(0, start));
+    // 
+   /*Initialize all node are infinity
+    for(int i=1;i<=n;i++)
+    {
+      d[i]=INF;
+    }
+    */
     d[start] = 0;
+    Q.push(pii(0, start));
+
 
     while(!Q.empty())
     {
         u = Q.top().second; // node
-        c = Q.top().first; // node cost so far
+        //c = Q.top().first; // node cost so far
         Q.pop(); // remove the top item.
 
-        if(d[u] < c) continue;
+       // if(d[u] < c) continue;
 
         for(int i = 0; i < G[u].size(); i++)
         {
