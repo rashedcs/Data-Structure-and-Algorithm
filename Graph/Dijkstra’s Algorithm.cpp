@@ -91,3 +91,4 @@ int main()
 
 
 //Simple Way : http://ideone.com/QknEbW
+// Another way : //Source : http://ideone.com/vGPHXA
