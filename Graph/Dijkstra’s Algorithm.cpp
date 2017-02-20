@@ -14,8 +14,7 @@ void dijkstra(int start, vector<pii>G[])
 
       priority_queue<pii,vector<pii>,greater<pii> >q;
 
-      long long int dist[1000000],prev[1000000];
-      vector<int>path;
+      long long int dist[1000000],prev[1000000];    vector<int>path;
 
 
       memset(dist,inf,sizeof(dist));
