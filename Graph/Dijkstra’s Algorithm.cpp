@@ -1,4 +1,3 @@
-//Source : http://ideone.com/vGPHXA
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -12,7 +11,7 @@ using namespace std;
 void dijkstra(int start, vector<pii>G[])
  {
 
-      priority_queue<pii,vector<pii>,greater<pii> >q;
+     priority_queue<pii,vector<pii>,greater<pii> >q;
 
       long long int dist[1000000],prev[1000000];    vector<int>path;
 
@@ -87,7 +86,7 @@ int main()
 
     return 0;
 }
-
-
+//This program : //Source : http://ideone.com/vGPHXA
+//Similarly but wrong :  http://ideone.com/VnN41N
 //Simple Way : http://ideone.com/QknEbW
 // Another way : //Source : http://ideone.com/vGPHXA
