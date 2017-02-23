@@ -35,6 +35,57 @@ int main()
 }
 */
 
+
+/*
+incomplete :
+#include<bits/stdc++.h>
+using namespace std;
+struct Interval {
+	int start;
+	int end;
+	Interval() : start(0), end(0) {}
+	Interval(int s, int e) : start(s), end(e) {}
+};
+class Solution
+{
+public:
+int minMeetingRooms(vector<Interval>& intervals) 
+{
+    map<int, int> changes;
+    
+    for(int i=0; i<3; i++)
+    {
+      changes[intervals[i].start] += 1;
+      changes[intervals[i].end]  -= 1;
+      cout<<changes[intervals[i].start]<<" "<<changes[intervals[i].end]<<endl;
+    }
+    
+    int rooms = 0, maxrooms = 0;
+    
+  //  for (auto change : changes)
+    for(int i=0; i<3; i++)
+    {
+        maxrooms = max(maxrooms, rooms += changes[i]);
+    }
+    
+    return maxrooms;
+}
+};
+ 
+int main() 
+{
+	Solution solution;
+	vector<Interval> intervals = {{0, 30}, {5, 10}, {15, 20}};
+	cout << solution.minMeetingRooms(intervals) << "\tPassed\n";
+	intervals.clear();
+	//cout << solution.minMeetingRooms(intervals) << "\tPassed\n";
+	intervals = {{9, 10}, {4, 9}, {4, 17}};
+	cout << solution.minMeetingRooms(intervals) << "\tPassed\n";
+	cout << "\nPassed All\n";
+	return 0;
+}
+*/
+
 #include<bits/stdc++.h>
 using namespace std;
 struct Interval {
