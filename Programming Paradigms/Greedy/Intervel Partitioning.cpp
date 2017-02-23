@@ -35,18 +35,48 @@ int main()
 }
 */
 
-int minMeetingRooms(vector<Interval>& intervals) {
-    vector<pair<int, int>> changes;
+#include<bits/stdc++.h>
+using namespace std;
+struct Interval {
+	int start;
+	int end;
+	Interval() : start(0), end(0) {}
+	Interval(int s, int e) : start(s), end(e) {}
+};
+class Solution
+{
+public:
+int minMeetingRooms(vector<Interval>& intervals)
+{
+   vector<pair<int, int>> changes;
     for (auto i : intervals) {
         changes.push_back({i.start, 1});
         changes.push_back({i.end, -1});
     };
-    sort(begin(changes), end(changes));
+       sort(begin(changes), end(changes));
     int rooms = 0, maxrooms = 0;
-    for (auto change : changes)
-        maxrooms = max(maxrooms, rooms += change.second);
+    
+  
+    for(int i=0; i<3; i++)
+       // maxrooms = max(maxrooms, rooms += change.second);
+       maxrooms = max(maxrooms, rooms += changes[i].second);
     return maxrooms;
 }
+
+};
+ 
+int main() {
+	Solution solution;
+	vector<Interval> intervals = {{0, 30}, {5, 10}, {15, 20}};
+	cout << solution.minMeetingRooms(intervals) << "\tPassed\n";
+	intervals.clear();
+	//cout << solution.minMeetingRooms(intervals) << "\tPassed\n";
+	intervals = {{9, 10}, {4, 9}, {4, 17}};
+	cout << solution.minMeetingRooms(intervals) << "\tPassed\n";
+	cout << "\nPassed All\n";
+	return 0;
+}
+
 
 // greedy : always change the smallest end time;
 // heap : min_heap
