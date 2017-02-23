@@ -6,7 +6,8 @@ http://massivealgorithms.blogspot.com/2015/08/like-coding-leetcode-253-meeting-r
 https://discuss.leetcode.com/topic/20971/c-o-n-log-n-584-ms-3-solutions/10
 https://github.com/yuanhui-yang/LeetCode-Online-Judge/blob/master/Algorithms/meeting-rooms-ii.cpp
 
-http://ideone.com/YwoAoL
+//http://ideone.com/YwoAoL
+http://ideone.com/jM6EyU
 /*
 #include<bits/stdc++.h>
 using namespace std;
