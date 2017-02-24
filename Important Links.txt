@@ -5,3 +5,21 @@ http://ibra.hammadian.com/home/coding-interview-preparation
 https://github.com/hackerkid/LightOJ-Solutions/blob/master/HINTS.md
 
 
+
+
+*Bit Manipulation
+*Math
+*Computational Geometry
+
+
+*Divide and Conquer
+*Greedy
+*Dp
+
+
+*Graph
+
+
+
+*Data structure
+
