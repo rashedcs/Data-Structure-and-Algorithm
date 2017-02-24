@@ -10,14 +10,19 @@ using namespace std;
 
 void dijkstra(int start, vector<pii>G[])
  {
+      priority_queue<pii,vector<pii>,greater<pii> >q;
 
-     priority_queue<pii,vector<pii>,greater<pii> >q;
+      vector<int>path;
 
-      long long int dist[1000000],prev[1000000];    vector<int>path;
-
-
+      long long int dist[1000000];
       memset(dist,inf,sizeof(dist));
+ 
+      //  vector<int>dist(1000000, inf); // instead of 17 -18 line but run time error
+     
+ 
+      long long int dist prev[1000000]; 
       memset(prev,-1,sizeof(prev));
+    
 
 
      q.push(pii(0,start)); // q.push(make_pair(0,start));
