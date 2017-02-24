@@ -20,7 +20,7 @@ void dijkstra(int start, vector<pii>G[])
       memset(prev,-1,sizeof(prev));
 
 
-     q.push(pii(0,start));
+     q.push(pii(0,start)); // q.push(make_pair(0,start));
      dist[start]=0;
 
      while(!q.empty())
@@ -79,6 +79,9 @@ int main()
         cin>>u>>v>>w;
         G[u].push_back(pii(w,v));
         G[v].push_back(pii(w,u)); ///Ai line ta na dile directed hoye jabe.
+       
+        // G[u].push_back(make_pair(w,v));
+       //  G[v].push_back(make_pair(w,u));
      }
 
      int start = 1;
