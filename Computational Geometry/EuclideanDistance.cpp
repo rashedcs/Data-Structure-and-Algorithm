@@ -1,4 +1,6 @@
- #include<bits/stdc++.h>
+http://www.codingalpha.com/calculate-distance-between-two-points-c-program/
+
+#include<bits/stdc++.h>
  using namespace std;
 
 
