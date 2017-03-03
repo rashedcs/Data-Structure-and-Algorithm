@@ -18,7 +18,7 @@ http://www.codingalpha.com/calculate-distance-between-two-points-c-program/
 	V.push_back(make_pair(4,3));
 	V.push_back(make_pair(2,2));
 
-    cout<<dist(V[0], V[1])<<endl;
+        cout<<dist(V[0], V[1])<<endl;
 
 	return 0;
  }
