@@ -21,10 +21,14 @@ int main()
 //Dp Approach
 // A Dynamic Programming based solution that uses table C[][] to
 // calculate the Binomial Coefficient
-#include<stdio.h>
- 
-// Prototype of a utility function that returns minimum of two integers
-int min(int a, int b);
+#include<bits/stdc++.h>
+using namespace std;
+
+// A utility function to return minimum of two integers
+int min(int a, int b)
+{
+    return (a<b)? a: b;
+}
  
 // Returns value of Binomial Coefficient C(n, k)
 int binomialCoeff(int n, int k)
@@ -50,11 +54,7 @@ int binomialCoeff(int n, int k)
     return C[n][k];
 }
  
-// A utility function to return minimum of two integers
-int min(int a, int b)
-{
-    return (a<b)? a: b;
-}
+
  
 /* Drier program to test above function*/
 int main()
