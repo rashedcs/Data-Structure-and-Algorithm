@@ -109,7 +109,7 @@ class Ideone
 
 
 
-//C++ implementation : lcp of two string 
+//C++ implementation : lcp of many string 
 //Source : http://code.geeksforgeeks.org/F7lklL
 
     #include<bits/stdc++.h>
