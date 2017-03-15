@@ -98,10 +98,8 @@ int main()
 
     return 0;
 }
-//This program : //Source : http://ideone.com/vGPHXA
-//Similarly but wrong :  http://ideone.com/VnN41N
-//Simple Way : http://ideone.com/QknEbW
-// Another way : //Source : http://ideone.com/vGPHXA
+
+
 
 
 #include<bits/stdc++.h>
