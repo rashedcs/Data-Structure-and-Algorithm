@@ -1,6 +1,5 @@
 // Best way : https://www.hackerrank.com/challenges/dijkstrashortreach
 
-
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -11,24 +10,26 @@ using namespace std;
  long long int n,m,u,v,w;
 
 
-void dijkstra(int start, vector<pii>G[])
+void dijkstra(int edge, int start, vector<pii>G[])
  {
-      priority_queue<pii,vector<pii>,greater<pii> >q;
+
+     priority_queue< pii,vector<pii>,greater<pii> >q;
+
+      long long int prev[1000000];
+      memset(prev,-1,sizeof(prev));
 
       vector<int>path;
 
-      long long int dist[1000000];
-      memset(dist,inf,sizeof(dist));
- 
-      //  vector<int>dist(1000000, inf); // instead of 17 -18 line but run time error
-     
- 
-      long long int dist prev[1000000]; 
-      memset(prev,-1,sizeof(prev));
-    
+
+     long long int  dist[1000000];
+     memset(dist,inf,sizeof(dist));
+    //  vector<int>dist(1000000, inf); //
 
 
-     q.push(pii(0,start)); // q.push(make_pair(0,start));
+
+
+
+     q.push(make_pair(0,start));
      dist[start]=0;
 
      while(!q.empty())
@@ -39,6 +40,7 @@ void dijkstra(int start, vector<pii>G[])
         {
             v=G[u][i].second;
             w=G[u][i].first;
+
             if(dist[u]+w<dist[v])
             {
 
@@ -85,15 +87,14 @@ int main()
      for(int i=0; i<m; i++)
      {
         cin>>u>>v>>w;
-        G[u].push_back(pii(w,v));
-        G[v].push_back(pii(w,u)); ///Ai line ta na dile directed hoye jabe.
-       
-        // G[u].push_back(make_pair(w,v));
-       //  G[v].push_back(make_pair(w,u));
+        //G[u].push_back(pii(w,v));
+         G[u].push_back(make_pair(w,v));
+        //G[v].push_back(pii(w,u));
+         G[v].push_back(make_pair(w,u));
      }
 
      int start = 1;
-     dijkstra(start,G);
+     dijkstra(m,start,G);
 
     return 0;
 }
