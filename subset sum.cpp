@@ -1,4 +1,7 @@
 http://k2code.blogspot.in/2012/01/given-integer-array-and-number-x-find.html
+http://code.cloudkaksha.org/arrays/to-check-if-an-array-has-pair-of-elements-with-given-sum
+
+
 
 import java.util.Scanner;
 import java.util.*;
