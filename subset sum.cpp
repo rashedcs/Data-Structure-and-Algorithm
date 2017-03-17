@@ -1,3 +1,5 @@
+http://k2code.blogspot.in/2012/01/given-integer-array-and-number-x-find.html
+
 import java.util.Scanner;
 import java.util.*;
 import java.io.*;
@@ -48,3 +50,56 @@ public class codechef
       }
       
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public class codechef {
+
+	public static void printSumPairs(int input[], int k)
+	{
+	    Map<Integer, Integer> pairs = new HashMap<Integer, Integer>();
+
+	    for(int i=0; i<input.length;i++)
+	    {
+	        if(pairs.containsKey(input[i]))
+	            System.out.println(input[i] +", "+ pairs.get(input[i]));
+	        else
+	            pairs.put(k-input[i], input[i]);
+	    }
+	}
+	
+	
+	
+   public static void main(String[] args) 
+   {        
+      int []a = {4,6,4};
+      printSumPairs(a,8);        
+   }
+
+
+
+
+}
+
+
+
+
+
+
+
