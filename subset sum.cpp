@@ -1,3 +1,4 @@
+http://codepad.org/QR9ptUwR
 http://k2code.blogspot.in/2012/01/given-integer-array-and-number-x-find.html
 http://code.cloudkaksha.org/arrays/to-check-if-an-array-has-pair-of-elements-with-given-sum
 
@@ -99,6 +100,45 @@ public class codechef {
 
 
 }
+
+
+
+  #include<bits/stdc++.h>
+   using namespace std;
+
+   map<int, int>Map;
+
+   void subsetSum(int arr[], int n, int kvalue)
+   {
+      //Al pairs
+     // for(int i=0; i<n; i++) Map[arr[i]]++;
+
+      for(int i=0; i<n; i++)
+      {
+         Map[arr[i]]++;
+         if(Map.count(kvalue-arr[i]))
+         {
+            cout<<arr[i]<<" "<<kvalue-arr[i]<<"\n";
+         }
+      }
+   }
+
+
+   int main()
+   {
+         int  n, x, y, sum;
+         cin>>n>>sum;
+
+         int *arr = new int[n];
+         for(int i=0; i<n; i++)
+         {
+           cin>>arr[i];
+         }
+         subsetSum(arr, n, sum);
+         free(arr);
+
+         return 0;
+   }
 
 
 
