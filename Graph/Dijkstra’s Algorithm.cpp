@@ -13,7 +13,7 @@ using namespace std;
 void dijkstra(int edge, int start, vector<pii>G[])
  {
 
-     priority_queue< pii,vector<pii>,greater<pii> >q;
+     priority_queue< pii, vector<pii>, greater<pii> >q;
 
       long long int prev[1000000];
       memset(prev,-1,sizeof(prev));
