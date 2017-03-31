@@ -15,7 +15,7 @@
 
 
 
-    void activitySelection(pair<int, int>P[], int W)
+    void fractionalKnapsack(pair<int, int>P[], int W)
     {
         sort(P, P+n, comp);
 
@@ -69,7 +69,7 @@
 
 
           //sort(C,C+n,comp);
-         activitySelection(P,W);
+         fractionalKnapsack(P,W);
 
 
 
