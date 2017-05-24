@@ -2,13 +2,13 @@
 using namespace std;
 
 
-list<int> adj[1000];
+list<int> adj[100001];
 
 
 void DFS(int v, bool visited[])
 {
     visited[v] = true;
-    cout<<v<<" ";
+    if(v!=0) cout<<v<<",";
 
     list<int>::iterator i;
     for(i = adj[v].begin(); i != adj[v].end(); ++i)
@@ -20,6 +20,7 @@ void DFS(int v, bool visited[])
 
 void connectedComponents(int V)
 {
+    int cc=0;
     bool *visited = new bool[V];
     memset(visited,false,sizeof(visited));
     for (int v=0; v<V; v++)
@@ -27,16 +28,20 @@ void connectedComponents(int V)
         if (visited[v] == false)
         {
             DFS(v, visited);
-            cout<<endl;
+            //cout<<",";
+            cc++;
         }
     }
+    cout<<cc;
 }
 
 
 int main()
 {
 
-        int start, vertex, edges,a,b;
+        int tc, start, vertex, edges,a,b;
+        cin>>tc;
+    while(tc--){
 	    cin>>vertex>>edges;
 	    for(int i=0;i<edges;i++)
 	    {
@@ -46,12 +51,10 @@ int main()
 	    }
 
         connectedComponents(vertex);
-
         cout<<endl;
+    }
         return 0;
 
 }
-
-
 
 
