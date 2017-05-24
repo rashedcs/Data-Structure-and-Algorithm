@@ -1,5 +1,97 @@
 #include<bits/stdc++.h>
 using namespace std;
+ 
+bool visited[100001];
+vector <int> adj[100001];
+ 
+ 
+void dfs(int v)
+{
+    visited[v]=true;
+    for(int i=0; i<adj[v].size(); i++)
+    {
+      if(visited[adj[v][i]]!=true)  dfs(adj[v][i]);
+    }
+}
+ 
+ 
+int main()
+{
+    ios::sync_with_stdio(false);
+    int tc, u,v, cc, node, edge;
+ 
+    cin>>tc;
+    while(tc--)
+    {
+       cc=0;
+       cin>>node>>edge;
+       memset(adj,0,sizeof(adj));
+       memset(visited,false,sizeof(visited));
+ 
+       for(int i=0; i<edge; i++)
+       {   cin>>u>>v;
+           adj[u].push_back(v);
+           adj[v].push_back(u);
+       }
+ 
+       for(int i=0; i<node; i++)
+       {
+         if(visited[i]!=true)
+         {
+            dfs(i);
+            cc++;
+         }
+       }
+       cout<<cc<<endl;
+    }
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Daught: 
+
+#include<bits/stdc++.h>
+using namespace std;
 
 
 list<int> adj[100001];
