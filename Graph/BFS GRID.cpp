@@ -38,8 +38,8 @@ void bfs(int sx, int sy)
  
                         if(safe(a,b) && !dist[a][b] && (int)arr[a][b]!=(int)arr[top.first][top.second])
                         {
-                          q.push(pii(a,b));
-                          dist[a][b] = dist[top.first][top.second]+1;
+                           q.push(pii(a,b));
+                           dist[a][b] = dist[top.first][top.second]+1;
                            vis[a][b]=1;
                         }
 		}
