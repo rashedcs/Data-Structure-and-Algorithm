@@ -24,8 +24,8 @@ void bfs(int sx, int sy)
 	queue< pii >q;
 	q.push(pii(sx,sy));
  
-    vis[sx][sy]=1;
-    dist[sx][sy]=1;
+        vis[sx][sy]=1;
+        dist[sx][sy]=1;
  
 	while(!q.empty())
 	{
@@ -36,12 +36,12 @@ void bfs(int sx, int sy)
 			int a = top.first + dr[i];
 			int b = top.second + dc[i];
  
-            if(safe(a,b) && !dist[a][b] && (int)arr[a][b]!=(int)arr[top.first][top.second])
-            {
-               q.push(pii(a,b));
-               dist[a][b] = dist[top.first][top.second]+1;
-               vis[a][b]=1;
-            }
+                        if(safe(a,b) && !dist[a][b] && (int)arr[a][b]!=(int)arr[top.first][top.second])
+                        {
+                          q.push(pii(a,b));
+                          dist[a][b] = dist[top.first][top.second]+1;
+                           vis[a][b]=1;
+                        }
 		}
 	}
 }
