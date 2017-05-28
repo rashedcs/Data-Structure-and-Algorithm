@@ -32,19 +32,19 @@ void bfs(int sx, int sy, int dx, int dy)
 
 	     while(!q.empty())
 	     {
-		   int r=q.front().first;
-	           int c=q.front().second;
-		   q.pop();
+		    int r=q.front().first;
+	            int c=q.front().second;
+		    q.pop();
 			
-                   if(arr[r][c]==0 ) 
-		   {
+                    if(arr[r][c]==0 ) 
+		    {
 	                 //   ans = -1 //No need to initialize ans = -1 because it at first initialize INT_MIN
 			break;
-		   }      
-
-                   if(dx==r && dy==c)   //If destination is found then ans=true, break;
+		    }      
+       
+                    if(dx==r && dy==c)  
                     {
-                          ans = 1; 
+                          ans = 1;   //If destination is found then ans=true, break;
                           break;
                     }
 		     
