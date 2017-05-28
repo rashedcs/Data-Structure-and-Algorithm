@@ -144,8 +144,8 @@ void bfs(int sx, int sy, int dx, int dy)
                        }
 
             
-	    	        for(int i=0; i<4; i++)
-	    	        {
+	    	      for(int i=0; i<4; i++)
+	    	      {
 		    	   int a = r + dr[i];
 		    	   int b = c + dc[i];
 
@@ -155,8 +155,8 @@ void bfs(int sx, int sy, int dx, int dy)
                              dist[a][b] = dist[r][c]+1;
                              vis[a][b]=1;
                            }
-		       }
-	       }
+		      }
+	     }
         }
    }
 
