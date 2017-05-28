@@ -35,36 +35,37 @@ void bfs(int sx, int sy, int dx, int dy)
             vis[sx][sy]=1;
             dist[sx][sy]=0;
 
-	        while(!q.empty())
-	       {
-		          	int r=q.front().first;
-			          int c=q.front().second;
-		          	q.pop();
+	     while(!q.empty())
+	     {
+		   int r=q.front().first;
+	           int c=q.front().second;
+		   q.pop();
 			
-               if(arr[r][c]==0 ) 
-		           {
-			         //   ans = -1  /No need to initialize ans = -1 because it at first initialize INT_MIN
-			           break;
-		           }      
+                   if(arr[r][c]==0 ) 
+		   {
+	                 //   ans = -1 //No need to initialize ans = -1 because it at first initialize INT_MIN
+			break;
+		   }      
 
-               if(dx==r && dy==c)   //If destination is found then ans=true, break;
-                {
-                       ans = 1; 
-                      break;
-                }
-	    	        for(int i=0; i<4; i++)
-	    	        {
-		    	              int a = r + dr[i];
-		    	              int b = c + dc[i];
+                   if(dx==r && dy==c)   //If destination is found then ans=true, break;
+                    {
+                          ans = 1; 
+                          break;
+                    }
+		     
+	    	    for(int i=0; i<4; i++)
+	    	    {
+		          int a = r + dr[i];
+		    	  int b = c + dc[i];
 
-                        if(safe(a,b)  && !vis[a][b] && arr[a][b])
-                        {
-                            q.push(make_pair(a,b));
-                            dist[a][b] = dist[r][c]+1;
-                            vis[a][b]=1;
-                        }
-		             }
-	           }
+                          if(safe(a,b)  && !vis[a][b] && arr[a][b])
+                          {
+                              q.push(make_pair(a,b));
+                              dist[a][b] = dist[r][c]+1;
+                              vis[a][b]=1;
+                          }
+		    }
+	       }
         }
    }
 
