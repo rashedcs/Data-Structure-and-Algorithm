@@ -21,14 +21,9 @@ int safe(int x,int y)
 
 void bfs(int sx, int sy, int dx, int dy)
 {
-       ans = INT_MAX;
+            ans = INT_MAX;
        
-      if(!arr[dx][dy]) 
-      {
-         ans = -1;
-      }
-      else
-      {
+
 	    queue< pair<int,int> > q;
    	    q.push(make_pair(sx,sy));
 
@@ -64,9 +59,8 @@ void bfs(int sx, int sy, int dx, int dy)
                               dist[a][b] = dist[r][c]+1;
                               vis[a][b]=1;
                           }
-		    }
+		   }
 	       }
-        }
    }
 
 
