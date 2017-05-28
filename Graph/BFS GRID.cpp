@@ -131,11 +131,15 @@ void bfs(int sx, int sy, int dx, int dy)
 			int c=q.front().second;
 			q.pop();
 			
-                       if(arr[r][c]==0 || arr[dx][dy]==0) break;
+                       if(arr[r][c]==0 ) 
+		       {
+			    //   ans = -1  ///No need to initialize ans = -1 because it at first initialize INT_MIN
+			       break;
+		       }      
 
-                       if(dx==r && dy==c)  
+                       if(dx==r && dy==c)   //If destination is found then ans=true, break;
                        {
-                           ans = 1;
+                           ans = 1; 
                            break;
                        }
 
