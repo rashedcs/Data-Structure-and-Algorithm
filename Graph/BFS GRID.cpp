@@ -122,8 +122,8 @@ void bfs(int sx, int sy, int dx, int dy)
 	    queue< pair<int,int> > q;
    	    q.push(make_pair(sx,sy));
 
-        vis[sx][sy]=1;
-        dist[sx][sy]=0;
+            vis[sx][sy]=1;
+            dist[sx][sy]=0;
 
 	    while(!q.empty())
 	    {
@@ -131,30 +131,30 @@ void bfs(int sx, int sy, int dx, int dy)
 			int c=q.front().second;
 			q.pop();
 			
-            if(arr[r][c]==0 || arr[dx][dy]==0) break;
+                       if(arr[r][c]==0 || arr[dx][dy]==0) break;
 
-            if(dx==r && dy==c)  
-            {
-                ans = 1;
-                break;
-            }
+                       if(dx==r && dy==c)  
+                       {
+                           ans = 1;
+                           break;
+                       }
 
             
-	    	for(int i=0; i<4; i++)
-	    	{
-		    	int a = r + dr[i];
-		    	int b = c + dc[i];
+	    	        for(int i=0; i<4; i++)
+	    	        {
+		    	   int a = r + dr[i];
+		    	   int b = c + dc[i];
 
-                if(safe(a,b)  && !vis[a][b] && arr[a][b])
-                {
-                  q.push(make_pair(a,b));
-                  dist[a][b] = dist[r][c]+1;
-                  vis[a][b]=1;
-              }
-		  }
-	   }
-    }
-}
+                           if(safe(a,b)  && !vis[a][b] && arr[a][b])
+                           {
+                             q.push(make_pair(a,b));
+                             dist[a][b] = dist[r][c]+1;
+                             vis[a][b]=1;
+                           }
+		       }
+	       }
+        }
+   }
 
 
 int main()
