@@ -111,11 +111,11 @@ int safe(int x,int y)
 
 void bfs(int sx, int sy, int dx, int dy)
 {
-       ans = 0;
+       ans = INT_MAX;
        
       if(!arr[dx][dy]) 
       {
-         ans = 0;
+         ans = -1;
       }
       else
       {
@@ -182,9 +182,9 @@ int main()
 
        bfs(0,0,dx,dy);
        
-       if(ans!=0)
+        if(ans==1) // If destination node is possible
 	        cout<<dist[dx][dy]<<endl;
-	    else
+        else    // Otherwise -1 
 	        cout<<"-1"<<endl;
 
     }
