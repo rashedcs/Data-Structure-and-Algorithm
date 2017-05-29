@@ -12,37 +12,37 @@
 
     void dfs(int u)
     {
-		  visited[u] = true;
-
-		  for(size_t i=0; i<adj[u].size(); ++i)
-		  {
-			  if (visited[adj[u][i]] == false)    dfs(adj[u][i]);
-		  }
+	  visited[u] = true;
+	    
+	  for(size_t i=0; i<adj[u].size(); ++i)
+	  {
+		  if (visited[adj[u][i]] == false)    dfs(adj[u][i]);
+	  }
      
-		  S.push(u);
+	  S.push(u);
     }
 
     void topologicalSort(int V)
     {
-	  	for(int i=0; i<V; ++i)
-	  	{
-			  if(visited[i]==false)
-			  {
+	  for(int i=0; i<V; ++i)
+	  {
+		  if(visited[i]==false)
+	          {
 			   	dfs(i);
-		 	  }
-		 }
+		  }
+	  }
 
 	  while(!S.empty())
 	  {
 		  topological_order.push_back(S.top());
 			 S.pop();
-  	}
- }
+  	  }
+    }
 
 
    int main()
    {
-      int vertex, edges, a, b;
+            int vertex, edges, a, b;
 	    cin>>vertex>>edges;
 
 	    for(int i=0; i<edges; i++)
@@ -51,9 +51,9 @@
 	       adj[a].push_back(b);
 	    }
 
-     topologicalSort(vertex);
+           topologicalSort(vertex);
 
-     for(int i=0; i<vertex; ++i)
+           for(int i=0; i<vertex; ++i)
  	   {
 	      printf("%d ", topological_order[i]);
 	   }
