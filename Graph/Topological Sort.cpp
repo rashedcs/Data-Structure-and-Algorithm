@@ -1,65 +1,72 @@
-    #include<bits/stdc++.h>
-    using namespace std;
 
-    const int MAX = 2e5 + 5;
+#include<bits/stdc++.h>
+using namespace std;
 
-    vector<int> adj[MAX];
-    vector<int>topological_order;
-
-    stack<int>S;
-    bool visited[MAX];
+const int MAX = 111111;
+vector<int>matrix[MAX];
+int inDegree [MAX];
 
 
-    void dfs(int u)
+
+int main ()
+{
+    ios::sync_with_stdio(false);
+    memset(inDegree, 0, sizeof(inDegree));
+
+    int edges, a, b, vertex, cnt=0;
+    cin>>vertex>>edges;
+
+    while(edges--)
     {
-	  visited[u] = true;
-	    
-	  for(size_t i=0; i<adj[u].size(); ++i)
-	  {
-		  if (visited[adj[u][i]] == false)    dfs(adj[u][i]);
-	  }
-     
-	  S.push(u);
+        cin>>a>>b;
+        matrix [a].push_back (b);
+        inDegree[b]++;
     }
 
-    void topologicalSort(int V)
-    {
-	  for(int i=0; i<V; ++i)
-	  {
-		  if(visited[i]==false)
-	          {
-			   	dfs(i);
-		  }
-	  }
+    queue<int>Q;
+    vector<int> sortedList;
 
-	  while(!S.empty())
-	  {
-		  topological_order.push_back(S.top());
-			 S.pop();
-  	  }
+    for(int i=1; i<=vertex; i++)
+    {
+        if(inDegree[i]==0)  Q.push(i);
+    }
+
+    while(!Q.empty())
+    {
+        int u = Q.front ();
+        Q.pop ();
+
+        sortedList.push_back(u);
+
+        for(int i=0; i<matrix[u].size(); i++)
+        {
+            inDegree[matrix [u][i]]--;
+            if(inDegree[matrix[u][i]]==0)  Q.push (matrix[u][i]);
+        }
+        cnt++;
+    }
+
+    if(cnt!=vertex) cout<<"Sandro fails.\n";
+    else
+    {
+       for(unsigned int i=0; i<sortedList.size (); i++)
+       {
+           cout<<sortedList [i]<<" ";
+       }
     }
 
 
-   int main()
-   {
-            int vertex, edges, a, b;
-	    cin>>vertex>>edges;
+    return 0;
+}
 
-	    for(int i=0; i<edges; i++)
-	    {
-	       cin>>a>>b;
-	       adj[a].push_back(b);
-	    }
 
-           topologicalSort(vertex);
 
-           for(int i=0; i<vertex; ++i)
- 	   {
-	      printf("%d ", topological_order[i]);
-	   }
 
-	   cout<<endl;
-	   return 0;
-     
-   }
+
+
+
+
+
+//Using bfs set : http://ideone.com/hy3TQi
+//Using dfs :http://ideone.com/o3lmCn
 
