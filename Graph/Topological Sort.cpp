@@ -61,7 +61,7 @@ int main ()
 
 
 
-
+//N.B It show error in duplicate elements. we try to use set data structure instead of queue. //using bfs set r8 answer
 
 
 
