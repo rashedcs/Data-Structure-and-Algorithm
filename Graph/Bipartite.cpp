@@ -6,10 +6,12 @@ vector<int>AdjList[200];
 
 void init()
 {
-	for(int i=0;i<200;i++){
+	for(int i=0;i<200;i++)
+	{
 		AdjList[i].clear();
 	}
 }
+
 void bfs(int V)
 {
  		queue<int> q;
@@ -29,8 +31,8 @@ void bfs(int V)
 					color[v] = 1 - color[u];
 					q.push(v);
 				}
-                else if (color[v] == color[u])
-                {
+                                else if (color[v] == color[u])
+                                {
 					isBipartite = false;
 					break;
 				}
@@ -47,13 +49,12 @@ void bfs(int V)
 
 int main()
 {
-	int V, E, u, v;
-	//vector<vi> AdjList;
+	  int V, E, u, v;
+	 //vector<vi> AdjList;
 
-
-	while (scanf("%d", &V), V)
-	{
-	   init();
+	 while (scanf("%d", &V), V)
+	 {
+	         init();
 		//AdjList.assign(V, vi());
 		scanf("%d", &E);
 
@@ -63,9 +64,8 @@ int main()
 			AdjList[u].push_back(v);
 			AdjList[v].push_back(u);
 		}
-        bfs(V);
-
-	}
+                bfs(V);
+	  }
 
 	return 0;
 }
