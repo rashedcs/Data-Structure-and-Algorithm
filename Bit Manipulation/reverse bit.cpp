@@ -33,6 +33,6 @@ binary representation of 30 is : 11110
 reverse of binary representation : 01111
 decimal of reversed binary representation is : 15
 */
-
+bit number = floor(log(n)/log(2)) + 1
 Solution : http://ideone.com/mephDU
 http://algorithms.tutorialhorizon.com/reverse-the-binary-representation-of-a-number/
