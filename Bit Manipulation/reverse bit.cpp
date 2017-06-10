@@ -19,8 +19,8 @@ int main()
 		    rev |= (n&1); // // if(n&1)  rev|=1;
 		    n>>=1;
 		}
-		cout<<rev<<endl;
- 
+	
+	cout<<rev<<endl;
 	return 0;
 }
 
