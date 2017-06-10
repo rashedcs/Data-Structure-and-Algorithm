@@ -1,5 +1,5 @@
 //Reverse a 32 bit given number.
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 int main()
