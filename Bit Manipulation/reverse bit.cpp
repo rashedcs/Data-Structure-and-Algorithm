@@ -26,5 +26,13 @@ int main()
 
 
 
-//Reverse the binary number 
+//Reversea a n bit given number 
+//Like 30 is binary
+/*
+binary representation of 30 is : 11110
+reverse of binary representation : 01111
+decimal of reversed binary representation is : 15
+*/
+
+Solution : http://ideone.com/mephDU
 http://algorithms.tutorialhorizon.com/reverse-the-binary-representation-of-a-number/
