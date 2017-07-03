@@ -108,7 +108,70 @@ int main()
 
 
 
+// Does not support negative cycle .
+#include <stdio.h>
+#include <queue>
+#include <vector>
+using namespace std;
+struct node
+{
+    int u , w ; // u is the road number and w is the total cost needed to reach u from source
+};
+class cmp
+{
+    public :
+    bool operator () (node &a,node &b)
+    {
+        if(a.w>b.w) return true; else return false; // Sorted in ascending order according to cost
+    }
+};
+vector <int> graph[100+10];
+vector <int> cost[100+10];
+int Dijkstra(int N,int source,int destination)
+{
+    bool visit[100+10] ;
+    for(int i=1;i<=100;i++) visit[i]=false;
+    priority_queue <node,vector<node>,cmp> Q;
 
+    node n;
+    n.u=source;n.w=0;
+    Q.push(n);
+    while(Q.size()!=0)
+    {
+        n = Q.top(); Q.pop();
+        int u = n.u , w = n.w;
+        if(visit[u]) continue;
+        visit[u]=true;
+        if(u==destination) return w;
+
+        for(int i=0;i<graph[u].size();i++)
+        {
+            int v = graph[u][i];
+            if(visit[v]==false)
+            {
+                n.u=v ; n.w=w+cost[u][i];
+                Q.push(n);
+            }
+        }
+    }
+    return -1; //Not found any path between source and destination
+}
+int main()
+{
+    int N,M; //N is the node numbers and M is the relation numbers
+    scanf("%d%d",&N,&M);
+    while(M--)
+    {
+        int u , v , w; // from node u to v is cost w
+        scanf("%d%d%d",&u,&v,&w);
+        graph[u].push_back(v);
+        cost[u].push_back(w);
+    }
+    int x , y ; // Find the minimum distance from x to y
+    scanf("%d%d",&x,&y);
+    printf("%d\n",Dijkstra(N,x,y));
+    return 0;
+}
 
 
 
