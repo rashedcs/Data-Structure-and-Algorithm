@@ -1,3 +1,5 @@
+/** 1st way **/
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -33,7 +35,7 @@ int main()
 }
 
 
-/** 2nd ways **/
+/** 2nd way **/
 
  #include<iostream>
  using namespace std;
