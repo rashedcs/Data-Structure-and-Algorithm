@@ -3,13 +3,16 @@ using namespace std;
 
 void doit(int **s , int row, int col)
 {
-    int i, j;
-    for (i = 0; i < row; i++){
-        for (j = 0 ;j < col; j++)
-            printf("%d ", s[i][j]);
+    for (int i=0; i < row; i++)
+    {
+        for (int j=0 ; j<col; j++)
+	{
+	     printf("%d ", s[i][j]);	
+	}
         printf("\n");
     }
 }
+
 int main()
 {
     int i, j;
@@ -22,13 +25,16 @@ int main()
       arr[i] = new int[m];
     }
 
-
-
     for (i = 0; i <n; i++)
-        for (j = 0; j <m; j++)
-            cin>>arr[i][j];
-
+    {
+	for (j = 0; j <m; j++)
+	{
+	   cin>>arr[i][j];    	
+	}     
+    }
+	
     doit(arr, n, m);
+    return 0;
 }
 
 
