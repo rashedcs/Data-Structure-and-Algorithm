@@ -28,7 +28,7 @@ int main()
 	   cin>>arr[i][j];    	
 	}     
     }
-    doit(arr, n, m);
+    doit(arr, r, c);
     return 0;
 }
 
