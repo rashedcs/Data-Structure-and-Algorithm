@@ -3,7 +3,7 @@ using namespace std;
 
 void doit(int **s , int row, int col)
 {
-    for (int i=0; i < row; i++)
+    for (int i=0; i<row; i++)
     {
         for (int j=0 ; j<col; j++)
 	{
@@ -15,29 +15,25 @@ void doit(int **s , int row, int col)
 
 int main()
 {
-    int i, j;
-    int n = 2, m= 2;
-
-    int** arr = new int*[n];
-
-    for(int i=0; i<n; i++)
+    int r = 2, c= 2;
+    int** arr = new int*[r];
+    for(int i=0; i<r; i++)
     {
-      arr[i] = new int[m];
+      arr[i] = new int[c];
     }
-
-    for (i = 0; i <n; i++)
+    for(int i=0; i<r; i++)
     {
-	for (j = 0; j <m; j++)
+	for(int j=0; j<c; j++)
 	{
 	   cin>>arr[i][j];    	
 	}     
     }
-	
     doit(arr, n, m);
     return 0;
 }
 
 
+/** 2nd ways **/
 
  #include<iostream>
  using namespace std;
