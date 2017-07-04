@@ -27,9 +27,9 @@ int main()
 
     vector <vector<int>> v;
     v.resize(col,vector<int>(row));
-
+    
     //v = {{1,2,3}, {4,5,6}, {7,8,9}};
-
+    
     /** input from use **/
     for(int i=0; i<row; i++)
     {
@@ -38,9 +38,8 @@ int main()
           cin>>v[i][j];
        }
     }
-
+    /**      fumction call          **/
     print(v, row, col);
-
     return 0;
 }
 
