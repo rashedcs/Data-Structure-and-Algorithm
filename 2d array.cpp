@@ -1,4 +1,45 @@
-/** 1st way **/
+/** Easiest Way **/
+
+#include<bits/stdc++.h>
+using namespace std;
+int arr[20][20];
+
+void func(int r, int c)
+{
+    for(int i=0; i<r; i++)
+    {
+        for(int j=0; j<c; j++)
+        {
+             printf("%d ", arr[i][j]);
+        }
+        puts(" ");
+    }
+}
+
+
+
+int main( int argc, char* argv[] )
+{
+  int row, col;
+  scanf("%d %d", &row, &col);
+  for(int i=0; i<row; i++)
+  {
+     for(int j=0; j<col; j++)
+     {
+        scanf("%d", &arr[i][j]);
+     }
+  }
+  func(row, col);
+  return 0;
+}
+
+
+
+
+
+
+
+/** easy way **/
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -35,24 +76,26 @@ int main()
 }
 
 
-/** 2nd way **/
+
+
+
+/** complex way **/
 
  #include<iostream>
  using namespace std;
 
-
-template<size_t N, size_t M>
-void print(int (&a)[N][M])
-{
-   for(size_t i=0; i<N; i++)
-   {
-      for(size_t j=0; j<M; j++)
-      {
-         cout<<a[i][j]<<" ";
-      }
-      cout<<endl;
-   }
-}
+ template<size_t N, size_t M>
+ void print(int (&a)[N][M])
+ {
+    for(size_t i=0; i<N; i++)
+    {
+       for(size_t j=0; j<M; j++)
+       {
+          cout<<a[i][j]<<" ";
+       }
+       cout<<endl;
+    }
+ }
 
 int main()
 {
