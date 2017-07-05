@@ -4,29 +4,29 @@
 
   map 
 
-           #include<bits/stdc++.h>
-    using namespace std;
+        #include<bits/stdc++.h>
+        using namespace std;
 
 
 	int main(int argc, char const *argv[])
 	{
-        int n, t, data, key;
-        map<int,int> mp;
+		int n, t, data, key;
+		map<int,int> mp;
 
-        cin>>n;
-        for (int i=0; i<n; i++)
-        {
-            cin>>data>>key;
-            mp[data] = key;
-        }
+		cin>>n;
+		for (int i=0; i<n; i++)
+		{
+		    cin>>data>>key;
+		    mp[data] = key;
+		}
 
-        for(auto val : mp )
-        {
-           int key = val.first;
-           int value = val.second; ///data occurence
-           cout<<key<<" "<<value<<endl;
-        }
-        return 0;
+		for(auto val : mp )
+		{
+		   int key = val.first;
+		   int value = val.second; ///data occurence
+		   cout<<key<<" "<<value<<endl;
+		}
+		return 0;
 	}
 
 
