@@ -110,7 +110,7 @@ int main()
 
     minHeap h(2);
 
-    h.heapInsert(node{"aishe", 100});
+    h.heapInsert(node{"asif", 100});
     h.heapInsert(node{"rashed" , 120});
 
     h.getMin();
