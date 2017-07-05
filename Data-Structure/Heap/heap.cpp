@@ -1,218 +1,160 @@
-// A C++ program to demonstrate common Binary Heap Operations
+
 http://practice.geeksforgeeks.org/viewSol.php?subId=2490829&pid=700240
-//geeksforgeeks
 https://www.codechef.com/viewsolution/7303604
-/*
-   http://www.sanfoundry.com/cpp-program-implement-binary-heap/
- C++ Program to Implement Binary Heap
- */
-#include <iostream>
-#include <cstdlib>
-#include <vector>
-#include <iterator>
+http://www.sanfoundry.com/cpp-program-implement-binary-heap/
+
+ 
+
+//Source : geeksforgeeks
+#include<bits/stdc++.h>
 using namespace std;
-/*
- * Class Declaration
- */
-class BinaryHeap
+
+
+// A class for Min Heap
+class MinHeap
 {
-    private:
-        vector <int> heap;
-        int left(int parent);
-        int right(int parent);
-        int parent(int child);
-        void heapifyup(int index);
-        void heapifydown(int index);
-    public:
-        BinaryHeap()
-        {}
-        void Insert(int element);
-        void DeleteMin();
-        int ExtractMin();
-        void DisplayHeap();
-        int Size();
+    int *harr; // pointer to array of elements in heap
+    int capacity; // maximum possible size of min heap
+    int heap_size; // Current number of elements in min heap
+public:
+    // Constructor
+    MinHeap(int capacity);
+
+    // to heapify a subtree with root at given index
+    void heapify(int );
+
+    int parent(int i) { return (i-1)/2; }
+
+    // to get index of left child of node at index i
+    int left(int i) { return (2*i + 1); }
+
+    // to get index of right child of node at index i
+    int right(int i) { return (2*i + 2); }
+
+    // to extract the root which is the minimum element
+    int extractMin();
+
+    // Decreases key value of key at index i to new_val
+    void decreaseKey(int i, int new_val);
+
+    // Returns the minimum key (key at root) from min heap
+    int getMin() { return harr[0]; }
+
+    // Deletes a key stored at index i
+    void deleteKey(int i);
+
+    // Inserts a new key 'k'
+    void insertKey(int k);
 };
-/*
- * Return Heap Size
- */
-int BinaryHeap::Size()
+
+// Constructor: Builds a heap from a given array a[] of given size
+MinHeap::MinHeap(int cap)
 {
-    return heap.size();
+    heap_size = 0;
+    capacity = cap;
+    harr = new int[cap];
 }
- 
-/*
- * Insert Element into a Heap
- */
-void BinaryHeap::Insert(int element)
+
+
+
+void MinHeap ::insertKey(int x)
 {
-    heap.push_back(element);
-    heapifyup(heap.size() -1);
-}
-/*
- * Delete Minimum Element
- */
-void BinaryHeap::DeleteMin()
-{
-    if (heap.size() == 0)
+    if(heap_size>=capacity-1)  return;
+    else
     {
-        cout<<"Heap is Empty"<<endl;
-        return;
+       heap_size++;
+       harr[heap_size-1]=x;
+       int i;
+       for(i=(heap_size-1)/2;i>=0;i--)
+       {
+         heapify(i);
+       }
     }
-    heap[0] = heap.at(heap.size() - 1);
-    heap.pop_back();
-    heapifydown(0);
-    cout<<"Element Deleted"<<endl;
 }
- 
-/*
- * Extract Minimum Element
- */
-int BinaryHeap::ExtractMin()
+
+
+// Decreases value of key at index 'i' to new_val.  It is assumed that
+// new_val is smaller than harr[i].
+void MinHeap :: decreaseKey(int index, int val)
 {
-    if (heap.size() == 0)
+    harr[index] = val;
+    while (index != 0 && harr[(index-1)/2] > harr[index])
     {
-        return -1;
+       swap(harr[index], harr[(index-1)/2]);
+
+       index = (index-1)/2;
+    }
+}
+// Method to remove minimum element (or root) from min heap
+int MinHeap::extractMin()
+{
+    if(heap_size <= 0)  return INT_MAX;
+    else if (heap_size == 1)
+    {
+        heap_size--;
+        return harr[0];
     }
     else
-        return heap.front();
-}
- 
-/*
- * Display Heap
- */
-void BinaryHeap::DisplayHeap()
-{
-    vector <int>::iterator pos = heap.begin();
-    cout<<"Heap -->  ";
-    while (pos != heap.end())
     {
-        cout<<*pos<<" ";
-        pos++;
-    }
-    cout<<endl;
-}
- 
-/*
- * Return Left Child
- */
-int BinaryHeap::left(int parent)
-{
-    int l = 2 * parent + 1;
-    if (l < heap.size())
-        return l;
-    else
-        return -1;
-}
- 
-/*
- * Return Right Child
- */
-int BinaryHeap::right(int parent)
-{
-    int r = 2 * parent + 2;
-    if (r < heap.size())
-        return r;
-    else
-        return -1;
-}
- 
-/*
- * Return Parent
- */
-int BinaryHeap::parent(int child)
-{
-    int p = (child - 1)/2;
-    if (child == 0)
-        return -1;
-    else
-        return p;
-}
- 
-/*
- * Heapify- Maintain Heap Structure bottom up
- */
-void BinaryHeap::heapifyup(int in)
-{
-    if (in >= 0 && parent(in) >= 0 && heap[parent(in)] > heap[in])
-    {
-        int temp = heap[in];
-        heap[in] = heap[parent(in)];
-        heap[parent(in)] = temp;
-        heapifyup(parent(in));
+       // Store the minimum value, and remove it from heap
+        int root = harr[0];
+        harr[0] = harr[heap_size-1];
+        heap_size--;
+        heapify(0);
+        return root;
     }
 }
- 
-/*
- * Heapify- Maintain Heap Structure top down
- */
-void BinaryHeap::heapifydown(int in)
+
+
+// This function deletes key at index i. It first reduced value to minus
+// infinite, then calls extractMin()
+/* Removes element from position x in the min heap  */
+void MinHeap :: deleteKey(int x)
 {
- 
-    int child = left(in);
-    int child1 = right(in);
-    if (child >= 0 && child1 >= 0 && heap[child] > heap[child1])
+    if(heap_size==0)  return;
+
+    else if(x < heap_size)
     {
-       child = child1;
-    }
-    if (child > 0)
-    {
-        int temp = heap[in];
-        heap[in] = heap[child];
-        heap[child] = temp;
-        heapifydown(child);
+        swap(harr[x],harr[heap_size-1]);
+        heap_size--;
+        heapify(x);
     }
 }
- 
-/*
- * Main Contains Menu
- */
+
+
+// A recursive method to heapify a subtree with root at given index
+// This method assumes that the subtrees are already heapified
+void MinHeap::heapify(int i)
+{
+    int l = left(i);
+    int r = right(i);
+    int smallest = i;
+    if (l < heap_size && harr[l] < harr[i])
+        smallest = l;
+    if (r < heap_size && harr[r] < harr[smallest])
+        smallest = r;
+    if (smallest != i)
+    {
+        swap(harr[i], harr[smallest]);
+        heapify(smallest);
+    }
+}
+
+
+// Driver program to test above functions
 int main()
 {
-    BinaryHeap h;
-    while (1)
-    {
-        cout<<"------------------"<<endl;
-        cout<<"Operations on Heap"<<endl;
-        cout<<"------------------"<<endl;
-        cout<<"1.Insert Element"<<endl;
-        cout<<"2.Delete Minimum Element"<<endl;
-        cout<<"3.Extract Minimum Element"<<endl;
-        cout<<"4.Print Heap"<<endl;
-        cout<<"5.Exit"<<endl;
-        int choice, element;
-        cout<<"Enter your choice: ";
-        cin>>choice;
-        switch(choice)
-        {
-        case 1:
-            cout<<"Enter the element to be inserted: ";
-            cin>>element;
-            h.Insert(element);
-            break;
-        case 2:
-            h.DeleteMin();
-            break;
-        case 3:
-            cout<<"Minimum Element: ";
-            if (h.ExtractMin() == -1)
-            {
-                cout<<"Heap is Empty"<<endl;
-            }
-            else
-                cout<<"Minimum Element:  "<<h.ExtractMin()<<endl;
-            break;
-        case 4:
-            cout<<"Displaying elements of Hwap:  ";
-            h.DisplayHeap();
-            break;
-        case 5:
-            exit(1);
-        default:
-            cout<<"Enter Correct Choice"<<endl;
-        }
-    }
+    MinHeap h(11);
+    h.insertKey(3);
+    h.insertKey(2);
+    h.deleteKey(1);
+    h.insertKey(15);
+    h.insertKey(5);
+    h.insertKey(4);
+    h.insertKey(45);
+    cout << h.extractMin() << " ";
+    cout << h.getMin() << " ";
+    h.decreaseKey(2, 1);
+    cout << h.getMin();
     return 0;
 }
-
-
-http://ideone.com/ifILMe
