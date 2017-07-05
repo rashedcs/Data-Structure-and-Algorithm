@@ -60,7 +60,6 @@ public:
         while (index != 0 && harr[(index-1)/2] > harr[index])
         {
            swap(harr[index], harr[(index-1)/2]);
-
            index = (index-1)/2;
         }
     }
