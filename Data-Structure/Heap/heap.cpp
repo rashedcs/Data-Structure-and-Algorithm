@@ -109,15 +109,15 @@ int MinHeap::extractMin()
 // This function deletes key at index i. It first reduced value to minus
 // infinite, then calls extractMin()
 /* Removes element from position x in the min heap  */
-void MinHeap :: deleteKey(int x)
+void MinHeap :: deleteKey(int index)
 {
     if(heap_size==0)  return;
 
-    else if(x < heap_size)
+    else if(index < heap_size)
     {
-        swap(harr[x],harr[heap_size-1]);
+        swap(harr[index],harr[heap_size-1]);
         heap_size--;
-        heapify(x);
+        heapify(index);
     }
 }
 
