@@ -92,10 +92,12 @@ class minHeap
         }
     }
 
+    /*
     void getMin()
     {
       cout<<arr[0].data<<" "<<arr[0].key;
     }
+    */
 
     void printPriorityQueue()
     {
@@ -118,8 +120,9 @@ int main()
 
     h.heapInsert(node{"asif", 100});
     h.heapInsert(node{"rashed" , 120});
-
-    h.getMin();
+    
+    cout<<h.heapMinimum().data<<" "<<h.heapMinimum().key<<endl;
+  //  h.getMin();
     h.printPriorityQueue();
     //inputQueueItems();
 
