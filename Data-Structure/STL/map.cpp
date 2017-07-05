@@ -1,4 +1,4 @@
-      /*  1st way :  */
+      /* map   */
 
         #include<bits/stdc++.h>
         using namespace std;
@@ -15,7 +15,14 @@
 		    cin>>data>>key;
 		    mp[data] = key;
 		}
-
+		
+	       /*
+		  for(map<char,int>::iterator it = first.begin(); it != first.end(); ++it) 
+		  {
+     		    cout << it->first <<" "<< it->second<<endl;
+   		  }
+	       */
+		
 		for(auto val : mp )
 		{
 		   int key = val.first;
@@ -23,7 +30,7 @@
 		   cout<<key<<" "<<value<<endl;
 		}
 		return 0;
-	}
+	 }
 
 
 
@@ -94,7 +101,7 @@
 
 
       
-    /* Find the frequency of array of element */
+       /* Find the frequency of array of element */
         #include <bits/stdc++.h>
 	using namespace std;
 
