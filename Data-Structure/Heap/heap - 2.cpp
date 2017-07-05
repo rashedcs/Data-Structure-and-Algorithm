@@ -76,14 +76,20 @@ class minHeap
 
     node extractMin()
     {
-        if(heap_size < 0)
-            printf("Heap Underflow\n");
-
-        node min = arr[0];
-        arr[0] = arr[heap_size - 1];
-        --heap_size;
-        minHeapify(0);
-        return min;
+        if(heap_size<=0)  printf("Heap Underflow\n");
+        else if(heap_size==1)
+        {
+            heap_size--;
+            return arr[0];
+        }
+        else
+        {
+            node root = arr[0];
+            arr[0] = arr[heap_size - 1];
+            heap_size--;
+            minHeapify(0);
+            return root;
+        }
     }
 
     void getMin()
