@@ -66,14 +66,29 @@ class minHeap
         return arr[0];
     }
 
-
+    void heapInsert(node n)
+    {
+        if(heap_size>=cap)  return;
+        else
+        {
+           heap_size++;
+           arr[heap_size-1]=n;
+           for(int i=(heap_size-1)/2; i>=0; i--)
+           {
+             minHeapify(i);
+           }
+        }
+    }
+    
+    /*
     void heapInsert(node n)
     {
         heap_size++;
         arr[heap_size - 1].key = INT_MAX;
         decreaseKey(heap_size-1, n);
     }
-
+   */
+    
     node extractMin()
     {
         if(heap_size<=0)  printf("Heap Underflow\n");
@@ -116,10 +131,11 @@ int main()
 {
     ios::sync_with_stdio(false);
 
-    minHeap h(2);
+    minHeap h(3);
 
     h.heapInsert(node{"asif", 100});
     h.heapInsert(node{"rashed" , 120});
+    h.heapInsert(node{"madhu", 101});
     
     cout<<h.heapMinimum().data<<" "<<h.heapMinimum().key<<endl;
   //  h.getMin();
