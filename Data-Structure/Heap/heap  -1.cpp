@@ -53,6 +53,18 @@ public:
            }
         }
     }
+    
+     void deleteKey(int index)
+    {
+        if(heap_size==0)  return;
+
+        else if(index < heap_size)
+        {
+            swap(harr[index],harr[heap_size-1]);
+            heap_size--;
+            heapify(index);
+        }
+    }
 
     void decreaseKey(int index, int val)
     {
@@ -79,18 +91,6 @@ public:
             heap_size--;
             heapify(0);
             return root;
-        }
-    }
-
-    void deleteKey(int index)
-    {
-        if(heap_size==0)  return;
-
-        else if(index < heap_size)
-        {
-            swap(harr[index],harr[heap_size-1]);
-            heap_size--;
-            heapify(index);
         }
     }
 };
