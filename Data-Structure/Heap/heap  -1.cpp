@@ -15,6 +15,15 @@ public:
         capacity = cap;
         harr = new int[cap];
     }
+    
+    
+    int parent(int i) { return (i-1)/2; }
+
+    int left(int i) { return (2*i + 1); }
+
+    int right(int i) { return (2*i + 2); }
+
+    int getMin() { return harr[0]; }
 
     void heapify(int i)
     {
@@ -85,15 +94,6 @@ public:
             heapify(index);
         }
     }
-
-    int parent(int i) { return (i-1)/2; }
-
-    int left(int i) { return (2*i + 1); }
-
-    int right(int i) { return (2*i + 2); }
-
-    int getMin() { return harr[0]; }
-
 };
 
 
