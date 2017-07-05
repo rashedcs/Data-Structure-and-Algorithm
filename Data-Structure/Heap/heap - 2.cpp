@@ -23,18 +23,6 @@ class minHeap
         this->cap = cap;
         arr = new node[cap];
     }
-    
-    node heapMinimum()
-    {
-        return arr[0];
-    }
-
-    /*
-    void getMin()
-    {
-      cout<<arr[0].data<<" "<<arr[0].key;
-    }
-    */
 
     void minHeapify(int i)
     {
@@ -76,6 +64,24 @@ class minHeap
     }
    */
     
+
+    void decreaseKey(int index, node n)
+    {
+        if(n.key > arr[index].key)
+        {
+            printf("Error\n");
+            return;
+        }
+        else
+        {
+            arr[index] = n;
+            while( index!=0 && arr[(index-1)/2].key>arr[index].key)
+            {
+                swap(arr[index], arr[(index-1)/2]);
+                index = (index-1)/2;
+            }
+        }
+    }
     
     node extractMin()
     {
@@ -95,24 +101,17 @@ class minHeap
         }
     }
     
-
-    void decreaseKey(int index, node n)
+    node heapMinimum()
     {
-        if(n.key > arr[index].key)
-        {
-            printf("Error\n");
-            return;
-        }
-        else
-        {
-            arr[index] = n;
-            while( index!=0 && arr[(index-1)/2].key>arr[index].key)
-            {
-                swap(arr[index], arr[(index-1)/2]);
-                index = (index-1)/2;
-            }
-        }
+        return arr[0];
     }
+
+    /*
+    void getMin()
+    {
+      cout<<arr[0].data<<" "<<arr[0].key;
+    }
+    */
 
     void printPriorityQueue()
     {
