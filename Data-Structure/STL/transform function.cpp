@@ -1,21 +1,27 @@
-#include <iostream>
-#include <algorithm>
-#include <functional>
-#include <iterator>
+#include <bits/stdc++.h>
 using namespace std;
+
+
+int calculation(int x)
+{
+   return x*x;
+}
 
 int main()
 {
-    int coll[] = { 5, 6, 2, 4, 1, 3 };
 
-    // square all elements
-    transform (coll, coll+6,        // first source
-               coll,                // second source
-               coll,                // destination
-               multiplies<int>());  // operation
+    int arr[] = { 5, 6, 2, 4, 1, 3 };
 
-    // print all elements
-    copy (coll, coll+6,
-          ostream_iterator<int>(cout," "));
-    cout << endl;
+    transform (arr, arr+6, arr, calculation);
+    copy(arr, arr+6, ostream_iterator<int>(cout," "));
+
+    cout<<endl;
+
+    for_each(arr, arr+6, calculation);
+     for(auto n: arr) 
+     {
+       cout << n << ", ";
+     }
+     
+    return 0;
 }
