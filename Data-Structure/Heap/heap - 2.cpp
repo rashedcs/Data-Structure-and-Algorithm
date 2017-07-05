@@ -31,11 +31,9 @@ class minHeap
         int l = 2*i +1;
         int r = 2*i +2;
 
-        if(l< heap_size && arr[l].key < arr[i].key)
-            largest = l;
-        if(r < heap_size && arr[r].key < arr[largest].key)
-            largest = r;
-
+        if(l< heap_size && arr[l].key < arr[i].key)             largest = l;
+        if(r < heap_size && arr[r].key < arr[largest].key)      largest = r;
+        
         if(largest != i)
         {
             swap(arr[i], arr[largest]);
@@ -132,19 +130,21 @@ int main()
     ios::sync_with_stdio(false);
 
     minHeap h(3);
-
+    
+    //inputQueueItems();
     h.heapInsert(node{"asif", 100});
     h.heapInsert(node{"rashed" , 120});
     h.heapInsert(node{"madhu", 101});
     
+     // h.getMin();
     cout<<h.heapMinimum().data<<" "<<h.heapMinimum().key<<endl;
-  //  h.getMin();
+
     h.printPriorityQueue();
-    //inputQueueItems();
+    
 
     return 0;
 }
 
-//Reference :  https://quickgrid.wordpress.com
+//Reference : https://quickgrid.wordpress.com/2015/04/09/min-priority-queue-implementation-using-array-min-heap/
 
    
