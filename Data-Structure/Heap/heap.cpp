@@ -1,5 +1,3 @@
-//geeksforgeeks
-
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -117,8 +115,13 @@ int main()
     return 0;
 }
 
+
+
+
 /*
 Reference : 
+   http://www.geeksforgeeks.org/binary-heap/
+   http://www.techiedelight.com/introduction-priority-queues-using-binary-heaps/
    codechef.com/viewsolution/7303604#include<bits/stdc++.h>
    http://ideone.com/3lABiO
  */
