@@ -1,8 +1,4 @@
-    
-100 lines (63 sloc)  1.61 KB
-        
-
-  map 
+      /*  1st way :  */
 
         #include<bits/stdc++.h>
         using namespace std;
@@ -35,7 +31,7 @@
 
 
 
-       /** Convert map to vector of pair **/
+        /* Convert map to vector of pair */
 
 	#include<bits/stdc++.h>
 	using namespace std;
@@ -51,28 +47,29 @@
 	{
 	    ios::sync_with_stdio(false);
 
-	    map<int, int> m;
+	    map<int, int>m;
 
 	    for(int i=0; i<10; i++)
 	    {
 	       m[i] = 5*i;
 	    }
-
+		
 	    vector<pair<int, int> > v(m.begin(), m.end());
-
+		
 	    /*
 		vector<pair<int, int> > v;
 		copy(m.begin(), m.end(), back_inserter(v));
 		sort(v.begin(), v.end(), cmp);
 	    */
-
 	    for(int i=0; i<v.size(); i++)
 	    {
 		cout<<v[i].first<< " : " <<v[i].second<<endl;
 	    }
-
 	    return 0;
 	}
+
+
+
 
 
 
