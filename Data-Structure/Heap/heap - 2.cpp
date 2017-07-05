@@ -23,6 +23,18 @@ class minHeap
         this->cap = cap;
         arr = new node[cap];
     }
+    
+    node heapMinimum()
+    {
+        return arr[0];
+    }
+
+    /*
+    void getMin()
+    {
+      cout<<arr[0].data<<" "<<arr[0].key;
+    }
+    */
 
     void minHeapify(int i)
     {
@@ -40,30 +52,7 @@ class minHeap
             minHeapify(largest);
         }
     }
-
-    void decreaseKey(int index, node n)
-    {
-        if(n.key > arr[index].key)
-        {
-            printf("Error\n");
-            return;
-        }
-        else
-        {
-            arr[index] = n;
-            while( index!=0 && arr[(index-1)/2].key>arr[index].key)
-            {
-                swap(arr[index], arr[(index-1)/2]);
-                index = (index-1)/2;
-            }
-        }
-    }
-
-    node heapMinimum()
-    {
-        return arr[0];
-    }
-
+    
     void heapInsert(node n)
     {
         if(heap_size>=cap)  return;
@@ -87,6 +76,7 @@ class minHeap
     }
    */
     
+    
     node extractMin()
     {
         if(heap_size<=0)  printf("Heap Underflow\n");
@@ -104,13 +94,25 @@ class minHeap
             return root;
         }
     }
+    
 
-    /*
-    void getMin()
+    void decreaseKey(int index, node n)
     {
-      cout<<arr[0].data<<" "<<arr[0].key;
+        if(n.key > arr[index].key)
+        {
+            printf("Error\n");
+            return;
+        }
+        else
+        {
+            arr[index] = n;
+            while( index!=0 && arr[(index-1)/2].key>arr[index].key)
+            {
+                swap(arr[index], arr[(index-1)/2]);
+                index = (index-1)/2;
+            }
+        }
     }
-    */
 
     void printPriorityQueue()
     {
