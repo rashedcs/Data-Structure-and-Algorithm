@@ -1,3 +1,4 @@
+
     #include<bits/stdc++.h>
     using namespace std;
 
@@ -62,8 +63,13 @@
       cout<<"\nFill : ";
 
 
-
-
+      /** fills a range with successive increments of the starting value **/
+        iota(Array.begin(), Array.end(), -4);
+        for(auto i: Array)
+        {
+          cout<<i<<" ";
+        }
+       cout<<"\nFill : ";
 
 
       /** copy-assigns the given value to every element in a range  **/
