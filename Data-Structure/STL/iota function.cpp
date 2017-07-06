@@ -1,3 +1,13 @@
+http://www.geeksforgeeks.org/useful-array-algorithms-in-c-stl/
+
+
+
+
+
+
+
+
+
 // C++ code to demonstrate working of iota()
 #include<iostream>
 #include<numeric> // for iota()
