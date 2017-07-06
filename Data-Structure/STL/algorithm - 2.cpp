@@ -8,6 +8,10 @@
             int arr[] = {2, 3, 8, 6, 7};
             int n = sizeof(arr)/sizeof(arr[0]);
 
+            int brr[] = {4, 6, 16, 12, 14};
+            int m = sizeof(brr)/sizeof(brr[0]);
+
+
 
            /** returns the smaller of the given values **/
             int mn = min(arr[0], arr[3]);
@@ -51,7 +55,6 @@
 
 
             /** determines if a sequence is a permutation of another sequence  **/
-            int brr[] = {7, 3, 8, 6, 2};
             cout<<"Check permutation : "<<boolalpha<<is_permutation(arr, arr+n, brr)<<endl;
 
 
@@ -66,6 +69,14 @@
             }
             while(next_permutation(s.begin(), s.end()));
 
+
+            /** Returns whether a range is lexicographically less than another range. **/
+            bool equ = lexicographical_compare(arr, arr+n, brr, brr+m, equal_to <int>());
+            cout<<"\nisEqual : "<<boolalpha<<equ<<endl;
+
+
+            bool les = lexicographical_compare(arr, arr+n, brr, brr+m); //lexicographical_compare(arr, arr+n, brr, brr+m, func)
+            (les==1)? cout<<"arr is less\n" : cout<<"brr is less\n";
 
 
             return 0;
