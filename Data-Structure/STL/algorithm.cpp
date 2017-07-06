@@ -1,4 +1,4 @@
-// A C++ program to demonstrate working of sort(),
+//link : http://www.geeksforgeeks.org/c-magicians-stl-algorithms/
 // reverse()
 #include <algorithm>
 #include <iostream>
