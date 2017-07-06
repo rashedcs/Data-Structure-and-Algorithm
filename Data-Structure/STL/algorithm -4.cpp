@@ -49,7 +49,19 @@
       {
         cout<<arr[i]<<" ";
       }
-      cout<<" \n ";
+      cout<<" \nDelete : ";
+
+
+
+
+     /** copies a range of elements omitting those that satisfy specific criteria  **/
+      vector<int>Array(arr, arr+n);
+      Array.erase(remove_if(Array.begin(), Array.end(), [](int n){ return n>100;}),Array.end());
+    //  Array.erase( remove_if(Array.begin(), Array.end(), comp), Array.end());
+      copy(Array.begin(), Array.end(), ostream_iterator<int>(cout, " "));
+      cout<<"\nFill : ";
+
+
 
 
 
@@ -73,24 +85,6 @@
       int p = {0};
       generate(arr, arr+n, [&p]{ return p++;});
       copy(arr, arr+n, ostream_iterator<int>(cout, " "));
-
-
-
-
-     /** copies a range of elements omitting those that satisfy specific criteria  **/
-      vector<int>Array(arr, arr+n);
-      Array.erase(remove_if(Array.begin(), Array.end(), [](int n) { return n <100; }),
-                 Array.end());
-     // a.erase( remove_if(a.begin(), a.end(), comp, a.end());
-      copy(arr, arr+n, ostream_iterator<int>(cout, " "));
-      cout<<"\nFill : ";
-
-
-
-
-
-
-
 
 
       return 0;
