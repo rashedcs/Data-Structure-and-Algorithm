@@ -60,6 +60,19 @@
 
 
             /** generates the next greater lexicographic permutation of a range of elements  **/
+             sort(arr, arr+n);
+             while(next_permutation(arr, arr+n))
+             {
+                 for(int i=0; i<n; i++)
+                 {
+                   cout<<arr[i]<<" ";
+                 }
+                 cout<<endl;
+             }
+
+                
+                
+            /** generates the next greater lexicographic permutation of a string **/
             string s = "aba";
             sort(s.begin(), s.end());
             //sort(s.begin(), s.end(), less<char>());
@@ -70,10 +83,12 @@
             while(next_permutation(s.begin(), s.end()));
 
 
+                
             /** Returns whether a range is lexicographically less than another range. **/
             bool equ = lexicographical_compare(arr, arr+n, brr, brr+m, equal_to <int>());
             cout<<"\nisEqual : "<<boolalpha<<equ<<endl;
 
+                
 
             bool les = lexicographical_compare(arr, arr+n, brr, brr+m); 
             // we also can use custom function lexicographical_compare(arr, arr+n, brr, brr+m, func) 
