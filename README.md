@@ -3,7 +3,8 @@
 #GeeksforGeeks-Algorithm-Solution
 #And Explanation
 
-#Created  by Rashed Hasan
+#Created  by Rashed
+Computer Science Student
  
 #Important link:
 
