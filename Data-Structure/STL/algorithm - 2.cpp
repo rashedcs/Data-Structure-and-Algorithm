@@ -75,7 +75,8 @@
             cout<<"\nisEqual : "<<boolalpha<<equ<<endl;
 
 
-            bool les = lexicographical_compare(arr, arr+n, brr, brr+m); //lexicographical_compare(arr, arr+n, brr, brr+m, func)
+            bool les = lexicographical_compare(arr, arr+n, brr, brr+m); 
+            // we also can use custom function lexicographical_compare(arr, arr+n, brr, brr+m, func) 
             (les==1)? cout<<"arr is less\n" : cout<<"brr is less\n";
 
 
