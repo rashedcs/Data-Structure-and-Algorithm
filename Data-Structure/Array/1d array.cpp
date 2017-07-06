@@ -46,4 +46,36 @@ int n = sizeof x / sizeof x[0]; //array size
 
 
 
+    #include<bits/stdc++.h>
+    using namespace std;
+
+
+    int main()
+    {
+      int myints[] = {10,20,30,30,20,10,10,20};      // 10 20 30 30 20 10 10 20
+                        // ^
+      int n = sizeof(myints)/sizeof(myints[0]); //
+      int k = 2;
+
+
+     /** delete particular index element  **/
+      n = remove(myints, myints+n, myints[k]) - myints;
+      for(int i=0; i<n; i++)
+      {
+        cout<<myints[i]<<" ";
+      }
+
+
+      /** delete particular number **/
+      remove (myints, myints+n, 20);         // 10 30 30 10 10 ?  ?  ?
+      for(int i=0; i<n; i++)
+      {
+        cout<<myints[i]<<" ";
+      }
+
+      return 0;
+    }
+
+
+
 
