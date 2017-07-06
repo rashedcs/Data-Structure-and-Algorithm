@@ -1,9 +1,9 @@
-# Competitive Programming 
-# Algorithm
-# GeeksforGeeks-Algorithm-Solution
-# And Explanation
+#Competitive Programming 
+#Algorithm
+#GeeksforGeeks-Algorithm-Solution
+#And Explanation
 
-# Created  by Rashed Hasan
+#Created  by Rashed Hasan
  
 #Important link:
 
