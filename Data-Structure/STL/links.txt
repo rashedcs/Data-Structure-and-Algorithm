@@ -2,4 +2,4 @@ C++ STL - http://en.cppreference.com/w/cpp
 
 C++ Container - http://www.geeksforgeeks.org/the-c-standard-template-library-stl/
 
-C++ Magicians – STL Algorithms : http://www.geeksforgeeks.org/c-magicians-stl-algorithms/
+C++ STL Algorithms : http://www.geeksforgeeks.org/c-magicians-stl-algorithms/
