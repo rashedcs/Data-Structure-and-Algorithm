@@ -14,6 +14,7 @@
 
     int main()
     {
+      ios::sync_with_stdio(false);
       int arr[] = {5, 2, 7, 9, 1, 10, 10, 12, 12, 15, 27};
 
       int n = sizeof(arr)/sizeof(arr[0]);
@@ -26,6 +27,13 @@
        vector<int> dest;
 
        unique_copy(ar.begin(), ar.end(), back_inserter(dest));
+       copy(dest.begin(), dest.end(), ostream_iterator<int>(cout, " "));
+
+
+       //Effiecient way
+       cout<<"\nUnique Copy : ";
+       unique_copy(ar.begin(), ar.end(), dest.begin());
+       //unique_copy(ar.begin(), ar.end(), dest.begin(), equal_to<int>());
        copy(dest.begin(), dest.end(), ostream_iterator<int>(cout, " "));
 
 
