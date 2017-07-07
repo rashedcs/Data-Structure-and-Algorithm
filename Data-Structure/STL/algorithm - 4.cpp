@@ -21,8 +21,17 @@
       int k = 2;
 
 
+      /** Copy from one vector to another **/
+        cout<<" Copy : ";
+        vector<int>fro(arr, arr+n);
+        vector<int> des;
+        copy(fro.begin(), fro.end(), back_inserter(des));
+        copy(des.begin(), des.end(), ostream_iterator<int>(cout, " "));
+
+
+
       /**copy of some range of elements that contains no consecutive duplicates **/
-       cout<<"Unique Copy : ";
+       cout<<"\n Unique Copy : ";
        vector<int>ar(arr, arr+n);
        vector<int> dest;
 
