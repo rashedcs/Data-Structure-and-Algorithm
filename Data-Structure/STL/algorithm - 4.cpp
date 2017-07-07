@@ -40,7 +40,8 @@
         cout<<" \nCopy Back : ";
         vector<int>s = {100, 200, 300};
         vector<int>d(arr, arr+n);
-        copy_backward(s.begin(), s.end()+3, d.begin()+7);
+        copy_backward(s.begin(), s.end(), d.end() );
+        //copy_backward(s.begin(), s.end()+3, d.begin()+7);
         copy(d.begin(), d.end(), ostream_iterator<int>(cout, " "));
         //https://www.tutorialspoint.com/cpp_standard_library/cpp_algorithm_copy_backward.htm
 
