@@ -43,6 +43,14 @@
         vector<int> de;
         copy_n(fr.begin(), 5, back_inserter(de));
         copy(de.begin(), de.end(), ostream_iterator<int>(cout, " "));
+        
+        /*
+        cout<<" \nCopy Range : ";
+        vector<int>fr(arr, arr+n);
+        vector<int> de(5);
+        copy_n(fr.begin(), 5, de.begin());
+        copy(de.begin(), de.end(), ostream_iterator<int>(cout, " "));
+        */
 
 
         /** copies a range of elements in backwards order  **/  //confusion
