@@ -29,12 +29,21 @@
         copy(des.begin(), des.end(), ostream_iterator<int>(cout, " "));
 
 
+        /** copies a number of elements to a new location **/
+        cout<<" \nCopy Range : ";
+        vector<int>fr(arr, arr+n);
+        vector<int> de;
+        copy_n(fr.begin(), 5, back_inserter(de));
+        copy(de.begin(), de.end(), ostream_iterator<int>(cout, " "));
+
+
+
 
       /**copy of some range of elements that contains no consecutive duplicates **/
        cout<<"\n Unique Copy : ";
        vector<int>ar(arr, arr+n);
        vector<int> dest;
-
+       //Simple way
        unique_copy(ar.begin(), ar.end(), back_inserter(dest));
        copy(dest.begin(), dest.end(), ostream_iterator<int>(cout, " "));
 
