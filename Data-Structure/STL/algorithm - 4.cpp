@@ -1,5 +1,4 @@
-
-    #include<bits/stdc++.h>
+#include<bits/stdc++.h>
     using namespace std;
 
 
@@ -35,6 +34,14 @@
         vector<int> de;
         copy_n(fr.begin(), 5, back_inserter(de));
         copy(de.begin(), de.end(), ostream_iterator<int>(cout, " "));
+
+
+        /** copies a range of elements in backwards order  **/  //confusion
+        cout<<" \nCopy Back : ";
+        vector<int>s = {100, 200, 300};
+        vector<int>d(arr, arr+n);
+        copy_backward(s.begin(), s.end()+3, d.begin()+7);
+        copy(d.begin(), d.end(), ostream_iterator<int>(cout, " "));
 
 
 
