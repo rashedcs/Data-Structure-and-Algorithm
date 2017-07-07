@@ -26,6 +26,15 @@
         vector<int> des;
         copy(fro.begin(), fro.end(), back_inserter(des));
         copy(des.begin(), des.end(), ostream_iterator<int>(cout, " "));
+        
+        /** Copy from one vector to another **/
+        /*
+        cout<<" Copy : ";
+        vector<int>fro(arr, arr+n);
+        vector<int> des(n);
+        copy(fro.begin(), fro.end(), des.begin());
+        copy(des.begin(), des.end(), ostream_iterator<int>(cout, " "));
+        */
 
 
         /** copies a number of elements to a new location **/
