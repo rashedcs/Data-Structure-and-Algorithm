@@ -15,6 +15,7 @@ int main()
     }
     
     for(int i=0; i<n; i++) {
+	//Search in set
         if(comp.find(arr[i]) != comp.end()) {
             is_pair = true;
             break;
