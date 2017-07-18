@@ -31,6 +31,50 @@ int main()
         return 0;
 }
 
+#include<bits/stdc++.h>
+using namespace std;
+
+
+int main()
+{
+    ios::sync_with_stdio(false);
+
+    unordered_set<int> comp;
+    int n, k;
+    cin>>n>>k;
+    int arr[n];
+
+
+    for(int i=0; i<n; i++)
+    {
+        cin >> arr[i];
+    }
+
+    for(int i=0; i<n; i++)
+    {
+        if(comp.find(arr[i]) != comp.end())
+        {
+           cout<<arr[i]<<" "<<k-arr[i]<<endl;
+        }
+        else
+        {
+            comp.insert(k - arr[i]);
+        }
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 import java.util.HashMap;
