@@ -13,6 +13,7 @@
 		for (int i=0; i<n; i++)
 		{
 		    cin>>data>>key;
+		    mp.emplace(data, key);
 		    mp[data] = key;
 		}
 		
