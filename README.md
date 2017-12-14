@@ -1,10 +1,6 @@
 #Competitive Programming 
-#Algorithm
-#GeeksforGeeks-Algorithm-Solution
-#And Explanation
+#Data Structure and Algorithm
 
-#Created  by Rashed
-Computer Science Student
  
 #Important link:
 
