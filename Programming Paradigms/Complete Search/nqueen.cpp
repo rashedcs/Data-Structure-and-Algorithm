@@ -1,54 +1,60 @@
-  #include<bits/stdc++.h>
+#include<bits/stdc++.h>
   using namespace std;
  
   int arr[90];
   void print (int );
  
  
-  bool place(int k,int i)
+  bool place(int r, int c)
   {
-    for(int j=1;j<=k-1;j++)
+    for(int i=1; i<=r-1; i++)
      {
-       if((arr[j]==i)||abs(j-k)==abs(i-arr[j]))  return false;
+       if((arr[i]==c) || abs(i-r)==abs(c-arr[i]))  return false;
      }
      return true;
   }
  
- void nqueen(int row, int n)
+
+  void nqueen(int row, int n)
   {
-     for(int i=1;i<=n;i++)
+     for(int col=1; col<=n; col++)
      {
-       if(place(row,i))
+       if(place(row, col))
         {
-           arr[row]=i;
+           arr[row]=col;
            if(row==n)   print(n);
-           else         nqueen(row+1,n);
+           else         nqueen(row+1, n);
         }
      }
   }
  
+
   void print(int n)
   {
+    cout<<"[";
     for(int i=1; i<=n; i++)
     {
       for(int j=1; j<=n; j++)
       {
-        if(arr[i]==j)  cout<<"Q\t";
-        else cout<<"-\t";
+        if(arr[i]==j)  cout<<j<<" ";
       }
-      cout<<endl;
     }
-    cout<<endl;
+    cout<<"] ";
   }
  
   int main()
   {
-    int n;
-    while(cin>>n)
+    int tc, n;
+    cin>>tc;
+    while(tc--)
     {
-      if(n==1)        cout<<"Q\n";
-      else if(n<4)    cout<<"Not Possible\n\n";
+      cin>>n;
+      if(n==1)        cout<<"[1 ]";
+      else if(n<4)    cout<<"-1";
       else            nqueen(1,n);
+      cout<<endl;
     }
     return 0;
   }
+ 
+
