@@ -1,63 +1,66 @@
-#include<bits/stdc++.h>
-  using namespace std;
+#include <bits/stdc++.h>
+using namespace std;
  
-  int arr[90];
-  void print (int );
- 
- 
-  bool place(int r, int c)
-  {
-    for(int i=1; i<=r-1; i++)
-     {
-       if((arr[i]==c) || abs(i-r)==abs(c-arr[i]))  return false;
-     }
-     return true;
-  }
- 
+int n;
+int arr[10]; 
 
-  void nqueen(int row, int n)
-  {
-     for(int col=1; col<=n; col++)
-     {
-       if(place(row, col))
-        {
-           arr[row]=col;
-           if(row==n)   print(n);
-           else         nqueen(row+1, n);
-        }
-     }
-  }
- 
-
-  void print(int n)
-  {
-    cout<<"[";
-    for(int i=1; i<=n; i++)
+int check(int row, int col)
+{
+    for (int i=0; i<row; i++) 
     {
-      for(int j=1; j<=n; j++)
-      {
-        if(arr[i]==j)  cout<<j<<" ";
-      }
+        if (arr[i] == col || abs(row - i) == abs(col -arr[i]))  return false;
     }
-    cout<<"] ";
-  }
+    return true;
+}
+
+
+void print()
+{
+       cout<<"[";
+       for(int row=0; row<n; row++) 
+        {
+            for(int col=0; col<n; col++) 
+            {
+                if(arr[row] == col) cout<<col+1<<" ";
+            }
+        }
+        cout<<"] ";
+}
+
+
  
-  int main()
-  {
-    int tc, n;
+bool nqueen(int row) 
+{
+    if (row==n) 
+    {
+        print();
+        return true;
+    }
+    
+    for (int col=0; col<n; col++) 
+    {
+        if(check(row,col)) 
+        {
+            arr[row] = col;
+            nqueen(row+1);
+        }
+    }
+    return false; 
+}
+ 
+ 
+int main()
+{
+    int tc;
     cin>>tc;
     while(tc--)
     {
       cin>>n;
       if(n==1)        cout<<"[1 ]";
       else if(n<4)    cout<<"-1";
-      else            nqueen(1,n);
+      else            nqueen(0);
       cout<<endl;
     }
     return 0;
-  }
+}
  
-//base case occur to terminate recursion
-//Link : https://ideone.com/miHKYi  
-//Link:  https://ideone.com/Gu6RLZ: 
-//base case occur to terminate recursion
