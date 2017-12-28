@@ -3,27 +3,20 @@ using namespace std;
 
 vector<string>res;
 
-int check(string arr, int m, int n)
-{
-    if(m!=n && arr[m]==arr[n]) return false;
-}
 
 void permute(string arr, int m, int n)
 {
-     if(m>=n)
-     {
-         res.push_back(arr);
-         return;
-     }
-     for(int i=m; i<arr.length(); i++)
-     {
-        if(!check(arr, m, i))
-        {
-             swap(arr[i], arr[m]);
-             permute(arr, m+1, n);
-             swap(arr[m], arr[i]); 
-        }
-     }
+    if(m>=n)
+    {
+      res.push_back(arr);
+      return;
+    }
+    for(int i=m; i<arr.length(); i++)
+    {
+       swap(arr[i], arr[m]);
+       permute(arr, m+1, n);
+       swap(arr[m], arr[i]); 
+    }
 }
 
 
@@ -44,9 +37,10 @@ int main()
         
         for(string iterate:res)
         {
-             cout<<iterate<<" ";
+           cout<<iterate<<" ";
         }
         cout<<endl;
     }
-	  return 0;
+    return 0;
 }
+//Daught : https://ideone.com/QT5eAa
