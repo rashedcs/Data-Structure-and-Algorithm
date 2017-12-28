@@ -44,6 +44,7 @@ int main()
     return 0;
 }
 
+//Extended Program : https://ideone.com/0gwnJk
 //Another Paradigm : https://www.codechef.com/viewsolution/15868684
 //Unique permutation : https://ideone.com/QSPney
 //Daught : https://ideone.com/QT5eAa
