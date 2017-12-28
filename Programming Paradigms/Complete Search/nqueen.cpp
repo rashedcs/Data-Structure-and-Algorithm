@@ -57,5 +57,7 @@
     return 0;
   }
  
-
-//Link : https://ideone.com/miHKYi  : base case occur to terminate recursion
+//base case occur to terminate recursion
+//Link : https://ideone.com/miHKYi  
+//Link:  https://ideone.com/Gu6RLZ: 
+//base case occur to terminate recursion
