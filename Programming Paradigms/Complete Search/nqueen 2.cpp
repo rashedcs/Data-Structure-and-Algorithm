@@ -47,7 +47,7 @@ bool solveNQUtil(int board[N][N], int col)
         printSolution(board);
                 return true;
     }
-
+  
     for (int i = 0; i < N; i++)
     {
         if ( isSafe(board, i, col) )
