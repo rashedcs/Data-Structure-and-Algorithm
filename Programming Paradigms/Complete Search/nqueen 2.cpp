@@ -36,7 +36,7 @@ bool isSafe(int board[N][N], int row, int col)
             return false;
     }
  
-    return true;
+    return true;  
 }
  
 /*solve N Queen problem */
