@@ -60,3 +60,5 @@ int main()
     else                nqueen(0);
     return 0;
 }
+
+//Using 2d array : https://practice.geeksforgeeks.org/viewSol.php?subId=4633684&pid=1521&user=pppppppppp
