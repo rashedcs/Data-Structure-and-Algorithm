@@ -53,11 +53,13 @@ bool solveNQUtil(int board[N][N], int col)
         if ( isSafe(board, i, col) )
         {
             board[i][col] = 1;
-           /*for one solution */
+         
+            /*for one solution */
             if (solveNQUtil(board, col + 1) == true) return true;
             else board[i][col] = 0;
+         
+            /*for one solution */
             /*
-            //fo many solution 
              solveNQUtil(board, col + 1);
              board[i][col] = 0;
             */
