@@ -38,7 +38,7 @@ bool nqueen(int row)
     
     for (int col=0; col<n; col++) 
     {
-        if(arr[n-1]>0) //For one solution .... Otherwise gets many solution
+        if(arr[n-1]>0) //For one solution condition  .... Otherwise gets many solution
         {
             break;
         }
