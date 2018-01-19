@@ -61,22 +61,12 @@ bool solveNQUtil(int board[N][N], int col)
     return false;
 }
  
-/* solves the N Queen problem using Backtracking.*/
-bool solveNQ()
-{
-    int board[N][N] = {0};
-    if (solveNQUtil(board, 0) == false)
-    {
-        cout<<"Solution does not exist"<<endl;
-        return false;
-    }
-    solveNQUtil(board, 0);
-    return true;
-}
- 
+
 // Main
 int main()
 {
-    solveNQ();
+       int board[N][N] = {0};
+    solveNQUtil(board, 0);
     return 0;
 }
+ 
