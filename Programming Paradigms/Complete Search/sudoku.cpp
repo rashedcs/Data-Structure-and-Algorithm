@@ -1,5 +1,4 @@
-//Sudoku
-//Backtracking
+//Sudoku  Backtracking Reference : Geeksforgeeks
 #include <bits/stdc++.h>
 using namespace std;
 
