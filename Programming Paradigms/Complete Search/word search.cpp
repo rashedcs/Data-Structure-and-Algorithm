@@ -5,15 +5,19 @@ class Solution
         bool backtrack(vector<vector<char>> &board, vector<vector<bool>> &visited, int row, int col, string &word, int index) 
         {
             if(index==word.size()) return true;
-            else if(row<0 || col<0 || row>=board.size() || col>=board[0].size() || visited[row][col] || board[row][col]!=word[index]) return false;
+            else if(row<0 || col<0 || row>=board.size() || col>=board[0].size() || visited[row][col] ||
+                 board[row][col]!=word[index]) return false;
             else 
             {
                 visited[row][col] = true;
-                if(backtrack(board, visited, row-1, col, word, index+1)) return true;  
-                if(backtrack(board, visited, row+1, col, word, index+1)) return true;
-                if(backtrack(board, visited, row, col-1, word, index+1)) return true;
-                if(backtrack(board, visited, row, col+1, word, index+1)) return true;
-                visited[row][col] = false;
+                bool flag = backtrack(board, visited, row-1, col, word, index+1) 
+                    || backtrack(board, visited, row+1, col, word, index+1)
+                    || backtrack(board, visited, row, col-1, word, index+1) 
+                    || backtrack(board, visited, row, col+1, word, index+1) ;
+                //if(flag) return true;
+
+                 visited[row][col] = false;
+                                return flag;
             }
             return false;
         }
