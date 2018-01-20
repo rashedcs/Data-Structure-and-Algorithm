@@ -57,7 +57,7 @@ bool isSafe(int row,int col,int num)
 
 bool solveSoduko()
 {
-    int row , col ;
+    int row , col ; //Like static variable......initial row=0, col=1
     if(!findLocation(row,col))
     {
            return true ;
