@@ -1,0 +1,9 @@
+Backtracking :
+1. N-Queen
+2. String Permutation
+3. Combination
+4. Word Search (DFS and Backtracking)
+
+
+Hard :
+Soduko
