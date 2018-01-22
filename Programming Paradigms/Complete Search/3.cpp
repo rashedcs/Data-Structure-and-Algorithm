@@ -1,48 +1,54 @@
 //leetcode : https://leetcode.com/problems/subsets/description/
+
+#include<bits/stdc++.h>
+using namespace std;
+
+
+    
+void backtrack(vector<int>& nums, int start, vector<int>& sub, vector<vector<int>>& subs)
+{
+    if(start==nums.size())
+    {
+        //print one subset per condition;
+        return;
+    }
+    else
+    {
+        for (int i=start; i<nums.size(); i++) 
+        {
+            sub.push_back(nums[i]);
+            subs.push_back(sub);
+            backtrack(nums, i + 1, sub, subs);
+            sub.pop_back();
+        }
+    }
+
+}
+
+vector<vector<int> > subsets(vector<int>& nums)
+{
+	sort(nums.begin(), nums.end());
+	vector<vector<int>> subs;
+	vector<int> sub;  
+	subs.push_back(sub);
+	backtrack(nums, 0, sub, subs);
+	return subs; 
+}
+
+
+
+int main()
+{
+    std::vector<int> vec{1,2,3};
+    for (const auto &v : subsets(vec)) {
+        for (auto i : v)
+            std::cout << i << " ";
+        std::cout << std::endl;
+    }
+
+}
+
+
 //https://ideone.com/8EWDAr
-	#include<bits/stdc++.h>
-        using namespace std;
-
-
-	void print(vector<int>out)
-	{
-
-	 for(int i: out)
-	   cout<<i<<" ";
-	  cout<<endl;
-	}
-
-
-
-	void findpowerSet(int S[], vector<int>&out, int i)
-	{
-		 if(i<0)
-		 {
-		   print(out);
-		   return ;
-		 }
-		 
-		 out.push_back(S[i]);
-		 findpowerSet(S, out, i-1);
-		 out.pop_back();
-		 while(S[i]==S[i-1])
-		   i--;
-
-		findpowerSet(S, out, i-1);
-	}
-
-
-	int main()
-	{
-
-		int S[] = {1, 3, 1};
-		int n = 3;
-		sort(S, S+n);
-		vector<int>out;
-		findpowerSet(S, out, n-1);
-		return 0;
-	}
-
-
 
 
