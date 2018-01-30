@@ -6,45 +6,41 @@ using namespace std;
 
 
     
-void backtrack(vector<int>& nums, int start, vector<int>& sub, vector<vector<int>>& subs)
+void backtrack(const vector<int>& nums, int len, vector<vector<int>>& res, vector<int>& sub, int begin) 
 {
-    if(start==nums.size())
-    {
-        //print one subset per condition;
-        return;
-    }
-    else
-    {
-        for (int i=start; i<nums.size(); i++) 
+        if (sub.size() == len) 
+        {
+            res.push_back(sub);
+            return;
+        }
+        //int end = nums.size() - (len - sub.size());
+        for (int i=begin; i<=nums.size()-len+sub.size(); i++) 
         {
             sub.push_back(nums[i]);
-            subs.push_back(sub);
-            backtrack(nums, i + 1, sub, subs);
+            backtrack(nums, len, res, sub, i+1);
             sub.pop_back();
         }
-    }
-
 }
 
-vector<vector<int> > subsets(vector<int>& nums)
+vector<vector<int>> subsets(vector<int>& nums) 
 {
-	sort(nums.begin(), nums.end());
-	vector<vector<int>> subs;
-	vector<int> sub;  
-	subs.push_back(sub);
-	backtrack(nums, 0, sub, subs);
-	return subs; 
+        vector<vector<int>> res(1);
+        vector<int> sub;
+        for (int i=1; i<=nums.size(); ++i) 
+        {
+            backtrack(nums, i, res, sub, 0);
+        }
+        return res;
 }
-
 
 
 int main()
 {
     std::vector<int> vec{1,2,3};
     for (const auto &v : subsets(vec)) {
-        for (auto i : v)
-            std::cout << i << " ";
-        std::cout << std::endl;
+	for (auto i : v)
+	    std::cout << i << " ";
+	std::cout << std::endl;
     }
 
 }
