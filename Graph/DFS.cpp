@@ -1,62 +1,43 @@
-#include<bits/stdc++.h>
+   #include<bits/stdc++.h>
    using namespace std;
 
    vector<int>nodes[1000];
 
    void dfs(int start, int vertex)
    {
-        stack<int>stack;
+         stack<int>stack;
 
-        bool visited[vertex];
+         bool visited[vertex];
 
-       /*
-        for(int i=0; i<vertex; i++)
-        {
-            visited[i]=false;
-        }
-        */
          memset(visited,false,sizeof(visited));
-        //bool *visited = new bool[V];
-	    //bool *visited = new bool[V];
-        stack.push(start);
-        visited[start]=true;
 
-        while(!stack.empty())
-        {
+         stack.push(start);
+         visited[start]=true;
+
+         while(!stack.empty())
+         {
 		    int u = stack.top();
 		    cout<<u<<" ";
 		    stack.pop();
 
-            for(int i=0; i<nodes[u].size(); i++)
-            {
-              int v = nodes[u][i];
-		 	  if(visited[v]==false)
-		 	  {
+		    for(int i=0; i<nodes[u].size(); i++)
+		    {
+			  int v = nodes[u][i];
+			  if(visited[v]==false)
+			  {
 				visited[v] = true;
 				stack.push(v);
 			  }
-            }
-           /*
-            for(vector<int>::iterator it=nodes[u].begin(); it!=nodes[u].end(); it++)
-            {
-              if(visited[*it]==false)
-              {
-                visited[*it] = true;
-                stack.push(*it);
-              }
-            }
-          */
+		    }
          }
-     }
+    }
 
 
 
   int main()
   {
+          int start, vertex, edges,a,b;
 
-       int start, vertex, edges,a,b;
-
-       cout<<"Enter the no of vertex and edges"<<endl;
 	   cin>>vertex>>edges;
 	   for(int i=0;i<edges;i++)
 	   {
@@ -65,31 +46,13 @@
 		// nodes[b].push_back(a);
 	   }
 
-        cout<<"\nEnter the starting node"<<endl;
-        cin>>start;
-        dfs(start, vertex);
+	   cout<<"\nEnter the starting node"<<endl;
+	   cin>>start;
+	   dfs(start, vertex);
 
 	   cout<<endl;
 	   return 0;
    }
-
-
-/* Input  : Directed graph
-    5 5
-    1 0
-    0 2
-    2 1
-    0 3
-    1 4
-    0
-    Output : 0 3 2 1 4
-    //http://www.geeksforgeeks.org/iterative-depth-first-traversal/
-*/
-
-
-
-
-//https://gist.github.com/78526Nasir/c81ec5fd2843d69038cec798e8154460
 
 
 
@@ -136,9 +99,46 @@ Recursive :
              for(int i=start; i<vertex; i++)
              {
                 if(visited[i]==false)  dfs(i);
-             }
+	     }
 	      
-            cout<<endl;
+             cout<<endl;
 
-            return 0;
+             return 0;
        }
+
+
+/* Input  : Directed graph
+    5 5
+    1 0
+    0 2
+    2 1
+    0 3
+    1 4
+    0
+    Output : 0 3 2 1 4
+    //http://www.geeksforgeeks.org/iterative-depth-first-traversal/
+    		          //bool *visited = new bool[V];
+	//bool *visited = new bool[V];
+        for(int i=0; i<vertex; i++)
+        {
+            visited[i]=false;
+        }
+	
+            for(vector<int>::iterator it=nodes[u].begin(); it!=nodes[u].end(); it++)
+            {
+		      if(visited[*it]==false)
+		      {
+			 visited[*it] = true;
+			 stack.push(*it);
+		      }
+            }
+*/
+
+
+
+
+//https://gist.github.com/78526Nasir/c81ec5fd2843d69038cec798e8154460
+
+
+
+
