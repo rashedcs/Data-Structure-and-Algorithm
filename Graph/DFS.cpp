@@ -8,7 +8,6 @@
          stack<int>stack;
 
          bool visited[vertex];
-
          memset(visited,false,sizeof(visited));
 
          stack.push(start);
@@ -29,7 +28,7 @@
 				stack.push(v);
 			  }
 		    }
-         }
+          }
     }
 
 
@@ -70,7 +69,6 @@ Recursive :
 
        void dfs(int u)
        {
-                   printf("\n%d",u);
 		   visited[u] = true;
 		   for(int i=0; i<adj[u].size(); i++)
 		   {
@@ -107,37 +105,37 @@ Recursive :
        }
 
 
-/* Input  : Directed graph
-    5 5
-    1 0
-    0 2
-    2 1
-    0 3
-    1 4
-    0
-    Output : 0 3 2 1 4
-    //http://www.geeksforgeeks.org/iterative-depth-first-traversal/
-    		          //bool *visited = new bool[V];
-	//bool *visited = new bool[V];
-        for(int i=0; i<vertex; i++)
-        {
-            visited[i]=false;
-        }
+/* 
+      Input  : Directed graph
+	    5 5
+	    1 0
+	    0 2
+	    2 1
+	    0 3
+	    1 4
+	    0
+	    Output : 0 3 2 1 4
+
+		 //bool *visited = new bool[V];
+		 //bool *visited = new bool[V];
+		 for(int i=0; i<vertex; i++)
+		 {
+		    visited[i]=false;
+		 }
 	
-            for(vector<int>::iterator it=nodes[u].begin(); it!=nodes[u].end(); it++)
-            {
+           	 for(vector<int>::iterator it=nodes[u].begin(); it!=nodes[u].end(); it++)
+            	 {
 		      if(visited[*it]==false)
 		      {
 			 visited[*it] = true;
 			 stack.push(*it);
 		      }
-            }
+                 }
 */
 
 
 
 
-//https://gist.github.com/78526Nasir/c81ec5fd2843d69038cec798e8154460
 
 
 
