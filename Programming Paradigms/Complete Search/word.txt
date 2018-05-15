@@ -7,3 +7,4 @@ Backtracking :
 
 Hard :
 Soduko
+https://books.google.com.bd/books?id=xWaa1YURXtgC&pg=SA5-PA2&lpg=SA5-PA2&dq=sum+of+subset+backtracking+github&source=bl&ots=mbWMEcXnBQ&sig=CMhs9jL14T1R3NT1BTcxHUZGNio&hl=en&sa=X&ved=0ahUKEwjswLjP3IbbAhVFtY8KHZ1MAPk4ChDoAQg9MAQ#v=onepage&q&f=false
