@@ -76,75 +76,8 @@ int main()
 }
 
 
-#include<bits/stdc++.h>
-using namespace std;
-
-
-void solution(int grid[20][20], int r,int c)
-{
-    	    int row=0,  col=0, tr, tc;
-
-       	    pair<int,int>P[r];
-          
-            for(int i=0; i<r; i++)
-            {
-        	   for(int j=0; j<c; j++)
-    	    	{
-    	   	      	P[i].first += grid[i][j];
-    		    	P[i].second += grid[j][i];
-    	    	}
-            }
-          
-	    	
-    	   	for(int k=0; k<r; k++) 
-    		{
-    			if(P[k].first%2!=0)
-    			{
-    			    row++, tr = k+1;
-    			}
-    			if(P[k].second%2!=0)
-    			{
-    			    col++, tc = k+1;
-    			}
-    		}
-	    	if(row== 0 && col==0) printf("OK\n");
-		    else if(row==1 && col==1) printf("Change bit %d,%d\n", tr, tc);
-		    else  printf("Corrupt\n");
-			
-}
 	
 	
-	
-int main() 
-{
-	
-int n;
-	while(scanf("%d", &n)==1 && n) 
-	{
-	    //for 2d array as argument
-	    int row=n, col=n;
-		int **grid = (int**) malloc(sizeof(int*) * row);
-		
-        for (int i = 0; i < row; i++)
-        {
-            *(grid+i) = (int*) malloc(sizeof(int) * col);
-        }
-        
-        //input
-		for(int i=0; i<row; i++)
-		{
-		   	for(int j=0; j<col; j++)
-		   	{
-		   	    cin>>grid[i][j];
-		   	}
-		}
-
-		solution(grid,row,col);
-		
-	}
-    return 0;
-}
-
 
 
 /** complex way **/
@@ -175,6 +108,71 @@ int main()
 
 }
 
+
+/* A typical program */
+#include<bits/stdc++.h>
+using namespace std;
+
+void solu(int ** grid , int row, int col)
+{
+
+    	    int r=0,  c=0, tr, tc;
+
+
+       	    pair<int,int>P[row];
+          
+            for(int i=0; i<row; i++)
+            {
+        	   for(int j=0; j<col; j++)
+    	    	{
+    	   	      	P[i].first += grid[i][j];
+    		    	P[i].second += grid[j][i];
+    	    	}
+            }
+          
+    	   	for(int k=0; k<row; k++)
+    		{
+    			if(P[k].first%2!=0)
+    			{
+    			    r++, tr = k+1;
+    			}
+    			if(P[k].second%2!=0)
+    			{
+    			    c++, tc = k+1;
+    			}
+    		}
+	    	if(r== 0 && c==0) printf("OK\n");
+		    else if(r==1 && c==1) printf("Change bit (%d,%d)\n", tr, tc);
+		    else  printf("Corrupt\n");
+		   
+}
+
+int main()
+{
+    int n, row , col;
+    while(scanf("%d", &n)==1 && n) 
+	{
+	    row=col=n;
+	    
+        /*Dynamic memory allocation start */
+        int** grid = new int*[row];
+        for(int i=0; i<row; i++)
+        {
+          grid[i] = new int[col];
+        }
+        /*Dynamic memory allocation end */
+            
+        for(int i=0; i<row; i++)
+        {
+            for(int j=0; j<col; j++)
+            {
+               cin>> grid[i][j] ;
+            }
+        }
+        solu(grid, row, col);
+        free(grid);
+	}
+}
 
 Daught : http://ideone.com/dLkB42   x not possible
 Daught : http://ideone.com/GrGJ52   x not possible
