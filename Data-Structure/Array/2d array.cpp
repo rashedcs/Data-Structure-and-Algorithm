@@ -76,6 +76,74 @@ int main()
 }
 
 
+#include<bits/stdc++.h>
+using namespace std;
+
+
+void solution(int grid[20][20], int r,int c)
+{
+    	    int row=0,  col=0, tr, tc;
+
+       	    pair<int,int>P[r];
+          
+            for(int i=0; i<r; i++)
+            {
+        	   for(int j=0; j<c; j++)
+    	    	{
+    	   	      	P[i].first += grid[i][j];
+    		    	P[i].second += grid[j][i];
+    	    	}
+            }
+          
+	    	
+    	   	for(int k=0; k<r; k++) 
+    		{
+    			if(P[k].first%2!=0)
+    			{
+    			    row++, tr = k+1;
+    			}
+    			if(P[k].second%2!=0)
+    			{
+    			    col++, tc = k+1;
+    			}
+    		}
+	    	if(row== 0 && col==0) printf("OK\n");
+		    else if(row==1 && col==1) printf("Change bit %d,%d\n", tr, tc);
+		    else  printf("Corrupt\n");
+			
+}
+	
+	
+	
+int main() 
+{
+	
+int n;
+	while(scanf("%d", &n)==1 && n) 
+	{
+	    //for 2d array as argument
+	    int row=n, col=n;
+		int **grid = (int**) malloc(sizeof(int*) * row);
+		
+        for (int i = 0; i < row; i++)
+        {
+            *(grid+i) = (int*) malloc(sizeof(int) * col);
+        }
+        
+        //input
+		for(int i=0; i<row; i++)
+		{
+		   	for(int j=0; j<col; j++)
+		   	{
+		   	    cin>>grid[i][j];
+		   	}
+		}
+
+		solution(grid,row,col);
+		
+	}
+    return 0;
+}
 
 
 
