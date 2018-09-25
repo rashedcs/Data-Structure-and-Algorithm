@@ -1,5 +1,3 @@
-//https://www.element14.com/community/community/code_exchange/blog/2013/05/24/c-tutorial--hash-tables
-
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -70,3 +68,7 @@ int main()
 
     return 0;
 }
+
+/*
+Reference :  //https://www.element14.com/community/community/code_exchange/blog/2013/05/24/c-tutorial--hash-tables
+*/
