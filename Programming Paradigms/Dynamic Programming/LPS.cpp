@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int lcs(string a, string b)
+int lps(string a, string b)
 {
     int n = a.size();
     int arr[n+1][n+1]; 
@@ -32,7 +32,7 @@ int main()
 	       y += x[i];  
 	    }
 	    n = x.size();
-	    cout<<lcs(x, y)<<endl;
+	    cout<<lps(x, y)<<endl;
 	
 	return 0;
 }
