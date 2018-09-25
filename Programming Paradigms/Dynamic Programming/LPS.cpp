@@ -1,79 +1,38 @@
- * http://www.geeksforgeeks.org/dynamic-programming-set-12-longest-palindromic-subsequence/
-
-// Longest Palindromic Subsequence - Dynamic Programming
-
-#include <iostream>
-#include <algorithm>
+#include<bits/stdc++.h>
+#define ll long long
 
 using namespace std;
 
-int lps(string & s, int size_s)
+int lcs(string a, string b)
 {
-	int mat[size_s][size_s];
+    int n = a.size();
+    int arr[n+1][n+1]; 
 
-	// strings de tamanho 1 são palíndromos de tamanho 1
-	for(int i = 0; i < size_s; i++)
-		mat[i][i] = 1;
-
-	int tam = 2;
-
-	while(tam <= size_s)
-	{
-		for(int i = 0, j = tam - 1 + i; j < size_s; i++, j++)
-		{
-			if(s[i] == s[j] && tam == 2)
-				mat[i][j] = 2;
-			else if(s[i] != s[j])
-				mat[i][j] = max(mat[i][j - 1], mat[i + 1][j]);
-			else
-				mat[i][j] = mat[i + 1][j - 1] + 2;
-		}
-		tam++;
-	}
-
-	return mat[0][size_s - 1];
-}
-
-int main(int argc, char *argv[])
-{
-	string s("ATCATA");
-
-	cout << lps(s, s.size()) << endl;
-
-	return 0;
+    for(int i=0; i<=n; i++)
+    {
+        for(int j=0; j<=n; j++)
+        {
+            if(i == 0 || j == 0) arr[i][j] = 0;
+            else if(a[i-1]==b[j-1]) arr[i][j] = 1 + arr[i-1][j-1];
+            else arr[i][j] = max(arr[i-1][j],arr[i][j-1]);
+        }
+    }
+    return arr[n][n];
 }
 
 
-
-
-
-
-
-
-
-
-
-// Longest Palindromic Subsequence Dynamic Problem
-Source : copied
-#include <iostream>
-#include <cstring>
-#include <cstdio>
-using namespace std;
-#define memo(a,b) memset(a,b,sizeof(a))
-char arr[1000];
-int dp[1000][1000];
-int solve(int low,int high)
-{
-    if(low>high) return 0;
-    if(low==high) return 1;
-    int &ret = dp[low][high];
-    if(arr[low]==arr[high]) return ret = 2 + solve(low+1,high-1);
-    else return ret = max(solve(low+1,high),solve(low,high+1));
-}
 int main()
 {
-    scanf("%s",&arr);
-    memo(dp,-1);
-    cout<<solve(0,strlen(arr)-1)<<endl;
-    return 0;
+    	int n;
+
+	    string x, y;
+	    cin>>x;
+	    for(int i=x.size()-1; i>=0; i--)
+	    {
+	       y += x[i];  
+	    }
+	    n = x.size();
+	    cout<<lcs(x, y)<<endl;
+	
+	return 0;
 }
