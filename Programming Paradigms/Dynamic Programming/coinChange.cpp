@@ -10,7 +10,7 @@ int coinChange(int arr[], int n, int k)
         {
             for (int j=1; j<=k; j++) 
             {
-                if(j>=arr[i]) dp[j] += dp[j - arr[i]];
+                if(arr[i]<=j) dp[j] += dp[j - arr[i]];
             }
         }
         return dp[k];
@@ -19,8 +19,7 @@ int coinChange(int arr[], int n, int k)
 
 int main()
 {
-    int  n, k;
-
+        int  n, k;
         cin>>n;
         int arr[n];
         for(int i=0; i<n; i++)
@@ -30,5 +29,5 @@ int main()
         cin>>k;
         cout<<coinChange(arr, n, k)<<endl;
     
-	   return 0;
+	return 0;
 }
