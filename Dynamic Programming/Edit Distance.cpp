@@ -1,11 +1,13 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-string a, string b;
-int dp[100]100];
-
-int solve(int len1, int len2)
+int solve(string a, string b)
 {
+    int len1 = a.size();
+    int len2 = b.size();
+    
+    int dp[len+1][len2];
+
     for(int i=1;i<=len1;i++) dp[i][0]=i;
     for(int i=1;i<=len2;i++) dp[0][i]=i;
 
@@ -27,7 +29,8 @@ int solve(int len1, int len2)
 }
 int main()
 {
+    string a, string b;
     cin>>a>>b;
-    printf("%d\n",solve(a.size() , b.size());
+    printf("%d\n",solve(a,b);
     return 0;
 }
