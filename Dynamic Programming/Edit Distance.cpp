@@ -1,21 +1,19 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int solve(string a, string b)
+int editDistance(string a, string b)
 {
-    int len1 = a.size();
-    int len2 = b.size();
+    int m=a.size(), n=b.size();
+    int dp[m+1][n+1]={};
     
-    int dp[len+1][len2];
+    for(int i=1;i<=m;i++) dp[i][0]=i;
+    for(int i=1;i<=n;i++) dp[0][i]=i;
 
-    for(int i=1;i<=len1;i++) dp[i][0]=i;
-    for(int i=1;i<=len2;i++) dp[0][i]=i;
-
-    for(int i=1;i<=len1;i++)
+    for(int i=1;i<=m;i++)
     {
-        for(int j=1;j<=len2;j++)
+        for(int j=1;j<=n;j++)
         {
-            if(A[i-1]==B[j-1]) 
+            if(a[i-1]==b[j-1]) 
             {
                 dp[i][j] = dp[i-1][j-1];
             }
@@ -25,12 +23,16 @@ int solve(string a, string b)
             }
         }
     }
-    return dp[len1][len2];
+    
+    return dp[m][n];
 }
+
 int main()
 {
-    string a, string b;
-    cin>>a>>b;
-    printf("%d\n",solve(a,b);
+    int m, n;
+         cin>>m>>n;
+         string a,b;
+         cin>>a>>b;
+         printf("%d\n",editDistance(a,b));
     return 0;
 }
