@@ -29,10 +29,8 @@ int editDistance(string a, string b)
 
 int main()
 {
-    int m, n;
-         cin>>m>>n;
          string a,b;
          cin>>a>>b;
          printf("%d\n",editDistance(a,b));
-    return 0;
+         return 0;
 }
