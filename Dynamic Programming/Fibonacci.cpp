@@ -1,21 +1,35 @@
-//Top down approach
+//Bottom Up approach
 #include<bits/stdc++.h>
 using namespace std;
 
-int n, memo[100];
-
-int fibo(int n)
+int fib(int n)
 {
-     if(n<=2)               return 1;
-     else  if(memo[n]!=-1)  return memo[n];
-     else                   return memo[n] = fibo(n-1) + fibo(n-2);
+        int dp[n];
+        for(int i=0; i<n; i++)
+        {
+            if(i==0 || i==1)
+            {
+                dp[i]=1;
+            }
+            else
+            {
+                dp[i] = dp[i-2] + dp[i-1];
+            }
+        }
+        return dp[n-1];
 }
-
 
 int main()
 {
-     memset(memo, -1, sizeof (memo));
-     cin>>n;
-     cout<<fibo(n)<<endl;
-     return 0;
+	int  n;
+	  cin>>n;
+       cout<< fib(n)<<endl;
+	return 0;
 }
+
+
+/*
+Top down approach
+Code : https://ideone.com/nvV15K
+*/
+
