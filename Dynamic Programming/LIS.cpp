@@ -1,9 +1,4 @@
-// Longest Increasing Subsequence
-// Dynamic Problem
-// Time Complexity O(N^2)
-// N -> Number of elements
-#include <cstdio>
-#include <iostream>
+#include<bits/stdc++.h>
 using namespace std;
 #define mx 100
 int LIS[mx],seq[mx],sol[mx];
