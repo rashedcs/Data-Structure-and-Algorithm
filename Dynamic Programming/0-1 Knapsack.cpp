@@ -20,7 +20,7 @@ int knapSack(int wt[], int val[], int n, int W)
 
 
 int main()
- {
+{
 	    int n,W,*va,*wt;
 	    cin>>W>>n;
 	    va = new int[n];
@@ -31,8 +31,11 @@ int main()
 	    }
 	    cout<<knapSack(wt, va, n, W)<<endl;
 	    return 0;
-    }
+}
 
-
+/*
+Top down approach 
+Code : https://ideone.com/GVRVR1
+*/
 
 
