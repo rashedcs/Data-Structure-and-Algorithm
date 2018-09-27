@@ -1,25 +1,36 @@
-//http://ideone.com/tR451k
 #include<bits/stdc++.h>
 using namespace std;
 
-string A, string B;
-int solve(int m,int n)
+int lcs(string str1, string str2)
 {
-    for(int i=0;i<=m;i++)
-    {
-        for(int j=0;j<=n;j++)
-        {
-            if(i==0||j==0)            dp[i][j]=0;
-            else if(A[i-1]==B[j-1])   dp[i][j]=1+dp[i-1][j-1];
-            else                      dp[i][j]=max(dp[i-1][j],dp[i][j-1]);
-        }
-    }
-    return dp[m][n];
+       int n=str1.size(), k=str2.size();
+       int dp[n+1][k+1]={}; 
+    
+	    for(int i=0; i<=n; i++)
+	    {
+	        for(int j=0; j<=k; j++)
+	        {
+	            if(i==0||j==0)
+	            {
+	                dp[i][j]=0;
+	            }
+	            else if(str1[i-1]==str2[j-1])
+	            {
+	                dp[i][j]=dp[i-1][j-1]+1;
+	            }
+	            else
+	            {
+	                dp[i][j]=max(dp[i][j-1],dp[i-1][j]);
+	            }
+	        }
+	    }
+        return dp[n][k];
 }
+
 int main()
 {
-    scanf("%s%s",&A,&B);
-    memo(dp,-1);
-    printf("%d\n",solve(strlen(A),strlen(B)));
-    return 0;
+        string a, b;
+    	    cin>>a>>b;
+    	    cout<<lcs(a, b)<<endl;
+    	return 0;
 }
